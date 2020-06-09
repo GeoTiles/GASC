@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E073-18
+% SZS output start Proof for E073-18
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18] : (coll(X18,X0,X3) & coll(X18,X4,X12) & coll(X13,X2,X3) & coll(X13,X4,X5) & coll(X12,X1,X2) & perp(X12,X4,X1,X2) & coll(X5,X0,X1) & perp(X5,X4,X0,X1) & coll(X4,X1,X3) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => para(X13,X18,X12,X5) [input]
+95. ~! [X5,X12,X18,X13] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18] : (coll(X18,X0,X3) & coll(X18,X4,X12) & coll(X13,X2,X3) & coll(X13,X4,X5) & coll(X12,X1,X2) & perp(X12,X4,X1,X2) & coll(X5,X0,X1) & perp(X5,X4,X0,X1) & coll(X4,X1,X3) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => para(X13,X18,X12,X5)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X7) & coll(X12,X8,X10) & coll(X11,X6,X7) & coll(X11,X8,X9) & coll(X10,X5,X6) & perp(X10,X8,X5,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X5,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) => para(X3,X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X7) & coll(X12,X8,X10) & coll(X11,X6,X7) & coll(X11,X8,X9) & coll(X10,X5,X6) & perp(X10,X8,X5,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X5,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X7) & coll(X12,X8,X10) & coll(X11,X6,X7) & coll(X11,X8,X9) & coll(X10,X5,X6) & perp(X10,X8,X5,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X5,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X7) & coll(X12,X8,X10) & coll(X11,X6,X7) & coll(X11,X8,X9) & coll(X10,X5,X6) & perp(X10,X8,X5,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X5,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) [choice axiom]
+353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X7) & coll(X12,X8,X10) & coll(X11,X6,X7) & coll(X11,X8,X9) & coll(X10,X5,X6) & perp(X10,X8,X5,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X5,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) [skolemisation 315,352]
+468. para(X4,X6,X5,X7) [cnf transformation 353]
+478. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
+479. $false [resolution 478,468]
+% SZS output end Proof for E073-18
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

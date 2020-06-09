@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for yL198-2
+% SZS output start Proof for yL198-2
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (para(X0,X3,X4,X19) & coll(X19,X0,X1) & para(X1,X2,X4,X18) & coll(X18,X0,X1) & midp(X13,X3,X0) & midp(X12,X0,X1) & midp(X5,X1,X2) & midp(X4,X2,X3) & para(X0,X1,X2,X3) & cong(X3,X0,X2,X1)) => cong(X13,X4,X4,X5) [input]
+95. ~! [X5,X4,X13] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (para(X0,X3,X4,X19) & coll(X19,X0,X1) & para(X1,X2,X4,X18) & coll(X18,X0,X1) & midp(X13,X3,X0) & midp(X12,X0,X1) & midp(X5,X1,X2) & midp(X4,X2,X3) & para(X0,X1,X2,X3) & cong(X3,X0,X2,X1)) => cong(X13,X4,X4,X5)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (para(X3,X6,X7,X12) & coll(X12,X3,X4) & para(X4,X5,X7,X11) & coll(X11,X3,X4) & midp(X10,X6,X3) & midp(X9,X3,X4) & midp(X8,X4,X5) & midp(X7,X5,X6) & para(X3,X4,X5,X6) & cong(X6,X3,X5,X4)) => cong(X2,X1,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (para(X3,X6,X7,X12) & coll(X12,X3,X4) & para(X4,X5,X7,X11) & coll(X11,X3,X4) & midp(X10,X6,X3) & midp(X9,X3,X4) & midp(X8,X4,X5) & midp(X7,X5,X6) & para(X3,X4,X5,X6) & cong(X6,X3,X5,X4))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (para(X3,X6,X7,X12) & coll(X12,X3,X4) & para(X4,X5,X7,X11) & coll(X11,X3,X4) & midp(X10,X6,X3) & midp(X9,X3,X4) & midp(X8,X4,X5) & midp(X7,X5,X6) & para(X3,X4,X5,X6) & cong(X6,X3,X5,X4))) => (~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (para(X3,X6,X7,X12) & coll(X12,X3,X4) & para(X4,X5,X7,X11) & coll(X11,X3,X4) & midp(X10,X6,X3) & midp(X9,X3,X4) & midp(X8,X4,X5) & midp(X7,X5,X6) & para(X3,X4,X5,X6) & cong(X6,X3,X5,X4))) [choice axiom]
+353. ~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (para(X3,X6,X7,X12) & coll(X12,X3,X4) & para(X4,X5,X7,X11) & coll(X11,X3,X4) & midp(X10,X6,X3) & midp(X9,X3,X4) & midp(X8,X4,X5) & midp(X7,X5,X6) & para(X3,X4,X5,X6) & cong(X6,X3,X5,X4)) [skolemisation 315,352]
+467. cong(X6,X3,X5,X4) [cnf transformation 353]
+477. ~cong(sK22,sK21,sK21,sK20) [cnf transformation 353]
+478. $false [resolution 477,467]
+% SZS output end Proof for yL198-2
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

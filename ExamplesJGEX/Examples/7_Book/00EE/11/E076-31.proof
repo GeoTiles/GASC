@@ -1,0 +1,56 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E076-31
+% SZS output start Proof for E076-31
+18. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X1,X0,X2,X3,X8,X9,X10,X11)) [input]
+19. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9)) [input]
+21. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X0,X1,X8,X9,X2,X3,X10,X11)) [input]
+22. ! [X0,X1,X2,X3,X8,X9,X10,X11,X4,X5,X12,X13] : ((eqangle(X8,X9,X10,X11,X4,X5,X12,X13) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => eqangle(X0,X1,X2,X3,X4,X5,X12,X13)) [input]
+39. ! [X0,X1,X2,X3,X8,X9] : (eqangle(X0,X1,X8,X9,X2,X3,X8,X9) => para(X0,X1,X2,X3)) [input]
+40. ! [X0,X1,X2,X3,X8,X9] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X8,X9,X2,X3,X8,X9)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12] : (coll(X12,X0,X1) & coll(X5,X1,X2) & coll(X5,X3,X4) & coll(X4,X0,X1) & coll(X3,X0,X2) & eqangle(X3,X1,X1,X0,X3,X1,X1,X2) & eqangle(X4,X2,X2,X1,X4,X2,X2,X0)) => eqangle(X12,X0,X0,X5,X5,X0,X0,X2) [input]
+95. ~! [X2,X0,X5,X12] : (! [X0,X1,X2,X3,X4,X5,X12] : (coll(X12,X0,X1) & coll(X5,X1,X2) & coll(X5,X3,X4) & coll(X4,X0,X1) & coll(X3,X0,X2) & eqangle(X3,X1,X1,X0,X3,X1,X1,X2) & eqangle(X4,X2,X2,X1,X4,X2,X2,X0)) => eqangle(X12,X0,X0,X5,X5,X0,X0,X2)) [negated conjecture 94]
+99. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X1,X0,X2,X3,X4,X5,X6,X7)) [rectify 18]
+100. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) [rectify 19]
+102. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X0,X1,X4,X5,X2,X3,X6,X7)) [rectify 21]
+103. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : ((eqangle(X4,X5,X6,X7,X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) [rectify 22]
+117. ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) => para(X0,X1,X2,X3)) [rectify 39]
+118. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X4,X5,X2,X3,X4,X5)) [rectify 40]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X5) & coll(X9,X5,X6) & coll(X9,X7,X8) & coll(X8,X4,X5) & coll(X7,X4,X6) & eqangle(X7,X5,X5,X4,X7,X5,X5,X6) & eqangle(X8,X6,X6,X5,X8,X6,X6,X4)) => eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) [rectify 95]
+190. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X1,X0,X2,X3,X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 99]
+191. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 100]
+193. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X4,X5,X2,X3,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 102]
+194. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))) [ennf transformation 103]
+195. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [flattening 194]
+216. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) | ~eqangle(X0,X1,X4,X5,X2,X3,X4,X5)) [ennf transformation 117]
+217. ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) [ennf transformation 118]
+315. ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X5) & coll(X9,X5,X6) & coll(X9,X7,X8) & coll(X8,X4,X5) & coll(X7,X4,X6) & eqangle(X7,X5,X5,X4,X7,X5,X5,X6) & eqangle(X8,X6,X6,X5,X8,X6,X6,X4))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X5) & coll(X9,X5,X6) & coll(X9,X7,X8) & coll(X8,X4,X5) & coll(X7,X4,X6) & eqangle(X7,X5,X5,X4,X7,X5,X5,X6) & eqangle(X8,X6,X6,X5,X8,X6,X6,X4))) => (~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X5) & coll(X9,X5,X6) & coll(X9,X7,X8) & coll(X8,X4,X5) & coll(X7,X4,X6) & eqangle(X7,X5,X5,X4,X7,X5,X5,X6) & eqangle(X8,X6,X6,X5,X8,X6,X6,X4))) [choice axiom]
+353. ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X5) & coll(X9,X5,X6) & coll(X9,X7,X8) & coll(X8,X4,X5) & coll(X7,X4,X6) & eqangle(X7,X5,X5,X4,X7,X5,X5,X6) & eqangle(X8,X6,X6,X5,X8,X6,X6,X4)) [skolemisation 315,352]
+371. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X1,X0,X2,X3,X4,X5,X6,X7) [cnf transformation 190]
+372. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5) [cnf transformation 191]
+374. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X0,X1,X4,X5,X2,X3,X6,X7) [cnf transformation 193]
+375. ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) [cnf transformation 195]
+392. ~eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | para(X0,X1,X2,X3) [cnf transformation 216]
+393. eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3) [cnf transformation 217]
+468. eqangle(X7,X5,X5,X4,X7,X5,X5,X6) [cnf transformation 353]
+474. ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) [cnf transformation 353]
+629. eqangle(X0,X1,X0,X2,X1,X0,X0,X3) [resolution 371,468]
+638. eqangle(X10,X11,X10,X12,X10,X13,X12,X10) [resolution 372,629]
+729. eqangle(X3,X4,X3,X5,X3,X6,X6,X3) [resolution 638,374]
+1595. ~eqangle(X143,X144,X145,X146,X147,X148,X148,X150) | eqangle(X143,X144,X145,X146,X147,X148,X148,X149) [resolution 375,468]
+1601. ~eqangle(X191,X192,X193,X194,X199,X200,X197,X198) | eqangle(X191,X192,X193,X194,X195,X196,X197,X198) | ~para(X199,X200,X195,X196) [resolution 375,393]
+3193. eqangle(X8,X9,X8,X10,X8,X11,X11,X12) [resolution 1595,729]
+3620. eqangle(X7,X8,X7,X9,X10,X11,X7,X10) [resolution 3193,372]
+3996. para(X0,X1,X2,X3) [resolution 3620,392]
+4984. eqangle(X375,X376,X376,X377,X378,X379,X376,X380) | ~para(X375,X376,X378,X379) [resolution 1601,468]
+5062. eqangle(X375,X376,X376,X377,X378,X379,X376,X380) [subsumption resolution 4984,3996]
+5116. $false [resolution 5062,474]
+% SZS output end Proof for E076-31
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 6652
+% Time elapsed: 0.081 s
+% ------------------------------
+% ------------------------------

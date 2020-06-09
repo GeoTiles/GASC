@@ -1,0 +1,58 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for tn_if_two_pt_on_cr_then_create_a_intersection
+% SZS output start Proof for tn_if_two_pt_on_cr_then_create_a_intersection
+7. ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) => perp(X0,X1,X3,X2)) [input]
+8. ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) => perp(X2,X3,X0,X1)) [input]
+19. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9)) [input]
+44. ! [X0,X1,X2,X4,X5] : ((midp(X5,X0,X2) & midp(X4,X0,X1)) => para(X4,X5,X1,X2)) [input]
+48. ! [X0,X1,X2,X7,X15] : ((perp(X7,X0,X0,X15) & circle(X7,X0,X1,X2)) => eqangle(X0,X15,X0,X1,X2,X0,X2,X1)) [input]
+51. ! [X0,X1,X2,X7,X6] : ((eqangle(X0,X1,X0,X2,X7,X1,X7,X6) & coll(X6,X1,X2) & circle(X7,X0,X1,X2)) => midp(X6,X1,X2)) [input]
+94. ! [X0,X1,X2,X18,X7,X6,X19,X13,X20,X21,X22] : (coll(X13,X1,X18) & circle(X7,X1,X13,X22) & circle(X7,X0,X19,X21) & perp(X1,X18,X1,X19) & coll(X6,X2,X18) & circle(X7,X2,X6,X20) & circle(X7,X0,X1,X2) & eqangle(X18,X2,X2,X0,X18,X2,X2,X1) & eqangle(X18,X1,X1,X2,X18,X1,X1,X0) & eqangle(X18,X0,X0,X1,X18,X0,X0,X2)) => para(X6,X19,X0,X18) [input]
+95. ~! [X18,X0,X19,X6] : (! [X0,X1,X2,X18,X7,X6,X19,X13,X20,X21,X22] : (coll(X13,X1,X18) & circle(X7,X1,X13,X22) & circle(X7,X0,X19,X21) & perp(X1,X18,X1,X19) & coll(X6,X2,X18) & circle(X7,X2,X6,X20) & circle(X7,X0,X1,X2) & eqangle(X18,X2,X2,X0,X18,X2,X2,X1) & eqangle(X18,X1,X1,X2,X18,X1,X1,X0) & eqangle(X18,X0,X0,X1,X18,X0,X0,X2)) => para(X6,X19,X0,X18)) [negated conjecture 94]
+100. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) [rectify 19]
+122. ! [X0,X1,X2,X3,X4] : ((midp(X4,X0,X2) & midp(X3,X0,X1)) => para(X3,X4,X1,X2)) [rectify 44]
+126. ! [X0,X1,X2,X3,X4] : ((perp(X3,X0,X0,X4) & circle(X3,X0,X1,X2)) => eqangle(X0,X4,X0,X1,X2,X0,X2,X1)) [rectify 48]
+129. ! [X0,X1,X2,X3,X4] : ((eqangle(X0,X1,X0,X2,X3,X1,X3,X4) & coll(X4,X1,X2) & circle(X3,X0,X1,X2)) => midp(X4,X1,X2)) [rectify 51]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X5,X7) & circle(X8,X5,X11,X14) & circle(X8,X4,X10,X13) & perp(X5,X7,X5,X10) & coll(X9,X6,X7) & circle(X8,X6,X9,X12) & circle(X8,X4,X5,X6) & eqangle(X7,X6,X6,X4,X7,X6,X6,X5) & eqangle(X7,X5,X5,X6,X7,X5,X5,X4) & eqangle(X7,X4,X4,X5,X7,X4,X4,X6)) => para(X3,X2,X1,X0)) [rectify 95]
+174. ! [X0,X1,X2,X3] : (perp(X0,X1,X3,X2) | ~perp(X0,X1,X2,X3)) [ennf transformation 7]
+175. ! [X0,X1,X2,X3] : (perp(X2,X3,X0,X1) | ~perp(X0,X1,X2,X3)) [ennf transformation 8]
+191. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 100]
+223. ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | (~midp(X4,X0,X2) | ~midp(X3,X0,X1))) [ennf transformation 122]
+224. ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | ~midp(X4,X0,X2) | ~midp(X3,X0,X1)) [flattening 223]
+230. ! [X0,X1,X2,X3,X4] : (eqangle(X0,X4,X0,X1,X2,X0,X2,X1) | (~perp(X3,X0,X0,X4) | ~circle(X3,X0,X1,X2))) [ennf transformation 126]
+231. ! [X0,X1,X2,X3,X4] : (eqangle(X0,X4,X0,X1,X2,X0,X2,X1) | ~perp(X3,X0,X0,X4) | ~circle(X3,X0,X1,X2)) [flattening 230]
+236. ! [X0,X1,X2,X3,X4] : (midp(X4,X1,X2) | (~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2))) [ennf transformation 129]
+237. ! [X0,X1,X2,X3,X4] : (midp(X4,X1,X2) | ~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2)) [flattening 236]
+315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X5,X7) & circle(X8,X5,X11,X14) & circle(X8,X4,X10,X13) & perp(X5,X7,X5,X10) & coll(X9,X6,X7) & circle(X8,X6,X9,X12) & circle(X8,X4,X5,X6) & eqangle(X7,X6,X6,X4,X7,X6,X6,X5) & eqangle(X7,X5,X5,X6,X7,X5,X5,X4) & eqangle(X7,X4,X4,X5,X7,X4,X4,X6))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X5,X7) & circle(X8,X5,X11,X14) & circle(X8,X4,X10,X13) & perp(X5,X7,X5,X10) & coll(X9,X6,X7) & circle(X8,X6,X9,X12) & circle(X8,X4,X5,X6) & eqangle(X7,X6,X6,X4,X7,X6,X6,X5) & eqangle(X7,X5,X5,X6,X7,X5,X5,X4) & eqangle(X7,X4,X4,X5,X7,X4,X4,X6))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X5,X7) & circle(X8,X5,X11,X14) & circle(X8,X4,X10,X13) & perp(X5,X7,X5,X10) & coll(X9,X6,X7) & circle(X8,X6,X9,X12) & circle(X8,X4,X5,X6) & eqangle(X7,X6,X6,X4,X7,X6,X6,X5) & eqangle(X7,X5,X5,X6,X7,X5,X5,X4) & eqangle(X7,X4,X4,X5,X7,X4,X4,X6))) [choice axiom]
+353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X5,X7) & circle(X8,X5,X11,X14) & circle(X8,X4,X10,X13) & perp(X5,X7,X5,X10) & coll(X9,X6,X7) & circle(X8,X6,X9,X12) & circle(X8,X4,X5,X6) & eqangle(X7,X6,X6,X4,X7,X6,X6,X5) & eqangle(X7,X5,X5,X6,X7,X5,X5,X4) & eqangle(X7,X4,X4,X5,X7,X4,X4,X6)) [skolemisation 315,352]
+360. ~perp(X0,X1,X2,X3) | perp(X0,X1,X3,X2) [cnf transformation 174]
+361. ~perp(X0,X1,X2,X3) | perp(X2,X3,X0,X1) [cnf transformation 175]
+372. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5) [cnf transformation 191]
+398. ~midp(X4,X0,X2) | para(X3,X4,X1,X2) | ~midp(X3,X0,X1) [cnf transformation 224]
+402. ~circle(X3,X0,X1,X2) | ~perp(X3,X0,X0,X4) | eqangle(X0,X4,X0,X1,X2,X0,X2,X1) [cnf transformation 231]
+405. ~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | midp(X4,X1,X2) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2) [cnf transformation 237]
+473. perp(X5,X7,X5,X10) [cnf transformation 353]
+475. circle(X8,X5,X11,X14) [cnf transformation 353]
+476. coll(X11,X5,X7) [cnf transformation 353]
+477. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
+480. perp(X0,X1,X2,X0) [resolution 360,473]
+483. perp(X3,X4,X4,X5) [resolution 361,480]
+838. ~perp(X0,X1,X1,X2) | eqangle(X1,X2,X1,X3,X4,X1,X4,X3) [resolution 402,475]
+839. eqangle(X1,X2,X1,X3,X4,X1,X4,X3) [subsumption resolution 838,483]
+843. eqangle(X10,X11,X10,X12,X13,X11,X13,X10) [resolution 839,372]
+1208. midp(X11,X12,X13) | ~coll(X11,X12,X13) | ~circle(X14,X11,X12,X13) [resolution 405,843]
+1252. midp(X11,X12,X13) | ~circle(X14,X11,X12,X13) [subsumption resolution 1208,476]
+1253. midp(X11,X12,X13) [subsumption resolution 1252,475]
+1256. para(X3,X4,X5,X6) | ~midp(X3,X7,X5) [resolution 1253,398]
+1278. para(X3,X4,X5,X6) [subsumption resolution 1256,1253]
+1600. $false [resolution 1278,477]
+% SZS output end Proof for tn_if_two_pt_on_cr_then_create_a_intersection
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5500
+% Time elapsed: 0.039 s
+% ------------------------------
+% ------------------------------

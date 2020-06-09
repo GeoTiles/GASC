@@ -1,0 +1,25 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for wang2
+% SZS output start Proof for wang2
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X4,X12) & para(X1,X4,X13,X5) & midp(X12,X2,X1) & coll(X5,X0,X3) & perp(X5,X2,X0,X3) & coll(X4,X0,X3) & perp(X4,X1,X0,X3) & coll(X3,X1,X2)) => cong(X12,X4,X12,X5) [input]
+95. ~! [X5,X12,X4] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X4,X12) & para(X1,X4,X13,X5) & midp(X12,X2,X1) & coll(X5,X0,X3) & perp(X5,X2,X0,X3) & coll(X4,X0,X3) & perp(X4,X1,X0,X3) & coll(X3,X1,X2)) => cong(X12,X4,X12,X5)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X9) & para(X4,X7,X10,X8) & midp(X9,X5,X4) & coll(X8,X3,X6) & perp(X8,X5,X3,X6) & coll(X7,X3,X6) & perp(X7,X4,X3,X6) & coll(X6,X4,X5)) => cong(X1,X2,X1,X0)) [rectify 95]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X9) & para(X4,X7,X10,X8) & midp(X9,X5,X4) & coll(X8,X3,X6) & perp(X8,X5,X3,X6) & coll(X7,X3,X6) & perp(X7,X4,X3,X6) & coll(X6,X4,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X9) & para(X4,X7,X10,X8) & midp(X9,X5,X4) & coll(X8,X3,X6) & perp(X8,X5,X3,X6) & coll(X7,X3,X6) & perp(X7,X4,X3,X6) & coll(X6,X4,X5))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X9) & para(X4,X7,X10,X8) & midp(X9,X5,X4) & coll(X8,X3,X6) & perp(X8,X5,X3,X6) & coll(X7,X3,X6) & perp(X7,X4,X3,X6) & coll(X6,X4,X5))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X9) & para(X4,X7,X10,X8) & midp(X9,X5,X4) & coll(X8,X3,X6) & perp(X8,X5,X3,X6) & coll(X7,X3,X6) & perp(X7,X4,X3,X6) & coll(X6,X4,X5)) [skolemisation 315,352]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+472. midp(X9,X5,X4) [cnf transformation 353]
+475. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+481. ~midp(sK21,sK22,sK20) [resolution 422,475]
+482. $false [subsumption resolution 481,472]
+% SZS output end Proof for wang2
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

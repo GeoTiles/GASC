@@ -1,0 +1,26 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for L057-3-2
+% SZS output start Proof for L057-3-2
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X18] : (midp(X5,X1,X3) & midp(X4,X0,X2) & coll(X3,X0,X2) & cong(X3,X0,X2,X0) & perp(X0,X1,X18,X2) & midpoint(X18,X0,X1)) => cong(X1,X4,X1,X5) [input]
+95. ~! [X5,X1,X4] : (! [X0,X1,X2,X3,X4,X5,X18] : (midp(X5,X1,X3) & midp(X4,X0,X2) & coll(X3,X0,X2) & cong(X3,X0,X2,X0) & perp(X0,X1,X18,X2) & midpoint(X18,X0,X1)) => cong(X1,X4,X1,X5)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9] : (midp(X8,X4,X6) & midp(X7,X3,X5) & coll(X6,X3,X5) & cong(X6,X3,X5,X3) & perp(X3,X4,X9,X5) & midpoint(X9,X3,X4)) => cong(X1,X2,X1,X0)) [rectify 95]
+166. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9] : (midp(X8,X4,X6) & midp(X7,X3,X5) & coll(X6,X3,X5) & cong(X6,X3,X5,X3) & perp(X3,X4,X9,X5)) => cong(X1,X2,X1,X0)) [pure predicate removal 165]
+267. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+316. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (midp(X8,X4,X6) & midp(X7,X3,X5) & coll(X6,X3,X5) & cong(X6,X3,X5,X3) & perp(X3,X4,X9,X5))) [ennf transformation 166]
+353. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (midp(X8,X4,X6) & midp(X7,X3,X5) & coll(X6,X3,X5) & cong(X6,X3,X5,X3) & perp(X3,X4,X9,X5))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (midp(X8,X4,X6) & midp(X7,X3,X5) & coll(X6,X3,X5) & cong(X6,X3,X5,X3) & perp(X3,X4,X9,X5))) [choice axiom]
+354. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (midp(X8,X4,X6) & midp(X7,X3,X5) & coll(X6,X3,X5) & cong(X6,X3,X5,X3) & perp(X3,X4,X9,X5)) [skolemisation 316,353]
+423. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 267]
+472. midp(X8,X4,X6) [cnf transformation 354]
+473. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 354]
+478. ~midp(sK21,sK22,sK20) [resolution 423,473]
+479. $false [subsumption resolution 478,472]
+% SZS output end Proof for L057-3-2
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.029 s
+% ------------------------------
+% ------------------------------

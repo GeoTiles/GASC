@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E037-20
+% SZS output start Proof for E037-20
+94. ! [X0,X1,X2,X3,X4,X18] : (eqangle(X1,X0,X0,X3,X3,X0,X0,X4) & perp(X4,X3,X3,X2) & perp(X3,X2,X2,X0) & circle(X2,X2,X3,X18) & midp(X2,X0,X1)) => perp(X0,X4,X4,X3) [input]
+95. ~! [X3,X4,X0] : (! [X0,X1,X2,X3,X4,X18] : (eqangle(X1,X0,X0,X3,X3,X0,X0,X4) & perp(X4,X3,X3,X2) & perp(X3,X2,X2,X0) & circle(X2,X2,X3,X18) & midp(X2,X0,X1)) => perp(X0,X4,X4,X3)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8] : (eqangle(X4,X3,X3,X6,X6,X3,X3,X7) & perp(X7,X6,X6,X5) & perp(X6,X5,X5,X3) & circle(X5,X5,X6,X8) & midp(X5,X3,X4)) => perp(X2,X1,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~perp(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (eqangle(X4,X3,X3,X6,X6,X3,X3,X7) & perp(X7,X6,X6,X5) & perp(X6,X5,X5,X3) & circle(X5,X5,X6,X8) & midp(X5,X3,X4))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~perp(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (eqangle(X4,X3,X3,X6,X6,X3,X3,X7) & perp(X7,X6,X6,X5) & perp(X6,X5,X5,X3) & circle(X5,X5,X6,X8) & midp(X5,X3,X4))) => (~perp(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (eqangle(X4,X3,X3,X6,X6,X3,X3,X7) & perp(X7,X6,X6,X5) & perp(X6,X5,X5,X3) & circle(X5,X5,X6,X8) & midp(X5,X3,X4))) [choice axiom]
+353. ~perp(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (eqangle(X4,X3,X3,X6,X6,X3,X3,X7) & perp(X7,X6,X6,X5) & perp(X6,X5,X5,X3) & circle(X5,X5,X6,X8) & midp(X5,X3,X4)) [skolemisation 315,352]
+470. perp(X7,X6,X6,X5) [cnf transformation 353]
+472. ~perp(sK22,sK21,sK21,sK20) [cnf transformation 353]
+473. $false [resolution 472,470]
+% SZS output end Proof for E037-20
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------

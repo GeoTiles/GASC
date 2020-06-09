@@ -1,0 +1,25 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 86
+% SZS output start Proof for 86
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X3,X4) & coll(X13,X1,X12) & coll(X12,X3,X5) & eqangle(X12,X1,X1,X2,X12,X1,X1,X0) & midp(X5,X0,X1) & midp(X4,X1,X2) & midp(X3,X2,X0)) => cong(X3,X12,X3,X13) [input]
+95. ~! [X13,X3,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X3,X4) & coll(X13,X1,X12) & coll(X12,X3,X5) & eqangle(X12,X1,X1,X2,X12,X1,X1,X0) & midp(X5,X0,X1) & midp(X4,X1,X2) & midp(X3,X2,X0)) => cong(X3,X12,X3,X13)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X4,X9) & coll(X9,X6,X8) & eqangle(X9,X4,X4,X5,X9,X4,X4,X3) & midp(X8,X3,X4) & midp(X7,X4,X5) & midp(X6,X5,X3)) => cong(X1,X2,X1,X0)) [rectify 95]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X4,X9) & coll(X9,X6,X8) & eqangle(X9,X4,X4,X5,X9,X4,X4,X3) & midp(X8,X3,X4) & midp(X7,X4,X5) & midp(X6,X5,X3))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X4,X9) & coll(X9,X6,X8) & eqangle(X9,X4,X4,X5,X9,X4,X4,X3) & midp(X8,X3,X4) & midp(X7,X4,X5) & midp(X6,X5,X3))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X4,X9) & coll(X9,X6,X8) & eqangle(X9,X4,X4,X5,X9,X4,X4,X3) & midp(X8,X3,X4) & midp(X7,X4,X5) & midp(X6,X5,X3))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X4,X9) & coll(X9,X6,X8) & eqangle(X9,X4,X4,X5,X9,X4,X4,X3) & midp(X8,X3,X4) & midp(X7,X4,X5) & midp(X6,X5,X3)) [skolemisation 315,352]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+469. midp(X8,X3,X4) [cnf transformation 353]
+474. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+479. ~midp(sK21,sK22,sK20) [resolution 422,474]
+480. $false [subsumption resolution 479,469]
+% SZS output end Proof for 86
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.031 s
+% ------------------------------
+% ------------------------------

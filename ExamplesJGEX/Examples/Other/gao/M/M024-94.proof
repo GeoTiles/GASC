@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for M024-94
+% SZS output start Proof for M024-94
+94. ! [X0,X1,X2,X3,X4,X5,X18,X19,X20,X21] : (circle(X2,X3,X5,X21) & coll(X5,X3,X2) & circle(X0,X3,X4,X20) & coll(X4,X3,X0) & circle(X2,X1,X3,X19) & circle(X0,X1,X3,X18)) => coll(X4,X1,X5) [input]
+95. ~! [X5,X1,X4] : (! [X0,X1,X2,X3,X4,X5,X18,X19,X20,X21] : (circle(X2,X3,X5,X21) & coll(X5,X3,X2) & circle(X0,X3,X4,X20) & coll(X4,X3,X0) & circle(X2,X1,X3,X19) & circle(X0,X1,X3,X18)) => coll(X4,X1,X5)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (circle(X5,X6,X8,X12) & coll(X8,X6,X5) & circle(X3,X6,X7,X11) & coll(X7,X6,X3) & circle(X5,X4,X6,X10) & circle(X3,X4,X6,X9)) => coll(X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (circle(X5,X6,X8,X12) & coll(X8,X6,X5) & circle(X3,X6,X7,X11) & coll(X7,X6,X3) & circle(X5,X4,X6,X10) & circle(X3,X4,X6,X9))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (circle(X5,X6,X8,X12) & coll(X8,X6,X5) & circle(X3,X6,X7,X11) & coll(X7,X6,X3) & circle(X5,X4,X6,X10) & circle(X3,X4,X6,X9))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (circle(X5,X6,X8,X12) & coll(X8,X6,X5) & circle(X3,X6,X7,X11) & coll(X7,X6,X3) & circle(X5,X4,X6,X10) & circle(X3,X4,X6,X9))) [choice axiom]
+353. ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (circle(X5,X6,X8,X12) & coll(X8,X6,X5) & circle(X3,X6,X7,X11) & coll(X7,X6,X3) & circle(X5,X4,X6,X10) & circle(X3,X4,X6,X9)) [skolemisation 315,352]
+471. coll(X8,X6,X5) [cnf transformation 353]
+473. ~coll(sK22,sK21,sK20) [cnf transformation 353]
+474. $false [resolution 473,471]
+% SZS output end Proof for M024-94
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

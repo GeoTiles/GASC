@@ -1,0 +1,25 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 49
+% SZS output start Proof for 49
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X2,X1,X3,X8,X9,X14,X18,X7] : (coll(X7,X9,X18) & coll(X7,X8,X14) & midp(X18,X0,X3) & midp(X14,X3,X2) & midp(X9,X2,X1) & midp(X8,X1,X0) & perp(X0,X2,X1,X3)) => cong(X7,X18,X7,X14) [input]
+95. ~! [X14,X7,X18] : (! [X0,X2,X1,X3,X8,X9,X14,X18,X7] : (coll(X7,X9,X18) & coll(X7,X8,X14) & midp(X18,X0,X3) & midp(X14,X3,X2) & midp(X9,X2,X1) & midp(X8,X1,X0) & perp(X0,X2,X1,X3)) => cong(X7,X18,X7,X14)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X10) & coll(X11,X7,X9) & midp(X10,X3,X6) & midp(X9,X6,X4) & midp(X8,X4,X5) & midp(X7,X5,X3) & perp(X3,X4,X5,X6)) => cong(X1,X2,X1,X0)) [rectify 95]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X10) & coll(X11,X7,X9) & midp(X10,X3,X6) & midp(X9,X6,X4) & midp(X8,X4,X5) & midp(X7,X5,X3) & perp(X3,X4,X5,X6))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X10) & coll(X11,X7,X9) & midp(X10,X3,X6) & midp(X9,X6,X4) & midp(X8,X4,X5) & midp(X7,X5,X3) & perp(X3,X4,X5,X6))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X10) & coll(X11,X7,X9) & midp(X10,X3,X6) & midp(X9,X6,X4) & midp(X8,X4,X5) & midp(X7,X5,X3) & perp(X3,X4,X5,X6))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X10) & coll(X11,X7,X9) & midp(X10,X3,X6) & midp(X9,X6,X4) & midp(X8,X4,X5) & midp(X7,X5,X3) & perp(X3,X4,X5,X6)) [skolemisation 315,352]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+471. midp(X10,X3,X6) [cnf transformation 353]
+474. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+479. ~midp(sK21,sK22,sK20) [resolution 422,474]
+480. $false [subsumption resolution 479,471]
+% SZS output end Proof for 49
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------

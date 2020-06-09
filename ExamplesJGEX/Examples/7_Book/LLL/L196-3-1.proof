@@ -1,0 +1,42 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for L196-3-1
+% SZS output start Proof for L196-3-1
+10. ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & para(X0,X1,X2,X3)) => perp(X0,X1,X4,X5)) [input]
+12. ! [X0,X1,X2,X7] : ((cong(X7,X0,X7,X2) & cong(X7,X0,X7,X1)) => circle(X7,X0,X1,X2)) [input]
+86. ! [X0,X1,X2,X7] : ? [X8] : (circle(X7,X0,X1,X2) => perp(X8,X0,X0,X7)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13] : (para(X1,X2,X4,X13) & coll(X13,X0,X1) & para(X0,X3,X4,X12) & coll(X12,X0,X1) & midp(X5,X1,X0) & midp(X4,X2,X3) & para(X0,X1,X2,X3) & cong(X3,X0,X2,X1)) => perp(X0,X1,X4,X5) [input]
+95. ~! [X5,X4,X1,X0] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (para(X1,X2,X4,X13) & coll(X13,X0,X1) & para(X0,X3,X4,X12) & coll(X12,X0,X1) & midp(X5,X1,X0) & midp(X4,X2,X3) & para(X0,X1,X2,X3) & cong(X3,X0,X2,X1)) => perp(X0,X1,X4,X5)) [negated conjecture 94]
+97. ! [X0,X1,X2,X3] : ((cong(X3,X0,X3,X2) & cong(X3,X0,X3,X1)) => circle(X3,X0,X1,X2)) [rectify 12]
+157. ! [X0,X1,X2,X3] : ? [X4] : (circle(X3,X0,X1,X2) => perp(X4,X0,X0,X3)) [rectify 86]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11] : (para(X5,X6,X8,X11) & coll(X11,X4,X5) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & midp(X9,X5,X4) & midp(X8,X6,X7) & para(X4,X5,X6,X7) & cong(X7,X4,X6,X5)) => perp(X3,X2,X1,X0)) [rectify 95]
+178. ! [X0,X1,X2,X3,X4,X5] : (perp(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~para(X0,X1,X2,X3))) [ennf transformation 10]
+179. ! [X0,X1,X2,X3,X4,X5] : (perp(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) [flattening 178]
+181. ! [X0,X1,X2,X3] : (circle(X3,X0,X1,X2) | (~cong(X3,X0,X3,X2) | ~cong(X3,X0,X3,X1))) [ennf transformation 97]
+182. ! [X0,X1,X2,X3] : (circle(X3,X0,X1,X2) | ~cong(X3,X0,X3,X2) | ~cong(X3,X0,X3,X1)) [flattening 181]
+300. ! [X0,X1,X2,X3] : ? [X4] : (perp(X4,X0,X0,X3) | ~circle(X3,X0,X1,X2)) [ennf transformation 157]
+315. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (para(X5,X6,X8,X11) & coll(X11,X4,X5) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & midp(X9,X5,X4) & midp(X8,X6,X7) & para(X4,X5,X6,X7) & cong(X7,X4,X6,X5))) [ennf transformation 165]
+336. ! [X3,X2,X1,X0] : (? [X4] : (perp(X4,X0,X0,X3) | ~circle(X3,X0,X1,X2)) => (perp(sK11(X0,X1,X2,X3),X0,X0,X3) | ~circle(X3,X0,X1,X2))) [choice axiom]
+337. ! [X0,X1,X2,X3] : (perp(sK11(X0,X1,X2,X3),X0,X0,X3) | ~circle(X3,X0,X1,X2)) [skolemisation 300,336]
+352. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (para(X5,X6,X8,X11) & coll(X11,X4,X5) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & midp(X9,X5,X4) & midp(X8,X6,X7) & para(X4,X5,X6,X7) & cong(X7,X4,X6,X5))) => (~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (para(X5,X6,X8,X11) & coll(X11,X4,X5) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & midp(X9,X5,X4) & midp(X8,X6,X7) & para(X4,X5,X6,X7) & cong(X7,X4,X6,X5))) [choice axiom]
+353. ~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (para(X5,X6,X8,X11) & coll(X11,X4,X5) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & midp(X9,X5,X4) & midp(X8,X6,X7) & para(X4,X5,X6,X7) & cong(X7,X4,X6,X5)) [skolemisation 315,352]
+363. ~perp(X2,X3,X4,X5) | perp(X0,X1,X4,X5) | ~para(X0,X1,X2,X3) [cnf transformation 179]
+365. ~cong(X3,X0,X3,X2) | circle(X3,X0,X1,X2) | ~cong(X3,X0,X3,X1) [cnf transformation 182]
+453. perp(sK11(X0,X1,X2,X3),X0,X0,X3) | ~circle(X3,X0,X1,X2) [cnf transformation 337]
+467. cong(X7,X4,X6,X5) [cnf transformation 353]
+474. para(X5,X6,X8,X11) [cnf transformation 353]
+475. ~perp(sK23,sK22,sK21,sK20) [cnf transformation 353]
+510. perp(X0,X1,X2,X3) | ~para(X0,X1,sK11(X2,X4,X5,X3),X2) | ~circle(X3,X2,X4,X5) [resolution 363,453]
+513. ~circle(X3,X2,X4,X5) | perp(X0,X1,X2,X3) [subsumption resolution 510,474]
+516. circle(X0,X1,X2,X3) | ~cong(X0,X1,X0,X2) [resolution 365,467]
+518. circle(X0,X1,X2,X3) [subsumption resolution 516,467]
+519. perp(X0,X1,X2,X3) [resolution 518,513]
+521. $false [resolution 519,475]
+% SZS output end Proof for L196-3-1
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.029 s
+% ------------------------------
+% ------------------------------

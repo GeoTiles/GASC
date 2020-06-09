@@ -1,0 +1,27 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 90
+% SZS output start Proof for 90
+9. ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & perp(X0,X1,X2,X3)) => para(X0,X1,X4,X5)) [input]
+94. ! [X0,X1,X2,X7,X3,X12,X5,X18,X19,X20,X21,X22] : (circle(X7,X3,X19,X22) & coll(X3,X5,X19) & circle(X7,X3,X18,X21) & coll(X3,X12,X18) & coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X12,X0,X1) & perp(X12,X3,X0,X1) & circle(X7,X0,X3,X20) & circle(X7,X0,X1,X2)) => para(X18,X2,X19,X1) [input]
+95. ~! [X1,X19,X2,X18] : (! [X0,X1,X2,X7,X3,X12,X5,X18,X19,X20,X21,X22] : (circle(X7,X3,X19,X22) & coll(X3,X5,X19) & circle(X7,X3,X18,X21) & coll(X3,X12,X18) & coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X12,X0,X1) & perp(X12,X3,X0,X1) & circle(X7,X0,X3,X20) & circle(X7,X0,X1,X2)) => para(X18,X2,X19,X1)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (circle(X7,X8,X12,X15) & coll(X8,X10,X12) & circle(X7,X8,X11,X14) & coll(X8,X9,X11) & coll(X10,X4,X6) & perp(X10,X8,X4,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & circle(X7,X4,X8,X13) & circle(X7,X4,X5,X6)) => para(X3,X2,X1,X0)) [rectify 95]
+176. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3))) [ennf transformation 9]
+177. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3)) [flattening 176]
+315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (circle(X7,X8,X12,X15) & coll(X8,X10,X12) & circle(X7,X8,X11,X14) & coll(X8,X9,X11) & coll(X10,X4,X6) & perp(X10,X8,X4,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & circle(X7,X4,X8,X13) & circle(X7,X4,X5,X6))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (circle(X7,X8,X12,X15) & coll(X8,X10,X12) & circle(X7,X8,X11,X14) & coll(X8,X9,X11) & coll(X10,X4,X6) & perp(X10,X8,X4,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & circle(X7,X4,X8,X13) & circle(X7,X4,X5,X6))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (circle(X7,X8,X12,X15) & coll(X8,X10,X12) & circle(X7,X8,X11,X14) & coll(X8,X9,X11) & coll(X10,X4,X6) & perp(X10,X8,X4,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & circle(X7,X4,X8,X13) & circle(X7,X4,X5,X6))) [choice axiom]
+353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (circle(X7,X8,X12,X15) & coll(X8,X10,X12) & circle(X7,X8,X11,X14) & coll(X8,X9,X11) & coll(X10,X4,X6) & perp(X10,X8,X4,X6) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & circle(X7,X4,X8,X13) & circle(X7,X4,X5,X6)) [skolemisation 315,352]
+362. ~perp(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~perp(X0,X1,X2,X3) [cnf transformation 177]
+471. perp(X10,X8,X4,X6) [cnf transformation 353]
+477. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
+534. para(X0,X1,X2,X3) | ~perp(X0,X1,X4,X5) [resolution 362,471]
+536. para(X0,X1,X2,X3) [subsumption resolution 534,471]
+537. $false [resolution 536,477]
+% SZS output end Proof for 90
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------

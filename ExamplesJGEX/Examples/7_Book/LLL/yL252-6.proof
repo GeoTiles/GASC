@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for yL252-6
+% SZS output start Proof for yL252-6
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18] : (coll(X18,X4,X5) & coll(X18,X1,X2) & coll(X13,X2,X3) & coll(X13,X4,X12) & para(X0,X3,X4,X12) & coll(X12,X0,X1) & para(X2,X3,X4,X5) & coll(X5,X0,X3) & coll(X4,X0,X2) & para(X0,X1,X2,X3) & para(X1,X2,X0,X3)) => para(X5,X12,X13,X18) [input]
+95. ~! [X18,X13,X12,X5] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18] : (coll(X18,X4,X5) & coll(X18,X1,X2) & coll(X13,X2,X3) & coll(X13,X4,X12) & para(X0,X3,X4,X12) & coll(X12,X0,X1) & para(X2,X3,X4,X5) & coll(X5,X0,X3) & coll(X4,X0,X2) & para(X0,X1,X2,X3) & para(X1,X2,X0,X3)) => para(X5,X12,X13,X18)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X8,X9) & coll(X12,X5,X6) & coll(X11,X6,X7) & coll(X11,X8,X10) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & para(X6,X7,X8,X9) & coll(X9,X4,X7) & coll(X8,X4,X6) & para(X4,X5,X6,X7) & para(X5,X6,X4,X7)) => para(X3,X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X8,X9) & coll(X12,X5,X6) & coll(X11,X6,X7) & coll(X11,X8,X10) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & para(X6,X7,X8,X9) & coll(X9,X4,X7) & coll(X8,X4,X6) & para(X4,X5,X6,X7) & para(X5,X6,X4,X7))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X8,X9) & coll(X12,X5,X6) & coll(X11,X6,X7) & coll(X11,X8,X10) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & para(X6,X7,X8,X9) & coll(X9,X4,X7) & coll(X8,X4,X6) & para(X4,X5,X6,X7) & para(X5,X6,X4,X7))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X8,X9) & coll(X12,X5,X6) & coll(X11,X6,X7) & coll(X11,X8,X10) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & para(X6,X7,X8,X9) & coll(X9,X4,X7) & coll(X8,X4,X6) & para(X4,X5,X6,X7) & para(X5,X6,X4,X7))) [choice axiom]
+353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X8,X9) & coll(X12,X5,X6) & coll(X11,X6,X7) & coll(X11,X8,X10) & para(X4,X7,X8,X10) & coll(X10,X4,X5) & para(X6,X7,X8,X9) & coll(X9,X4,X7) & coll(X8,X4,X6) & para(X4,X5,X6,X7) & para(X5,X6,X4,X7)) [skolemisation 315,352]
+473. para(X4,X7,X8,X10) [cnf transformation 353]
+478. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
+479. $false [resolution 478,473]
+% SZS output end Proof for yL252-6
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.028 s
+% ------------------------------
+% ------------------------------

@@ -1,0 +1,25 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E074-24
+% SZS output start Proof for E074-24
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (perp(X18,X13,X0,X13) & circle(X13,X0,X18,X19) & perp(X0,X2,X5,X18) & midp(X13,X2,X0) & coll(X12,X1,X2) & perp(X12,X5,X1,X2) & coll(X5,X0,X2) & coll(X5,X1,X4) & midp(X4,X3,X0) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & perp(X0,X1,X0,X2)) => cong(X5,X18,X5,X12) [input]
+95. ~! [X12,X5,X18] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (perp(X18,X13,X0,X13) & circle(X13,X0,X18,X19) & perp(X0,X2,X5,X18) & midp(X13,X2,X0) & coll(X12,X1,X2) & perp(X12,X5,X1,X2) & coll(X5,X0,X2) & coll(X5,X1,X4) & midp(X4,X3,X0) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & perp(X0,X1,X0,X2)) => cong(X5,X18,X5,X12)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (perp(X11,X10,X3,X10) & circle(X10,X3,X11,X12) & perp(X3,X5,X8,X11) & midp(X10,X5,X3) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X3,X5) & coll(X8,X4,X7) & midp(X7,X6,X3) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & perp(X3,X4,X3,X5)) => cong(X1,X2,X1,X0)) [rectify 95]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (perp(X11,X10,X3,X10) & circle(X10,X3,X11,X12) & perp(X3,X5,X8,X11) & midp(X10,X5,X3) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X3,X5) & coll(X8,X4,X7) & midp(X7,X6,X3) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & perp(X3,X4,X3,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (perp(X11,X10,X3,X10) & circle(X10,X3,X11,X12) & perp(X3,X5,X8,X11) & midp(X10,X5,X3) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X3,X5) & coll(X8,X4,X7) & midp(X7,X6,X3) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & perp(X3,X4,X3,X5))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (perp(X11,X10,X3,X10) & circle(X10,X3,X11,X12) & perp(X3,X5,X8,X11) & midp(X10,X5,X3) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X3,X5) & coll(X8,X4,X7) & midp(X7,X6,X3) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & perp(X3,X4,X3,X5))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (perp(X11,X10,X3,X10) & circle(X10,X3,X11,X12) & perp(X3,X5,X8,X11) & midp(X10,X5,X3) & coll(X9,X4,X5) & perp(X9,X8,X4,X5) & coll(X8,X3,X5) & coll(X8,X4,X7) & midp(X7,X6,X3) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & perp(X3,X4,X3,X5)) [skolemisation 315,352]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+475. midp(X10,X5,X3) [cnf transformation 353]
+479. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+484. ~midp(sK21,sK22,sK20) [resolution 422,479]
+485. $false [subsumption resolution 484,475]
+% SZS output end Proof for E074-24
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------

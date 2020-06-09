@@ -1,0 +1,56 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E051-25
+% SZS output start Proof for E051-25
+23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
+24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
+52. ! [X0,X1,X2,X6] : ((midp(X6,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X6,X1,X6)) [input]
+67. ! [X0,X1,X2] : ((coll(X0,X1,X2) & cong(X0,X1,X0,X2)) => midp(X0,X1,X2)) [input]
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X18,X5,X13) & coll(X18,X1,X2) & circle(X12,X0,X13,X19) & coll(X0,X12,X13) & perp(X2,X0,X22,X12) & midp(X22,X2,X0) & perp(X1,X0,X21,X12) & midp(X21,X1,X0) & perp(X1,X2,X20,X12) & midp(X20,X1,X2) & coll(X5,X2,X4) & coll(X5,X1,X3) & coll(X4,X0,X1) & perp(X4,X2,X0,X1) & coll(X3,X0,X2) & perp(X3,X1,X0,X2)) => cong(X5,X18,X18,X13) [input]
+95. ~! [X13,X18,X5,X22,X21,X20] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X18,X5,X13) & coll(X18,X1,X2) & circle(X12,X0,X13,X19) & coll(X0,X12,X13) & perp(X2,X0,X22,X12) & midp(X22,X2,X0) & perp(X1,X0,X21,X12) & midp(X21,X1,X0) & perp(X1,X2,X20,X12) & midp(X20,X1,X2) & coll(X5,X2,X4) & coll(X5,X1,X3) & coll(X4,X0,X1) & perp(X4,X2,X0,X1) & coll(X3,X0,X2) & perp(X3,X1,X0,X2)) => cong(X5,X18,X18,X13)) [negated conjecture 94]
+130. ! [X0,X1,X2,X3] : ((midp(X3,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X3,X1,X3)) [rectify 52]
+165. ~! [X0,X1,X2,X3,X4,X5] : (! [X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X14,X11,X13) & coll(X14,X7,X8) & circle(X12,X6,X13,X15) & coll(X6,X12,X13) & perp(X8,X6,X3,X12) & midp(X3,X8,X6) & perp(X7,X6,X4,X12) & midp(X4,X7,X6) & perp(X7,X8,X5,X12) & midp(X5,X7,X8) & coll(X11,X8,X10) & coll(X11,X7,X9) & coll(X10,X6,X7) & perp(X10,X8,X6,X7) & coll(X9,X6,X8) & perp(X9,X7,X6,X8)) => cong(X2,X1,X1,X0)) [rectify 95]
+196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
+197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
+238. ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | (~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2))) [ennf transformation 130]
+239. ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | ~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2)) [flattening 238]
+264. ! [X0,X1,X2] : (midp(X0,X1,X2) | (~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2))) [ennf transformation 67]
+265. ! [X0,X1,X2] : (midp(X0,X1,X2) | ~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2)) [flattening 264]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2,X3,X4,X5] : (~cong(X2,X1,X1,X0) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X14,X11,X13) & coll(X14,X7,X8) & circle(X12,X6,X13,X15) & coll(X6,X12,X13) & perp(X8,X6,X3,X12) & midp(X3,X8,X6) & perp(X7,X6,X4,X12) & midp(X4,X7,X6) & perp(X7,X8,X5,X12) & midp(X5,X7,X8) & coll(X11,X8,X10) & coll(X11,X7,X9) & coll(X10,X6,X7) & perp(X10,X8,X6,X7) & coll(X9,X6,X8) & perp(X9,X7,X6,X8))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3,X4,X5] : (~cong(X2,X1,X1,X0) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X14,X11,X13) & coll(X14,X7,X8) & circle(X12,X6,X13,X15) & coll(X6,X12,X13) & perp(X8,X6,X3,X12) & midp(X3,X8,X6) & perp(X7,X6,X4,X12) & midp(X4,X7,X6) & perp(X7,X8,X5,X12) & midp(X5,X7,X8) & coll(X11,X8,X10) & coll(X11,X7,X9) & coll(X10,X6,X7) & perp(X10,X8,X6,X7) & coll(X9,X6,X8) & perp(X9,X7,X6,X8))) => (~cong(sK22,sK21,sK21,sK20) & ! [X15,X14,X13,X12,X11,X10,X9,X8,X7,X6] : (coll(X14,X11,X13) & coll(X14,X7,X8) & circle(X12,X6,X13,X15) & coll(X6,X12,X13) & perp(X8,X6,sK23,X12) & midp(sK23,X8,X6) & perp(X7,X6,sK24,X12) & midp(sK24,X7,X6) & perp(X7,X8,sK25,X12) & midp(sK25,X7,X8) & coll(X11,X8,X10) & coll(X11,X7,X9) & coll(X10,X6,X7) & perp(X10,X8,X6,X7) & coll(X9,X6,X8) & perp(X9,X7,X6,X8))) [choice axiom]
+353. ~cong(sK22,sK21,sK21,sK20) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X14,X11,X13) & coll(X14,X7,X8) & circle(X12,X6,X13,X15) & coll(X6,X12,X13) & perp(X8,X6,sK23,X12) & midp(sK23,X8,X6) & perp(X7,X6,sK24,X12) & midp(sK24,X7,X6) & perp(X7,X8,sK25,X12) & midp(sK25,X7,X8) & coll(X11,X8,X10) & coll(X11,X7,X9) & coll(X10,X6,X7) & perp(X10,X8,X6,X7) & coll(X9,X6,X8) & perp(X9,X7,X6,X8)) [skolemisation 315,352]
+376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
+377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
+406. ~perp(X0,X1,X1,X2) | ~midp(X3,X0,X2) | cong(X0,X3,X1,X3) [cnf transformation 239]
+421. ~cong(X0,X1,X0,X2) | ~coll(X0,X1,X2) | midp(X0,X1,X2) [cnf transformation 265]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+469. perp(X10,X8,X6,X7) [cnf transformation 353]
+477. midp(sK23,X8,X6) [cnf transformation 353]
+482. coll(X14,X11,X13) [cnf transformation 353]
+483. ~cong(sK22,sK21,sK21,sK20) [cnf transformation 353]
+500. cong(X0,X1,X2,X0) | ~midp(X0,X1,X2) [resolution 376,422]
+503. cong(X3,X4,X4,X5) | ~midp(X4,X5,X3) [resolution 377,500]
+509. cong(X5,X3,X4,X3) | ~midp(X3,X4,X5) [resolution 503,376]
+547. ~midp(X6,X7,X7) | ~coll(X7,X6,X6) | midp(X7,X6,X6) [resolution 509,421]
+548. ~midp(X6,X7,X7) | midp(X7,X6,X6) [subsumption resolution 547,482]
+551. midp(X2,sK23,sK23) [resolution 548,477]
+579. ~midp(X0,X1,X2) | cong(X1,X0,X3,X0) [resolution 406,469]
+586. cong(sK23,X6,X7,X6) [resolution 579,551]
+710. cong(sK23,X6,X6,X7) [resolution 586,376]
+746. cong(X4,X5,sK23,X4) [resolution 710,377]
+827. cong(X6,X7,X6,sK23) [resolution 746,376]
+994. ~coll(X16,X17,sK23) | midp(X16,X17,sK23) [resolution 827,421]
+995. midp(X16,X17,sK23) [subsumption resolution 994,482]
+1005. cong(X18,X19,X20,X19) [resolution 995,579]
+1423. cong(X8,X9,X9,X10) [resolution 1005,376]
+1527. $false [resolution 1423,483]
+% SZS output end Proof for E051-25
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5500
+% Time elapsed: 0.037 s
+% ------------------------------
+% ------------------------------

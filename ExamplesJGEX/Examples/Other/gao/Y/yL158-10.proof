@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for yL158-10
+% SZS output start Proof for yL158-10
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18] : (coll(X18,X5,X12) & coll(X18,X2,X3) & coll(X13,X0,X1) & coll(X13,X5,X12) & midp(X12,X3,X0) & midp(X5,X2,X1) & coll(X4,X0,X1) & coll(X4,X2,X3) & cong(X3,X2,X1,X0)) => cong(X4,X13,X4,X18) [input]
+95. ~! [X18,X4,X13] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18] : (coll(X18,X5,X12) & coll(X18,X2,X3) & coll(X13,X0,X1) & coll(X13,X5,X12) & midp(X12,X3,X0) & midp(X5,X2,X1) & coll(X4,X0,X1) & coll(X4,X2,X3) & cong(X3,X2,X1,X0)) => cong(X4,X13,X4,X18)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X9) & coll(X11,X5,X6) & coll(X10,X3,X4) & coll(X10,X8,X9) & midp(X9,X6,X3) & midp(X8,X5,X4) & coll(X7,X3,X4) & coll(X7,X5,X6) & cong(X6,X5,X4,X3)) => cong(X1,X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X9) & coll(X11,X5,X6) & coll(X10,X3,X4) & coll(X10,X8,X9) & midp(X9,X6,X3) & midp(X8,X5,X4) & coll(X7,X3,X4) & coll(X7,X5,X6) & cong(X6,X5,X4,X3))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X9) & coll(X11,X5,X6) & coll(X10,X3,X4) & coll(X10,X8,X9) & midp(X9,X6,X3) & midp(X8,X5,X4) & coll(X7,X3,X4) & coll(X7,X5,X6) & cong(X6,X5,X4,X3))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X9) & coll(X11,X5,X6) & coll(X10,X3,X4) & coll(X10,X8,X9) & midp(X9,X6,X3) & midp(X8,X5,X4) & coll(X7,X3,X4) & coll(X7,X5,X6) & cong(X6,X5,X4,X3))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X8,X9) & coll(X11,X5,X6) & coll(X10,X3,X4) & coll(X10,X8,X9) & midp(X9,X6,X3) & midp(X8,X5,X4) & coll(X7,X3,X4) & coll(X7,X5,X6) & cong(X6,X5,X4,X3)) [skolemisation 315,352]
+467. cong(X6,X5,X4,X3) [cnf transformation 353]
+476. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+477. $false [resolution 476,467]
+% SZS output end Proof for yL158-10
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

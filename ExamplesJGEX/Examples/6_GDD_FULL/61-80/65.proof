@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 65
+% SZS output start Proof for 65
+94. ! [X0,X1,X2,X3,X4,X5,X12] : (circle(X12,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X12,X3) [input]
+95. ~! [X3,X12,X0] : (! [X0,X1,X2,X3,X4,X5,X12] : (circle(X12,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X12,X3)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5)) => coll(X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5))) [choice axiom]
+353. ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5)) [skolemisation 315,352]
+470. coll(X8,X3,X5) [cnf transformation 353]
+472. ~coll(sK22,sK21,sK20) [cnf transformation 353]
+473. $false [resolution 472,470]
+% SZS output end Proof for 65
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.028 s
+% ------------------------------
+% ------------------------------

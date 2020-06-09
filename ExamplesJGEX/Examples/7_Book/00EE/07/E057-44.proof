@@ -1,0 +1,47 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E057-44
+% SZS output start Proof for E057-44
+23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
+24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
+52. ! [X0,X1,X2,X6] : ((midp(X6,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X6,X1,X6)) [input]
+67. ! [X0,X1,X2] : ((coll(X0,X1,X2) & cong(X0,X1,X0,X2)) => midp(X0,X1,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5] : (coll(X5,X1,X4) & coll(X5,X0,X3) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & (cong(X2,X0,X2,X1) | cong(X2,X0,X0,X1))) => cong(X5,X0,X5,X1) [input]
+95. ~! [X1,X5,X0] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X1,X4) & coll(X5,X0,X3) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & (cong(X2,X0,X2,X1) | cong(X2,X0,X0,X1))) => cong(X5,X0,X5,X1)) [negated conjecture 94]
+130. ! [X0,X1,X2,X3] : ((midp(X3,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X3,X1,X3)) [rectify 52]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))) => cong(X1,X2,X1,X0)) [rectify 95]
+196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
+197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
+238. ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | (~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2))) [ennf transformation 130]
+239. ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | ~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2)) [flattening 238]
+264. ! [X0,X1,X2] : (midp(X0,X1,X2) | (~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2))) [ennf transformation 67]
+265. ! [X0,X1,X2] : (midp(X0,X1,X2) | ~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2)) [flattening 264]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))) [skolemisation 315,352]
+376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
+377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
+406. ~perp(X0,X1,X1,X2) | ~midp(X3,X0,X2) | cong(X0,X3,X1,X3) [cnf transformation 239]
+421. ~cong(X0,X1,X0,X2) | ~coll(X0,X1,X2) | midp(X0,X1,X2) [cnf transformation 265]
+467. cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4) [cnf transformation 353]
+470. perp(X7,X4,X3,X5) [cnf transformation 353]
+473. coll(X8,X4,X7) [cnf transformation 353]
+474. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+479. cong(X0,X0,X0,X1) [factoring 467]
+490. cong(X9,X10,X9,X9) [resolution 377,479]
+506. ~coll(X8,X9,X8) | midp(X8,X9,X8) [resolution 421,490]
+511. midp(X8,X9,X8) [subsumption resolution 506,473]
+553. ~midp(X0,X1,X2) | cong(X1,X0,X3,X0) [resolution 406,470]
+569. cong(X2,X3,X4,X3) [resolution 553,511]
+577. cong(X3,X4,X4,X5) [resolution 569,376]
+607. cong(X0,X1,X2,X0) [resolution 577,377]
+631. cong(X8,X9,X8,X10) [resolution 607,376]
+647. $false [resolution 631,474]
+% SZS output end Proof for E057-44
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.029 s
+% ------------------------------
+% ------------------------------

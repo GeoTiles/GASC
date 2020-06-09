@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for yC103
+% SZS output start Proof for yC103
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X19,X1,X13) & coll(X19,X0,X18) & midp(X18,X1,X2) & midp(X13,X2,X0) & coll(X12,X1,X4) & coll(X12,X2,X5) & coll(X5,X0,X1) & perp(X5,X2,X0,X1) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & cong(X3,X0,X3,X1) & cong(X3,X0,X3,X2)) => coll(X3,X19,X12) [input]
+95. ~! [X12,X19,X3] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X19,X1,X13) & coll(X19,X0,X18) & midp(X18,X1,X2) & midp(X13,X2,X0) & coll(X12,X1,X4) & coll(X12,X2,X5) & coll(X5,X0,X1) & perp(X5,X2,X0,X1) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & cong(X3,X0,X3,X1) & cong(X3,X0,X3,X2)) => coll(X3,X19,X12)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X10) & coll(X12,X3,X11) & midp(X11,X4,X5) & midp(X10,X5,X3) & coll(X9,X4,X7) & coll(X9,X5,X8) & coll(X8,X3,X4) & perp(X8,X5,X3,X4) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & cong(X6,X3,X6,X4) & cong(X6,X3,X6,X5)) => coll(X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X10) & coll(X12,X3,X11) & midp(X11,X4,X5) & midp(X10,X5,X3) & coll(X9,X4,X7) & coll(X9,X5,X8) & coll(X8,X3,X4) & perp(X8,X5,X3,X4) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & cong(X6,X3,X6,X4) & cong(X6,X3,X6,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X10) & coll(X12,X3,X11) & midp(X11,X4,X5) & midp(X10,X5,X3) & coll(X9,X4,X7) & coll(X9,X5,X8) & coll(X8,X3,X4) & perp(X8,X5,X3,X4) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & cong(X6,X3,X6,X4) & cong(X6,X3,X6,X5))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X10) & coll(X12,X3,X11) & midp(X11,X4,X5) & midp(X10,X5,X3) & coll(X9,X4,X7) & coll(X9,X5,X8) & coll(X8,X3,X4) & perp(X8,X5,X3,X4) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & cong(X6,X3,X6,X4) & cong(X6,X3,X6,X5))) [choice axiom]
+353. ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (coll(X12,X4,X10) & coll(X12,X3,X11) & midp(X11,X4,X5) & midp(X10,X5,X3) & coll(X9,X4,X7) & coll(X9,X5,X8) & coll(X8,X3,X4) & perp(X8,X5,X3,X4) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & cong(X6,X3,X6,X4) & cong(X6,X3,X6,X5)) [skolemisation 315,352]
+478. coll(X12,X4,X10) [cnf transformation 353]
+479. ~coll(sK22,sK21,sK20) [cnf transformation 353]
+480. $false [resolution 479,478]
+% SZS output end Proof for yC103
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.028 s
+% ------------------------------
+% ------------------------------

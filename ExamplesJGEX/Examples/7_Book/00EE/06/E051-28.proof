@@ -1,0 +1,44 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E051-28
+% SZS output start Proof for E051-28
+23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
+24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
+51. ! [X0,X1,X2,X7,X6] : ((eqangle(X0,X1,X0,X2,X7,X1,X7,X6) & coll(X6,X1,X2) & circle(X7,X0,X1,X2)) => midp(X6,X1,X2)) [input]
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X18,X19,X20,X21] : (eqangle(X0,X4,X4,X12,X1,X0,X0,X3) & coll(X12,X3,X4) & coll(X12,X0,X1) & coll(X5,X0,X3) & circle(X2,X1,X4,X21) & circle(X2,X1,X3,X20) & circle(X2,X1,X18,X19) & perp(X0,X1,X1,X2)) => cong(X0,X12,X12,X1) [input]
+95. ~! [X1,X12,X0] : (! [X0,X1,X2,X3,X4,X5,X12,X18,X19,X20,X21] : (eqangle(X0,X4,X4,X12,X1,X0,X0,X3) & coll(X12,X3,X4) & coll(X12,X0,X1) & coll(X5,X0,X3) & circle(X2,X1,X4,X21) & circle(X2,X1,X3,X20) & circle(X2,X1,X18,X19) & perp(X0,X1,X1,X2)) => cong(X0,X12,X12,X1)) [negated conjecture 94]
+129. ! [X0,X1,X2,X3,X4] : ((eqangle(X0,X1,X0,X2,X3,X1,X3,X4) & coll(X4,X1,X2) & circle(X3,X0,X1,X2)) => midp(X4,X1,X2)) [rectify 51]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (eqangle(X3,X7,X7,X9,X4,X3,X3,X6) & coll(X9,X6,X7) & coll(X9,X3,X4) & coll(X8,X3,X6) & circle(X5,X4,X7,X13) & circle(X5,X4,X6,X12) & circle(X5,X4,X10,X11) & perp(X3,X4,X4,X5)) => cong(X2,X1,X1,X0)) [rectify 95]
+196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
+197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
+236. ! [X0,X1,X2,X3,X4] : (midp(X4,X1,X2) | (~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2))) [ennf transformation 129]
+237. ! [X0,X1,X2,X3,X4] : (midp(X4,X1,X2) | ~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2)) [flattening 236]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (eqangle(X3,X7,X7,X9,X4,X3,X3,X6) & coll(X9,X6,X7) & coll(X9,X3,X4) & coll(X8,X3,X6) & circle(X5,X4,X7,X13) & circle(X5,X4,X6,X12) & circle(X5,X4,X10,X11) & perp(X3,X4,X4,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (eqangle(X3,X7,X7,X9,X4,X3,X3,X6) & coll(X9,X6,X7) & coll(X9,X3,X4) & coll(X8,X3,X6) & circle(X5,X4,X7,X13) & circle(X5,X4,X6,X12) & circle(X5,X4,X10,X11) & perp(X3,X4,X4,X5))) => (~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (eqangle(X3,X7,X7,X9,X4,X3,X3,X6) & coll(X9,X6,X7) & coll(X9,X3,X4) & coll(X8,X3,X6) & circle(X5,X4,X7,X13) & circle(X5,X4,X6,X12) & circle(X5,X4,X10,X11) & perp(X3,X4,X4,X5))) [choice axiom]
+353. ~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (eqangle(X3,X7,X7,X9,X4,X3,X3,X6) & coll(X9,X6,X7) & coll(X9,X3,X4) & coll(X8,X3,X6) & circle(X5,X4,X7,X13) & circle(X5,X4,X6,X12) & circle(X5,X4,X10,X11) & perp(X3,X4,X4,X5)) [skolemisation 315,352]
+376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
+377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
+405. ~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | midp(X4,X1,X2) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2) [cnf transformation 237]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+470. circle(X5,X4,X7,X13) [cnf transformation 353]
+473. coll(X9,X6,X7) [cnf transformation 353]
+474. eqangle(X3,X7,X7,X9,X4,X3,X3,X6) [cnf transformation 353]
+475. ~cong(sK22,sK21,sK21,sK20) [cnf transformation 353]
+488. cong(X0,X1,X0,X2) | ~midp(X0,X2,X1) [resolution 377,422]
+491. cong(X3,X5,X4,X3) | ~midp(X3,X4,X5) [resolution 488,376]
+496. cong(X1,X0,X0,X2) | ~midp(X0,X1,X2) [resolution 491,377]
+507. ~midp(sK21,sK22,sK20) [resolution 496,475]
+1253. midp(X0,X1,X2) | ~coll(X0,X1,X2) | ~circle(X1,X1,X1,X2) [resolution 405,474]
+1292. midp(X0,X1,X2) | ~circle(X1,X1,X1,X2) [subsumption resolution 1253,473]
+1293. midp(X0,X1,X2) [subsumption resolution 1292,470]
+1318. $false [resolution 1293,507]
+% SZS output end Proof for E051-28
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5373
+% Time elapsed: 0.035 s
+% ------------------------------
+% ------------------------------

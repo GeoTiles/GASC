@@ -1,0 +1,27 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E051-17
+% SZS output start Proof for E051-17
+25. ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12] : (coll(X12,X3,X2) & perp(X12,X4,X3,X2) & coll(X5,X1,X2) & perp(X5,X4,X1,X2) & coll(X4,X1,X3) & cong(X0,X3,X3,X2) & eqangle(X1,X0,X0,X3,X0,X3,X3,X2)) => cong(X0,X4,X12,X5) [input]
+95. ~! [X5,X12,X4,X0] : (! [X0,X1,X2,X3,X4,X5,X12] : (coll(X12,X3,X2) & perp(X12,X4,X3,X2) & coll(X5,X1,X2) & perp(X5,X4,X1,X2) & coll(X4,X1,X3) & cong(X0,X3,X3,X2) & eqangle(X1,X0,X0,X3,X0,X3,X3,X2)) => cong(X0,X4,X12,X5)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X6) & perp(X10,X8,X7,X6) & coll(X9,X5,X6) & perp(X9,X8,X5,X6) & coll(X8,X5,X7) & cong(X4,X7,X7,X6) & eqangle(X5,X4,X4,X7,X4,X7,X7,X6)) => cong(X3,X2,X1,X0)) [rectify 95]
+198. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))) [ennf transformation 25]
+199. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)) [flattening 198]
+315. ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X6) & perp(X10,X8,X7,X6) & coll(X9,X5,X6) & perp(X9,X8,X5,X6) & coll(X8,X5,X7) & cong(X4,X7,X7,X6) & eqangle(X5,X4,X4,X7,X4,X7,X7,X6))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X6) & perp(X10,X8,X7,X6) & coll(X9,X5,X6) & perp(X9,X8,X5,X6) & coll(X8,X5,X7) & cong(X4,X7,X7,X6) & eqangle(X5,X4,X4,X7,X4,X7,X7,X6))) => (~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X6) & perp(X10,X8,X7,X6) & coll(X9,X5,X6) & perp(X9,X8,X5,X6) & coll(X8,X5,X7) & cong(X4,X7,X7,X6) & eqangle(X5,X4,X4,X7,X4,X7,X7,X6))) [choice axiom]
+353. ~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X7,X6) & perp(X10,X8,X7,X6) & coll(X9,X5,X6) & perp(X9,X8,X5,X6) & coll(X8,X5,X7) & cong(X4,X7,X7,X6) & eqangle(X5,X4,X4,X7,X4,X7,X7,X6)) [skolemisation 315,352]
+378. ~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3) [cnf transformation 199]
+468. cong(X4,X7,X7,X6) [cnf transformation 353]
+474. ~cong(sK23,sK22,sK21,sK20) [cnf transformation 353]
+541. ~cong(X0,X1,X4,X2) | cong(X0,X1,X2,X3) [resolution 378,468]
+558. cong(X0,X1,X2,X3) [resolution 541,468]
+565. $false [resolution 558,474]
+% SZS output end Proof for E051-17
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------

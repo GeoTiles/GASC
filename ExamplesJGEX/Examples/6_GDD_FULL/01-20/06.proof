@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 06
+% SZS output start Proof for 06
+94. ! [X0,X1,X2,X4,X5,X13] : (coll(X13,X0,X5) & coll(X13,X2,X4) & coll(X5,X1,X2) & perp(X5,X0,X1,X2) & coll(X4,X0,X1) & perp(X4,X2,X0,X1)) => perp(X1,X13,X0,X2) [input]
+95. ~! [X2,X0,X13,X1] : (! [X0,X1,X2,X4,X5,X13] : (coll(X13,X0,X5) & coll(X13,X2,X4) & coll(X5,X1,X2) & perp(X5,X0,X1,X2) & coll(X4,X0,X1) & perp(X4,X2,X0,X1)) => perp(X1,X13,X0,X2)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X8) & coll(X9,X6,X7) & coll(X8,X5,X6) & perp(X8,X4,X5,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) => perp(X3,X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X8) & coll(X9,X6,X7) & coll(X8,X5,X6) & perp(X8,X4,X5,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X8) & coll(X9,X6,X7) & coll(X8,X5,X6) & perp(X8,X4,X5,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) => (~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X8) & coll(X9,X6,X7) & coll(X8,X5,X6) & perp(X8,X4,X5,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) [choice axiom]
+353. ~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X8) & coll(X9,X6,X7) & coll(X8,X5,X6) & perp(X8,X4,X5,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) [skolemisation 315,352]
+469. perp(X8,X4,X5,X6) [cnf transformation 353]
+473. ~perp(sK23,sK22,sK21,sK20) [cnf transformation 353]
+474. $false [resolution 473,469]
+% SZS output end Proof for 06
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------

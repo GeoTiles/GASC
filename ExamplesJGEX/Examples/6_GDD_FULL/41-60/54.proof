@@ -1,0 +1,25 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 54
+% SZS output start Proof for 54
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X1,X2,X0,X3,X7,X6,X12,X5,X4,X18,X19,X20] : (coll(X4,X1,X6) & coll(X4,X0,X3) & coll(X5,X1,X6) & coll(X5,X2,X0) & circle(X7,X0,X12,X20) & coll(X12,X1,X6) & coll(X6,X0,X7) & perp(X6,X1,X0,X7) & circle(X7,X0,X18,X19) & midp(X7,X2,X1) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & perp(X0,X1,X0,X2)) => cong(X4,X0,X4,X1) [input]
+95. ~! [X1,X4,X0] : (! [X1,X2,X0,X3,X7,X6,X12,X5,X4,X18,X19,X20] : (coll(X4,X1,X6) & coll(X4,X0,X3) & coll(X5,X1,X6) & coll(X5,X2,X0) & circle(X7,X0,X12,X20) & coll(X12,X1,X6) & coll(X6,X0,X7) & perp(X6,X1,X0,X7) & circle(X7,X0,X18,X19) & midp(X7,X2,X1) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & perp(X0,X1,X0,X2)) => cong(X4,X0,X4,X1)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X3,X8) & coll(X11,X5,X6) & coll(X10,X3,X8) & coll(X10,X4,X5) & circle(X7,X5,X9,X14) & coll(X9,X3,X8) & coll(X8,X5,X7) & perp(X8,X3,X5,X7) & circle(X7,X5,X12,X13) & midp(X7,X4,X3) & coll(X6,X3,X4) & perp(X6,X5,X3,X4) & perp(X5,X3,X5,X4)) => cong(X1,X2,X1,X0)) [rectify 95]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X3,X8) & coll(X11,X5,X6) & coll(X10,X3,X8) & coll(X10,X4,X5) & circle(X7,X5,X9,X14) & coll(X9,X3,X8) & coll(X8,X5,X7) & perp(X8,X3,X5,X7) & circle(X7,X5,X12,X13) & midp(X7,X4,X3) & coll(X6,X3,X4) & perp(X6,X5,X3,X4) & perp(X5,X3,X5,X4))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X3,X8) & coll(X11,X5,X6) & coll(X10,X3,X8) & coll(X10,X4,X5) & circle(X7,X5,X9,X14) & coll(X9,X3,X8) & coll(X8,X5,X7) & perp(X8,X3,X5,X7) & circle(X7,X5,X12,X13) & midp(X7,X4,X3) & coll(X6,X3,X4) & perp(X6,X5,X3,X4) & perp(X5,X3,X5,X4))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X3,X8) & coll(X11,X5,X6) & coll(X10,X3,X8) & coll(X10,X4,X5) & circle(X7,X5,X9,X14) & coll(X9,X3,X8) & coll(X8,X5,X7) & perp(X8,X3,X5,X7) & circle(X7,X5,X12,X13) & midp(X7,X4,X3) & coll(X6,X3,X4) & perp(X6,X5,X3,X4) & perp(X5,X3,X5,X4))) [choice axiom]
+353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X11,X3,X8) & coll(X11,X5,X6) & coll(X10,X3,X8) & coll(X10,X4,X5) & circle(X7,X5,X9,X14) & coll(X9,X3,X8) & coll(X8,X5,X7) & perp(X8,X3,X5,X7) & circle(X7,X5,X12,X13) & midp(X7,X4,X3) & coll(X6,X3,X4) & perp(X6,X5,X3,X4) & perp(X5,X3,X5,X4)) [skolemisation 315,352]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+470. midp(X7,X4,X3) [cnf transformation 353]
+480. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
+485. ~midp(sK21,sK22,sK20) [resolution 422,480]
+486. $false [subsumption resolution 485,470]
+% SZS output end Proof for 54
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E069-8
+% SZS output start Proof for E069-8
+94. ! [X0,X1,X2,X3,X4] : (eqangle(X0,X3,X3,X4,X4,X1,X1,X0) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => eqangle(X3,X0,X0,X4,X4,X2,X2,X3) [input]
+95. ~! [X3,X2,X4,X0] : (! [X0,X1,X2,X3,X4] : (eqangle(X0,X3,X3,X4,X4,X1,X1,X0) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => eqangle(X3,X0,X0,X4,X4,X2,X2,X3)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8] : (eqangle(X4,X7,X7,X8,X8,X5,X5,X4) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) => eqangle(X0,X3,X3,X2,X2,X1,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2,X3] : (~eqangle(X0,X3,X3,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8] : (eqangle(X4,X7,X7,X8,X8,X5,X5,X4) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~eqangle(X0,X3,X3,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8] : (eqangle(X4,X7,X7,X8,X8,X5,X5,X4) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) => (~eqangle(sK20,sK23,sK23,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8] : (eqangle(X4,X7,X7,X8,X8,X5,X5,X4) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) [choice axiom]
+353. ~eqangle(sK20,sK23,sK23,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8] : (eqangle(X4,X7,X7,X8,X8,X5,X5,X4) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) [skolemisation 315,352]
+469. eqangle(X4,X7,X7,X8,X8,X5,X5,X4) [cnf transformation 353]
+470. ~eqangle(sK20,sK23,sK23,sK22,sK22,sK21,sK21,sK20) [cnf transformation 353]
+471. $false [resolution 470,469]
+% SZS output end Proof for E069-8
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.029 s
+% ------------------------------
+% ------------------------------

@@ -1,0 +1,62 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E051-18
+% SZS output start Proof for E051-18
+19. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9)) [input]
+23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
+24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
+48. ! [X0,X1,X2,X7,X15] : ((perp(X7,X0,X0,X15) & circle(X7,X0,X1,X2)) => eqangle(X0,X15,X0,X1,X2,X0,X2,X1)) [input]
+51. ! [X0,X1,X2,X7,X6] : ((eqangle(X0,X1,X0,X2,X7,X1,X7,X6) & coll(X6,X1,X2) & circle(X7,X0,X1,X2)) => midp(X6,X1,X2)) [input]
+53. ! [X0,X1,X2,X7] : ((coll(X7,X0,X2) & circle(X7,X0,X1,X2)) => perp(X0,X1,X1,X2)) [input]
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X18] : (coll(X5,X2,X3) & circle(X4,X2,X5,X18) & circle(X4,X0,X2,X1) & eqangle(X3,X0,X0,X1,X3,X0,X0,X2) & eqangle(X3,X2,X2,X0,X3,X2,X2,X1)) => cong(X0,X5,X5,X3) [input]
+95. ~! [X3,X5,X0] : (! [X0,X1,X2,X3,X4,X5,X18] : (coll(X5,X2,X3) & circle(X4,X2,X5,X18) & circle(X4,X0,X2,X1) & eqangle(X3,X0,X0,X1,X3,X0,X0,X2) & eqangle(X3,X2,X2,X0,X3,X2,X2,X1)) => cong(X0,X5,X5,X3)) [negated conjecture 94]
+100. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) [rectify 19]
+126. ! [X0,X1,X2,X3,X4] : ((perp(X3,X0,X0,X4) & circle(X3,X0,X1,X2)) => eqangle(X0,X4,X0,X1,X2,X0,X2,X1)) [rectify 48]
+129. ! [X0,X1,X2,X3,X4] : ((eqangle(X0,X1,X0,X2,X3,X1,X3,X4) & coll(X4,X1,X2) & circle(X3,X0,X1,X2)) => midp(X4,X1,X2)) [rectify 51]
+131. ! [X0,X1,X2,X3] : ((coll(X3,X0,X2) & circle(X3,X0,X1,X2)) => perp(X0,X1,X1,X2)) [rectify 53]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9] : (coll(X8,X5,X6) & circle(X7,X5,X8,X9) & circle(X7,X3,X5,X4) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4)) => cong(X2,X1,X1,X0)) [rectify 95]
+191. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 100]
+196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
+197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
+230. ! [X0,X1,X2,X3,X4] : (eqangle(X0,X4,X0,X1,X2,X0,X2,X1) | (~perp(X3,X0,X0,X4) | ~circle(X3,X0,X1,X2))) [ennf transformation 126]
+231. ! [X0,X1,X2,X3,X4] : (eqangle(X0,X4,X0,X1,X2,X0,X2,X1) | ~perp(X3,X0,X0,X4) | ~circle(X3,X0,X1,X2)) [flattening 230]
+236. ! [X0,X1,X2,X3,X4] : (midp(X4,X1,X2) | (~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2))) [ennf transformation 129]
+237. ! [X0,X1,X2,X3,X4] : (midp(X4,X1,X2) | ~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2)) [flattening 236]
+240. ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | (~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2))) [ennf transformation 131]
+241. ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | ~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2)) [flattening 240]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X8,X5,X6) & circle(X7,X5,X8,X9) & circle(X7,X3,X5,X4) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X8,X5,X6) & circle(X7,X5,X8,X9) & circle(X7,X3,X5,X4) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4))) => (~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X8,X5,X6) & circle(X7,X5,X8,X9) & circle(X7,X3,X5,X4) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4))) [choice axiom]
+353. ~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X8,X5,X6) & circle(X7,X5,X8,X9) & circle(X7,X3,X5,X4) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4)) [skolemisation 315,352]
+372. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5) [cnf transformation 191]
+376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
+377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
+402. ~circle(X3,X0,X1,X2) | ~perp(X3,X0,X0,X4) | eqangle(X0,X4,X0,X1,X2,X0,X2,X1) [cnf transformation 231]
+405. ~eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | midp(X4,X1,X2) | ~coll(X4,X1,X2) | ~circle(X3,X0,X1,X2) [cnf transformation 237]
+407. ~circle(X3,X0,X1,X2) | ~coll(X3,X0,X2) | perp(X0,X1,X1,X2) [cnf transformation 241]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+470. circle(X7,X5,X8,X9) [cnf transformation 353]
+471. coll(X8,X5,X6) [cnf transformation 353]
+472. ~cong(sK22,sK21,sK21,sK20) [cnf transformation 353]
+477. cong(X0,X1,X0,X2) | ~midp(X0,X2,X1) [resolution 377,422]
+480. cong(X3,X5,X4,X3) | ~midp(X3,X4,X5) [resolution 477,376]
+485. cong(X1,X0,X0,X2) | ~midp(X0,X1,X2) [resolution 480,377]
+496. ~midp(sK21,sK22,sK20) [resolution 485,472]
+524. ~coll(X0,X1,X2) | perp(X1,X3,X3,X2) [resolution 407,470]
+525. perp(X1,X3,X3,X2) [subsumption resolution 524,471]
+832. ~perp(X0,X1,X1,X2) | eqangle(X1,X2,X1,X3,X4,X1,X4,X3) [resolution 402,470]
+833. eqangle(X1,X2,X1,X3,X4,X1,X4,X3) [subsumption resolution 832,525]
+837. eqangle(X10,X11,X10,X12,X13,X11,X13,X10) [resolution 833,372]
+1203. midp(X11,X12,X13) | ~coll(X11,X12,X13) | ~circle(X14,X11,X12,X13) [resolution 405,837]
+1248. midp(X11,X12,X13) | ~circle(X14,X11,X12,X13) [subsumption resolution 1203,471]
+1249. midp(X11,X12,X13) [subsumption resolution 1248,470]
+1271. $false [resolution 1249,496]
+% SZS output end Proof for E051-18
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5373
+% Time elapsed: 0.038 s
+% ------------------------------
+% ------------------------------

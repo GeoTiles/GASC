@@ -1,0 +1,22 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 85
+% SZS output start Proof for 85
+94. ! [X0,X1,X2,X3,X4,X5,X18] : (coll(X5,X0,X3) & perp(X0,X4,X18,X5) & midpoint(X18,X0,X4) & coll(X4,X1,X2) & eqangle(X4,X0,X0,X2,X4,X0,X0,X1) & circle(X3,X0,X1,X2)) => perp(X4,X5,X1,X2) [input]
+95. ~! [X2,X1,X5,X4] : (! [X0,X1,X2,X3,X4,X5,X18] : (coll(X5,X0,X3) & perp(X0,X4,X18,X5) & midpoint(X18,X0,X4) & coll(X4,X1,X2) & eqangle(X4,X0,X0,X2,X4,X0,X0,X1) & circle(X3,X0,X1,X2)) => perp(X4,X5,X1,X2)) [negated conjecture 94]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (coll(X9,X4,X7) & perp(X4,X8,X10,X9) & midpoint(X10,X4,X8) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X6,X8,X4,X4,X5) & circle(X7,X4,X5,X6)) => perp(X3,X2,X1,X0)) [rectify 95]
+166. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (coll(X9,X4,X7) & perp(X4,X8,X10,X9) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X6,X8,X4,X4,X5) & circle(X7,X4,X5,X6)) => perp(X3,X2,X1,X0)) [pure predicate removal 165]
+316. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X9,X4,X7) & perp(X4,X8,X10,X9) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X6,X8,X4,X4,X5) & circle(X7,X4,X5,X6))) [ennf transformation 166]
+353. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X9,X4,X7) & perp(X4,X8,X10,X9) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X6,X8,X4,X4,X5) & circle(X7,X4,X5,X6))) => (~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X9,X4,X7) & perp(X4,X8,X10,X9) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X6,X8,X4,X4,X5) & circle(X7,X4,X5,X6))) [choice axiom]
+354. ~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (coll(X9,X4,X7) & perp(X4,X8,X10,X9) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X6,X8,X4,X4,X5) & circle(X7,X4,X5,X6)) [skolemisation 316,353]
+471. perp(X4,X8,X10,X9) [cnf transformation 354]
+473. ~perp(sK23,sK22,sK21,sK20) [cnf transformation 354]
+474. $false [resolution 473,471]
+% SZS output end Proof for 85
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

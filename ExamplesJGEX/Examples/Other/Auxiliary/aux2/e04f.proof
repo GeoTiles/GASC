@@ -1,0 +1,21 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for e04f
+% SZS output start Proof for e04f
+94. ! [X0,X1,X2,X3,X4,X5,X12] : (coll(X12,X0,X3) & coll(X12,X4,X5) & midp(X5,X3,X1) & midp(X4,X2,X0) & para(X0,X1,X2,X3)) => midp(X12,X0,X3) [input]
+95. ~! [X3,X0,X12] : (! [X0,X1,X2,X3,X4,X5,X12] : (coll(X12,X0,X3) & coll(X12,X4,X5) & midp(X5,X3,X1) & midp(X4,X2,X0) & para(X0,X1,X2,X3)) => midp(X12,X0,X3)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9] : (coll(X9,X3,X6) & coll(X9,X7,X8) & midp(X8,X6,X4) & midp(X7,X5,X3) & para(X3,X4,X5,X6)) => midp(X2,X1,X0)) [rectify 95]
+315. ? [X0,X1,X2] : (~midp(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X9,X3,X6) & coll(X9,X7,X8) & midp(X8,X6,X4) & midp(X7,X5,X3) & para(X3,X4,X5,X6))) [ennf transformation 165]
+352. ? [X0,X1,X2] : (~midp(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X9,X3,X6) & coll(X9,X7,X8) & midp(X8,X6,X4) & midp(X7,X5,X3) & para(X3,X4,X5,X6))) => (~midp(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X9,X3,X6) & coll(X9,X7,X8) & midp(X8,X6,X4) & midp(X7,X5,X3) & para(X3,X4,X5,X6))) [choice axiom]
+353. ~midp(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (coll(X9,X3,X6) & coll(X9,X7,X8) & midp(X8,X6,X4) & midp(X7,X5,X3) & para(X3,X4,X5,X6)) [skolemisation 315,352]
+469. midp(X8,X6,X4) [cnf transformation 353]
+472. ~midp(sK22,sK21,sK20) [cnf transformation 353]
+473. $false [resolution 472,469]
+% SZS output end Proof for e04f
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 4989
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------

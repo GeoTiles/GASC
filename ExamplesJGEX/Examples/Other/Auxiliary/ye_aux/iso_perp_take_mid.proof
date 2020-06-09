@@ -1,0 +1,34 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for iso_perp_take_mid
+% SZS output start Proof for iso_perp_take_mid
+23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
+24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (midp(X13,X0,X2) & midp(X12,X1,X0) & midp(X5,X2,X1) & perp(X0,X2,X19,X4) & midpoint(X19,X0,X2) & perp(X2,X4,X0,X4) & perp(X0,X1,X18,X3) & midpoint(X18,X0,X1) & perp(X1,X3,X0,X3)) => cong(X3,X5,X5,X4) [input]
+95. ~! [X4,X5,X3] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (midp(X13,X0,X2) & midp(X12,X1,X0) & midp(X5,X2,X1) & perp(X0,X2,X19,X4) & midpoint(X19,X0,X2) & perp(X2,X4,X0,X4) & perp(X0,X1,X18,X3) & midpoint(X18,X0,X1) & perp(X1,X3,X0,X3)) => cong(X3,X5,X5,X4)) [negated conjecture 94]
+165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (midp(X10,X3,X5) & midp(X9,X4,X3) & midp(X8,X5,X4) & perp(X3,X5,X12,X7) & midpoint(X12,X3,X5) & perp(X5,X7,X3,X7) & perp(X3,X4,X11,X6) & midpoint(X11,X3,X4) & perp(X4,X6,X3,X6)) => cong(X2,X1,X1,X0)) [rectify 95]
+166. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (midp(X10,X3,X5) & midp(X9,X4,X3) & midp(X8,X5,X4) & perp(X3,X5,X12,X7) & perp(X5,X7,X3,X7) & perp(X3,X4,X11,X6) & perp(X4,X6,X3,X6)) => cong(X2,X1,X1,X0)) [pure predicate removal 165]
+197. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
+198. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
+267. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+316. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (midp(X10,X3,X5) & midp(X9,X4,X3) & midp(X8,X5,X4) & perp(X3,X5,X12,X7) & perp(X5,X7,X3,X7) & perp(X3,X4,X11,X6) & perp(X4,X6,X3,X6))) [ennf transformation 166]
+353. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (midp(X10,X3,X5) & midp(X9,X4,X3) & midp(X8,X5,X4) & perp(X3,X5,X12,X7) & perp(X5,X7,X3,X7) & perp(X3,X4,X11,X6) & perp(X4,X6,X3,X6))) => (~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (midp(X10,X3,X5) & midp(X9,X4,X3) & midp(X8,X5,X4) & perp(X3,X5,X12,X7) & perp(X5,X7,X3,X7) & perp(X3,X4,X11,X6) & perp(X4,X6,X3,X6))) [choice axiom]
+354. ~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12] : (midp(X10,X3,X5) & midp(X9,X4,X3) & midp(X8,X5,X4) & perp(X3,X5,X12,X7) & perp(X5,X7,X3,X7) & perp(X3,X4,X11,X6) & perp(X4,X6,X3,X6)) [skolemisation 316,353]
+377. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 197]
+378. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 198]
+423. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 267]
+474. midp(X10,X3,X5) [cnf transformation 354]
+475. ~cong(sK22,sK21,sK21,sK20) [cnf transformation 354]
+482. cong(X0,X1,X2,X0) | ~midp(X0,X1,X2) [resolution 377,423]
+483. cong(X0,X1,X2,X0) [subsumption resolution 482,474]
+486. cong(X3,X4,X4,X5) [resolution 378,483]
+490. $false [resolution 486,475]
+% SZS output end Proof for iso_perp_take_mid
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.028 s
+% ------------------------------
+% ------------------------------

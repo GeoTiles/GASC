@@ -1,0 +1,56 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for E070-9
+% SZS output start Proof for E070-9
+9. ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & perp(X0,X1,X2,X3)) => para(X0,X1,X4,X5)) [input]
+18. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X1,X0,X2,X3,X8,X9,X10,X11)) [input]
+19. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9)) [input]
+21. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X0,X1,X8,X9,X2,X3,X10,X11)) [input]
+22. ! [X0,X1,X2,X3,X8,X9,X10,X11,X4,X5,X12,X13] : ((eqangle(X8,X9,X10,X11,X4,X5,X12,X13) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => eqangle(X0,X1,X2,X3,X4,X5,X12,X13)) [input]
+40. ! [X0,X1,X2,X3,X8,X9] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X8,X9,X2,X3,X8,X9)) [input]
+94. ! [X0,X1,X2,X3,X4,X5,X12,X18,X19,X20,X21,X22,X23,X24,X25] : (coll(X12,X2,X4) & circle(X1,X2,X12,X25) & circle(X0,X2,X5,X24) & coll(X5,X3,X4) & circle(X0,X2,X4,X23) & perp(X4,X3,X3,X1) & circle(X1,X2,X3,X22) & circle(X1,X2,X20,X21) & circle(X0,X2,X18,X19) & coll(X2,X0,X1)) => eqangle(X5,X2,X2,X3,X3,X2,X2,X12) [input]
+95. ~! [X12,X2,X3,X5] : (! [X0,X1,X2,X3,X4,X5,X12,X18,X19,X20,X21,X22,X23,X24,X25] : (coll(X12,X2,X4) & circle(X1,X2,X12,X25) & circle(X0,X2,X5,X24) & coll(X5,X3,X4) & circle(X0,X2,X4,X23) & perp(X4,X3,X3,X1) & circle(X1,X2,X3,X22) & circle(X1,X2,X20,X21) & circle(X0,X2,X18,X19) & coll(X2,X0,X1)) => eqangle(X5,X2,X2,X3,X3,X2,X2,X12)) [negated conjecture 94]
+99. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X1,X0,X2,X3,X4,X5,X6,X7)) [rectify 18]
+100. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) [rectify 19]
+102. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X0,X1,X4,X5,X2,X3,X6,X7)) [rectify 21]
+103. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : ((eqangle(X4,X5,X6,X7,X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) [rectify 22]
+118. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X4,X5,X2,X3,X4,X5)) [rectify 40]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15,X16,X17,X18] : (coll(X10,X6,X8) & circle(X5,X6,X10,X18) & circle(X4,X6,X9,X17) & coll(X9,X7,X8) & circle(X4,X6,X8,X16) & perp(X8,X7,X7,X5) & circle(X5,X6,X7,X15) & circle(X5,X6,X13,X14) & circle(X4,X6,X11,X12) & coll(X6,X4,X5)) => eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) [rectify 95]
+176. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3))) [ennf transformation 9]
+177. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3)) [flattening 176]
+190. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X1,X0,X2,X3,X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 99]
+191. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 100]
+193. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X4,X5,X2,X3,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 102]
+194. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))) [ennf transformation 103]
+195. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [flattening 194]
+217. ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) [ennf transformation 118]
+315. ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15,X16,X17,X18] : (coll(X10,X6,X8) & circle(X5,X6,X10,X18) & circle(X4,X6,X9,X17) & coll(X9,X7,X8) & circle(X4,X6,X8,X16) & perp(X8,X7,X7,X5) & circle(X5,X6,X7,X15) & circle(X5,X6,X13,X14) & circle(X4,X6,X11,X12) & coll(X6,X4,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15,X16,X17,X18] : (coll(X10,X6,X8) & circle(X5,X6,X10,X18) & circle(X4,X6,X9,X17) & coll(X9,X7,X8) & circle(X4,X6,X8,X16) & perp(X8,X7,X7,X5) & circle(X5,X6,X7,X15) & circle(X5,X6,X13,X14) & circle(X4,X6,X11,X12) & coll(X6,X4,X5))) => (~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15,X16,X17,X18] : (coll(X10,X6,X8) & circle(X5,X6,X10,X18) & circle(X4,X6,X9,X17) & coll(X9,X7,X8) & circle(X4,X6,X8,X16) & perp(X8,X7,X7,X5) & circle(X5,X6,X7,X15) & circle(X5,X6,X13,X14) & circle(X4,X6,X11,X12) & coll(X6,X4,X5))) [choice axiom]
+353. ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15,X16,X17,X18] : (coll(X10,X6,X8) & circle(X5,X6,X10,X18) & circle(X4,X6,X9,X17) & coll(X9,X7,X8) & circle(X4,X6,X8,X16) & perp(X8,X7,X7,X5) & circle(X5,X6,X7,X15) & circle(X5,X6,X13,X14) & circle(X4,X6,X11,X12) & coll(X6,X4,X5)) [skolemisation 315,352]
+362. ~perp(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~perp(X0,X1,X2,X3) [cnf transformation 177]
+371. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X1,X0,X2,X3,X4,X5,X6,X7) [cnf transformation 190]
+372. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5) [cnf transformation 191]
+374. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X0,X1,X4,X5,X2,X3,X6,X7) [cnf transformation 193]
+375. ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) [cnf transformation 195]
+393. eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3) [cnf transformation 217]
+471. perp(X8,X7,X7,X5) [cnf transformation 353]
+477. ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) [cnf transformation 353]
+542. ~perp(X0,X1,X4,X2) | para(X0,X1,X2,X3) [resolution 362,471]
+622. para(X0,X1,X2,X3) [resolution 542,471]
+636. eqangle(X0,X1,X2,X3,X4,X5,X2,X3) | ~para(X1,X0,X4,X5) [resolution 371,393]
+640. eqangle(X0,X1,X2,X3,X4,X5,X2,X3) [subsumption resolution 636,622]
+641. eqangle(X0,X1,X2,X3,X0,X1,X4,X5) | ~para(X2,X3,X4,X5) [resolution 372,393]
+645. eqangle(X0,X1,X2,X3,X0,X1,X4,X5) [subsumption resolution 641,622]
+658. eqangle(X0,X1,X2,X3,X4,X5,X4,X5) [resolution 374,640]
+660. eqangle(X12,X13,X12,X13,X14,X15,X16,X17) [resolution 374,645]
+1648. eqangle(X191,X192,X193,X194,X195,X196,X197,X198) | ~eqangle(X191,X192,X193,X194,X199,X200,X199,X200) [resolution 375,660]
+1661. eqangle(X191,X192,X193,X194,X195,X196,X197,X198) [subsumption resolution 1648,658]
+1737. $false [resolution 1661,477]
+% SZS output end Proof for E070-9
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5500
+% Time elapsed: 0.042 s
+% ------------------------------
+% ------------------------------

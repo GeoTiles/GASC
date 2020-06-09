@@ -1,0 +1,40 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 88
+% SZS output start Proof for 88
+13. ! [X0,X1,X2,X3,X7] : ((cong(X7,X0,X7,X3) & cong(X7,X0,X7,X2) & cong(X7,X0,X7,X1)) => cyclic(X0,X1,X2,X3)) [input]
+67. ! [X0,X1,X2] : ((coll(X0,X1,X2) & cong(X0,X1,X0,X2)) => midp(X0,X1,X2)) [input]
+68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
+94. ! [X7,X15,X18,X0,X17,X1,X8,X9,X19,X20] : (coll(X20,X18,X1) & coll(X20,X7,X15) & coll(X19,X7,X17) & coll(X19,X18,X0) & cong(X18,X1,X18,X9) & coll(X18,X1,X9) & cong(X18,X0,X18,X8) & coll(X18,X0,X8) & coll(X1,X7,X17) & perp(X1,X18,X7,X17) & coll(X0,X7,X15) & perp(X0,X18,X7,X15)) => cyclic(X7,X8,X9,X20) [input]
+95. ~! [X20,X9,X8,X7] : (! [X7,X15,X18,X0,X17,X1,X8,X9,X19,X20] : (coll(X20,X18,X1) & coll(X20,X7,X15) & coll(X19,X7,X17) & coll(X19,X18,X0) & cong(X18,X1,X18,X9) & coll(X18,X1,X9) & cong(X18,X0,X18,X8) & coll(X18,X0,X8) & coll(X1,X7,X17) & perp(X1,X18,X7,X17) & coll(X0,X7,X15) & perp(X0,X18,X7,X15)) => cyclic(X7,X8,X9,X20)) [negated conjecture 94]
+98. ! [X0,X1,X2,X3,X4] : ((cong(X4,X0,X4,X3) & cong(X4,X0,X4,X2) & cong(X4,X0,X4,X1)) => cyclic(X0,X1,X2,X3)) [rectify 13]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X13,X6,X9) & coll(X13,X4,X5) & coll(X12,X4,X8) & coll(X12,X6,X7) & cong(X6,X9,X6,X11) & coll(X6,X9,X11) & cong(X6,X7,X6,X10) & coll(X6,X7,X10) & coll(X9,X4,X8) & perp(X9,X6,X4,X8) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) => cyclic(X3,X2,X1,X0)) [rectify 95]
+183. ! [X0,X1,X2,X3,X4] : (cyclic(X0,X1,X2,X3) | (~cong(X4,X0,X4,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1))) [ennf transformation 98]
+184. ! [X0,X1,X2,X3,X4] : (cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1)) [flattening 183]
+264. ! [X0,X1,X2] : (midp(X0,X1,X2) | (~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2))) [ennf transformation 67]
+265. ! [X0,X1,X2] : (midp(X0,X1,X2) | ~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2)) [flattening 264]
+266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
+315. ? [X0,X1,X2,X3] : (~cyclic(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X13,X6,X9) & coll(X13,X4,X5) & coll(X12,X4,X8) & coll(X12,X6,X7) & cong(X6,X9,X6,X11) & coll(X6,X9,X11) & cong(X6,X7,X6,X10) & coll(X6,X7,X10) & coll(X9,X4,X8) & perp(X9,X6,X4,X8) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~cyclic(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X13,X6,X9) & coll(X13,X4,X5) & coll(X12,X4,X8) & coll(X12,X6,X7) & cong(X6,X9,X6,X11) & coll(X6,X9,X11) & cong(X6,X7,X6,X10) & coll(X6,X7,X10) & coll(X9,X4,X8) & perp(X9,X6,X4,X8) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) => (~cyclic(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X13,X6,X9) & coll(X13,X4,X5) & coll(X12,X4,X8) & coll(X12,X6,X7) & cong(X6,X9,X6,X11) & coll(X6,X9,X11) & cong(X6,X7,X6,X10) & coll(X6,X7,X10) & coll(X9,X4,X8) & perp(X9,X6,X4,X8) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) [choice axiom]
+353. ~cyclic(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X13,X6,X9) & coll(X13,X4,X5) & coll(X12,X4,X8) & coll(X12,X6,X7) & cong(X6,X9,X6,X11) & coll(X6,X9,X11) & cong(X6,X7,X6,X10) & coll(X6,X7,X10) & coll(X9,X4,X8) & perp(X9,X6,X4,X8) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) [skolemisation 315,352]
+366. ~cong(X4,X0,X4,X3) | cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1) [cnf transformation 184]
+421. ~cong(X0,X1,X0,X2) | ~coll(X0,X1,X2) | midp(X0,X1,X2) [cnf transformation 265]
+422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
+474. cong(X6,X9,X6,X11) [cnf transformation 353]
+478. coll(X13,X6,X9) [cnf transformation 353]
+479. ~cyclic(sK23,sK22,sK21,sK20) [cnf transformation 353]
+498. ~coll(X3,X4,X5) | midp(X3,X4,X5) [resolution 421,474]
+503. midp(X3,X4,X5) [subsumption resolution 498,478]
+1080. cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1) | ~midp(X4,X0,X3) [resolution 366,422]
+1088. cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X1) | ~midp(X4,X0,X3) [subsumption resolution 1080,474]
+1089. cyclic(X0,X1,X2,X3) | ~midp(X4,X0,X3) [subsumption resolution 1088,474]
+1090. cyclic(X0,X1,X2,X3) [subsumption resolution 1089,503]
+1091. $false [resolution 1090,479]
+% SZS output end Proof for 88
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5245
+% Time elapsed: 0.031 s
+% ------------------------------
+% ------------------------------

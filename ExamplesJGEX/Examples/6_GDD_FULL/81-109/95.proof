@@ -1,0 +1,28 @@
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for 95
+% SZS output start Proof for 95
+44. ! [X0,X1,X2,X4,X5] : ((midp(X5,X0,X2) & midp(X4,X0,X1)) => para(X4,X5,X1,X2)) [input]
+94. ! [X0,X1,X2,X18,X19,X5,X8,X9,X20,X21] : (coll(X9,X0,X19) & circle(X5,X0,X9,X21) & coll(X8,X0,X18) & circle(X5,X0,X8,X20) & circle(X5,X0,X1,X2) & coll(X19,X1,X2) & eqangle(X19,X0,X0,X1,X2,X0,X0,X18) & midp(X18,X2,X1)) => para(X1,X2,X8,X9) [input]
+95. ~! [X9,X8,X2,X1] : (! [X0,X1,X2,X18,X19,X5,X8,X9,X20,X21] : (coll(X9,X0,X19) & circle(X5,X0,X9,X21) & coll(X8,X0,X18) & circle(X5,X0,X8,X20) & circle(X5,X0,X1,X2) & coll(X19,X1,X2) & eqangle(X19,X0,X0,X1,X2,X0,X0,X18) & midp(X18,X2,X1)) => para(X1,X2,X8,X9)) [negated conjecture 94]
+122. ! [X0,X1,X2,X3,X4] : ((midp(X4,X0,X2) & midp(X3,X0,X1)) => para(X3,X4,X1,X2)) [rectify 44]
+165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X11,X4,X8) & circle(X9,X4,X11,X13) & coll(X10,X4,X7) & circle(X9,X4,X10,X12) & circle(X9,X4,X5,X6) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X5,X6,X4,X4,X7) & midp(X7,X6,X5)) => para(X3,X2,X1,X0)) [rectify 95]
+223. ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | (~midp(X4,X0,X2) | ~midp(X3,X0,X1))) [ennf transformation 122]
+224. ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | ~midp(X4,X0,X2) | ~midp(X3,X0,X1)) [flattening 223]
+315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X11,X4,X8) & circle(X9,X4,X11,X13) & coll(X10,X4,X7) & circle(X9,X4,X10,X12) & circle(X9,X4,X5,X6) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X5,X6,X4,X4,X7) & midp(X7,X6,X5))) [ennf transformation 165]
+352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X11,X4,X8) & circle(X9,X4,X11,X13) & coll(X10,X4,X7) & circle(X9,X4,X10,X12) & circle(X9,X4,X5,X6) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X5,X6,X4,X4,X7) & midp(X7,X6,X5))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X11,X4,X8) & circle(X9,X4,X11,X13) & coll(X10,X4,X7) & circle(X9,X4,X10,X12) & circle(X9,X4,X5,X6) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X5,X6,X4,X4,X7) & midp(X7,X6,X5))) [choice axiom]
+353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X11,X4,X8) & circle(X9,X4,X11,X13) & coll(X10,X4,X7) & circle(X9,X4,X10,X12) & circle(X9,X4,X5,X6) & coll(X8,X5,X6) & eqangle(X8,X4,X4,X5,X6,X4,X4,X7) & midp(X7,X6,X5)) [skolemisation 315,352]
+398. ~midp(X4,X0,X2) | para(X3,X4,X1,X2) | ~midp(X3,X0,X1) [cnf transformation 224]
+467. midp(X7,X6,X5) [cnf transformation 353]
+475. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
+491. para(X0,X1,X2,X3) | ~midp(X0,X4,X2) [resolution 398,467]
+492. para(X0,X1,X2,X3) [subsumption resolution 491,467]
+493. $false [resolution 492,475]
+% SZS output end Proof for 95
+% ------------------------------
+% Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
+% Termination reason: Refutation
+
+% Memory used [KB]: 5117
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------
