@@ -1,35 +1,81 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for M021-62
 % SZS output start Proof for M021-62
-23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
-25. ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5)) [input]
-68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
-94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21] : (midp(X13,X4,X12) & circle(X0,X3,X12,X21) & coll(X12,X3,X5) & circle(X0,X2,X5,X20) & perp(X0,X5,X5,X3) & circle(X0,X3,X4,X19) & coll(X4,X3,X2) & perp(X0,X2,X3,X2) & circle(X0,X1,X3,X18)) => cong(X12,X13,X5,X2) [input]
-95. ~! [X2,X5,X13,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21] : (midp(X13,X4,X12) & circle(X0,X3,X12,X21) & coll(X12,X3,X5) & circle(X0,X2,X5,X20) & perp(X0,X5,X5,X3) & circle(X0,X3,X4,X19) & coll(X4,X3,X2) & perp(X0,X2,X3,X2) & circle(X0,X1,X3,X18)) => cong(X12,X13,X5,X2)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12)) => cong(X3,X2,X1,X0)) [rectify 95]
-196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
-198. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))) [ennf transformation 25]
-199. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)) [flattening 198]
-266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
-315. ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12))) => (~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12))) [choice axiom]
-353. ~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12)) [skolemisation 315,352]
-376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
-378. ~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3) [cnf transformation 199]
-422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
-475. midp(X11,X8,X10) [cnf transformation 353]
-476. ~cong(sK23,sK22,sK21,sK20) [cnf transformation 353]
-489. cong(X0,X1,X2,X0) | ~midp(X0,X1,X2) [resolution 376,422]
-490. cong(X0,X1,X2,X0) [subsumption resolution 489,475]
-553. ~cong(X10,X11,X13,X14) | cong(X10,X11,X12,X13) [resolution 378,490]
-558. cong(X7,X8,X9,X10) [resolution 553,490]
-566. $false [resolution 558,476]
+fof(f570,plain,(
+  $false),
+  inference(resolution,[],[f562,f480])).
+fof(f480,plain,(
+  ~cong(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12))) => (~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (midp(X11,X8,X10) & circle(X4,X7,X10,X15) & coll(X10,X7,X9) & circle(X4,X6,X9,X14) & perp(X4,X9,X9,X7) & circle(X4,X7,X8,X13) & coll(X8,X7,X6) & perp(X4,X6,X7,X6) & circle(X4,X5,X7,X12)) => cong(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X2,X5,X13,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21] : (midp(X13,X4,X12) & circle(X0,X3,X12,X21) & coll(X12,X3,X5) & circle(X0,X2,X5,X20) & perp(X0,X5,X5,X3) & circle(X0,X3,X4,X19) & coll(X4,X3,X2) & perp(X0,X2,X3,X2) & circle(X0,X1,X3,X18)) => cong(X12,X13,X5,X2))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X2,X12,X5,X13] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21] : (midp(X13,X4,X12) & circle(X0,X3,X12,X21) & coll(X12,X3,X5) & circle(X0,X2,X5,X20) & perp(X0,X5,X5,X3) & circle(X0,X3,X4,X19) & coll(X4,X3,X2) & perp(X0,X2,X3,X2) & circle(X0,X1,X3,X18)) => cong(X12,X13,X5,X2)) )),
+  file('./Other/gao/M/M021-62.p',exemploOthergaoMM02162)).
+fof(f562,plain,(
+  ( ! [X10,X8,X7,X9] : (cong(X7,X8,X9,X10)) )),
+  inference(resolution,[],[f557,f494])).
+fof(f494,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0)) )),
+  inference(subsumption_resolution,[],[f493,f479])).
+fof(f479,plain,(
+  ( ! [X10,X8,X11] : (midp(X11,X8,X10)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f493,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0) | ~midp(X0,X1,X2)) )),
+  inference(resolution,[],[f380,f426])).
+fof(f426,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f270])).
+fof(f270,plain,(
+  ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2))),
+  inference(ennf_transformation,[],[f69])).
+fof(f69,axiom,(
+  ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2))),
+  file('./Other/gao/M/M021-62.p',ruleD68)).
+fof(f380,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f198])).
+fof(f198,plain,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2))),
+  file('./Other/gao/M/M021-62.p',cong23)).
+fof(f557,plain,(
+  ( ! [X14,X12,X10,X13,X11] : (~cong(X10,X11,X13,X14) | cong(X10,X11,X12,X13)) )),
+  inference(resolution,[],[f382,f494])).
+fof(f382,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f201])).
+fof(f201,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))),
+  inference(flattening,[],[f200])).
+fof(f200,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,axiom,(
+  ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5))),
+  file('./Other/gao/M/M021-62.p',ruleD25)).
 % SZS output end Proof for M021-62
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.027 s
+% Time elapsed: 0.028 s
 % ------------------------------
 % ------------------------------

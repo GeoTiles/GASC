@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for simson
 % SZS output start Proof for simson
-94. ! [X0,X1,X2,X7,X3,X4,X5,X12,X18] : (coll(X12,X0,X1) & perp(X12,X3,X0,X1) & coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & circle(X7,X0,X3,X18) & perp(X1,X2,X21,X7) & midp(X21,X1,X2) & perp(X0,X2,X20,X7) & midp(X20,X0,X2) & perp(X0,X1,X19,X7) & midp(X19,X0,X1)) => coll(X12,X4,X5) [input]
-95. ~! [X5,X4,X12,X21,X20,X19] : (! [X0,X1,X2,X7,X3,X4,X5,X12,X18] : (coll(X12,X0,X1) & perp(X12,X3,X0,X1) & coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & circle(X7,X0,X3,X18) & perp(X1,X2,X21,X7) & midp(X21,X1,X2) & perp(X0,X2,X20,X7) & midp(X20,X0,X2) & perp(X0,X1,X19,X7) & midp(X19,X0,X1)) => coll(X12,X4,X5)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3,X4,X5] : (! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,X3,X9) & midp(X3,X7,X8) & perp(X6,X8,X4,X9) & midp(X4,X6,X8) & perp(X6,X7,X5,X9) & midp(X5,X6,X7)) => coll(X2,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2,X3,X4,X5] : (~coll(X2,X1,X0) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,X3,X9) & midp(X3,X7,X8) & perp(X6,X8,X4,X9) & midp(X4,X6,X8) & perp(X6,X7,X5,X9) & midp(X5,X6,X7))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3,X4,X5] : (~coll(X2,X1,X0) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,X3,X9) & midp(X3,X7,X8) & perp(X6,X8,X4,X9) & midp(X4,X6,X8) & perp(X6,X7,X5,X9) & midp(X5,X6,X7))) => (~coll(sK22,sK21,sK20) & ! [X14,X13,X12,X11,X10,X9,X8,X7,X6] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,sK23,X9) & midp(sK23,X7,X8) & perp(X6,X8,sK24,X9) & midp(sK24,X6,X8) & perp(X6,X7,sK25,X9) & midp(sK25,X6,X7))) [choice axiom]
-353. ~coll(sK22,sK21,sK20) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,sK23,X9) & midp(sK23,X7,X8) & perp(X6,X8,sK24,X9) & midp(sK24,X6,X8) & perp(X6,X7,sK25,X9) & midp(sK25,X6,X7)) [skolemisation 315,352]
-479. coll(X13,X6,X7) [cnf transformation 353]
-480. ~coll(sK22,sK21,sK20) [cnf transformation 353]
-481. $false [resolution 480,479]
+fof(f485,plain,(
+  $false),
+  inference(resolution,[],[f484,f483])).
+fof(f483,plain,(
+  ( ! [X6,X7,X13] : (coll(X13,X6,X7)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~coll(sK22,sK21,sK20) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,sK23,X9) & midp(sK23,X7,X8) & perp(X6,X8,sK24,X9) & midp(sK24,X6,X8) & perp(X6,X7,sK25,X9) & midp(sK25,X6,X7))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23,sK24,sK25])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3,X4,X5] : (~coll(X2,X1,X0) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,X3,X9) & midp(X3,X7,X8) & perp(X6,X8,X4,X9) & midp(X4,X6,X8) & perp(X6,X7,X5,X9) & midp(X5,X6,X7))) => (~coll(sK22,sK21,sK20) & ! [X14,X13,X12,X11,X10,X9,X8,X7,X6] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,sK23,X9) & midp(sK23,X7,X8) & perp(X6,X8,sK24,X9) & midp(sK24,X6,X8) & perp(X6,X7,sK25,X9) & midp(sK25,X6,X7)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3,X4,X5] : (~coll(X2,X1,X0) & ! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,X3,X9) & midp(X3,X7,X8) & perp(X6,X8,X4,X9) & midp(X4,X6,X8) & perp(X6,X7,X5,X9) & midp(X5,X6,X7)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3,X4,X5] : (! [X6,X7,X8,X9,X10,X11,X12,X13,X14] : (coll(X13,X6,X7) & perp(X13,X10,X6,X7) & coll(X12,X6,X8) & perp(X12,X10,X6,X8) & coll(X11,X7,X8) & perp(X11,X10,X7,X8) & circle(X9,X6,X10,X14) & perp(X7,X8,X3,X9) & midp(X3,X7,X8) & perp(X6,X8,X4,X9) & midp(X4,X6,X8) & perp(X6,X7,X5,X9) & midp(X5,X6,X7)) => coll(X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X5,X4,X12,X21,X20,X19] : (! [X0,X1,X2,X7,X3,X4,X5,X12,X18] : (coll(X12,X0,X1) & perp(X12,X3,X0,X1) & coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & circle(X7,X0,X3,X18) & perp(X1,X2,X21,X7) & midp(X21,X1,X2) & perp(X0,X2,X20,X7) & midp(X20,X0,X2) & perp(X0,X1,X19,X7) & midp(X19,X0,X1)) => coll(X12,X4,X5))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X4,X12,X21,X19,X5,X20] : (! [X0,X1,X2,X7,X3,X4,X5,X12,X18] : (coll(X12,X0,X1) & perp(X12,X3,X0,X1) & coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & circle(X7,X0,X3,X18) & perp(X1,X2,X21,X7) & midp(X21,X1,X2) & perp(X0,X2,X20,X7) & midp(X20,X0,X2) & perp(X0,X1,X19,X7) & midp(X19,X0,X1)) => coll(X12,X4,X5)) )),
+  file('./3_JAR/JAR01new/simson.p',exemplo3JARJAR01newsimson)).
+fof(f484,plain,(
+  ~coll(sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for simson
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 4989
+% Memory used [KB]: 5117
 % Time elapsed: 0.026 s
 % ------------------------------
 % ------------------------------

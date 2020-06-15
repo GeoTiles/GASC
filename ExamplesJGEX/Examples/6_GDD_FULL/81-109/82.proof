@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 82
 % SZS output start Proof for 82
-94. ! [X0,X1,X2,X7,X18,X4,X19,X20] : (coll(X20,X1,X7) & perp(X20,X2,X1,X7) & coll(X19,X0,X4) & perp(X19,X2,X0,X4) & perp(X0,X7,X0,X4) & coll(X18,X0,X7) & perp(X18,X2,X0,X7) & eqangle(X7,X2,X2,X0,X7,X2,X2,X1) & eqangle(X7,X1,X1,X2,X7,X1,X1,X0) & eqangle(X7,X0,X0,X1,X7,X0,X0,X2)) => coll(X18,X20,X19) [input]
-95. ~! [X19,X20,X18] : (! [X0,X1,X2,X7,X18,X4,X19,X20] : (coll(X20,X1,X7) & perp(X20,X2,X1,X7) & coll(X19,X0,X4) & perp(X19,X2,X0,X4) & perp(X0,X7,X0,X4) & coll(X18,X0,X7) & perp(X18,X2,X0,X7) & eqangle(X7,X2,X2,X0,X7,X2,X2,X1) & eqangle(X7,X1,X1,X2,X7,X1,X1,X0) & eqangle(X7,X0,X0,X1,X7,X0,X0,X2)) => coll(X18,X20,X19)) [negated conjecture 94]
-165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5)) => coll(X2,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5))) [ennf transformation 165]
-352. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5))) [choice axiom]
-353. ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5)) [skolemisation 315,352]
-476. coll(X10,X4,X6) [cnf transformation 353]
-477. ~coll(sK22,sK21,sK20) [cnf transformation 353]
-478. $false [resolution 477,476]
+fof(f482,plain,(
+  $false),
+  inference(resolution,[],[f481,f480])).
+fof(f480,plain,(
+  ( ! [X6,X4,X10] : (coll(X10,X4,X6)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X4,X6) & perp(X10,X5,X4,X6) & coll(X9,X3,X8) & perp(X9,X5,X3,X8) & perp(X3,X6,X3,X8) & coll(X7,X3,X6) & perp(X7,X5,X3,X6) & eqangle(X6,X5,X5,X3,X6,X5,X5,X4) & eqangle(X6,X4,X4,X5,X6,X4,X4,X3) & eqangle(X6,X3,X3,X4,X6,X3,X3,X5)) => coll(X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X19,X20,X18] : (! [X0,X1,X2,X7,X18,X4,X19,X20] : (coll(X20,X1,X7) & perp(X20,X2,X1,X7) & coll(X19,X0,X4) & perp(X19,X2,X0,X4) & perp(X0,X7,X0,X4) & coll(X18,X0,X7) & perp(X18,X2,X0,X7) & eqangle(X7,X2,X2,X0,X7,X2,X2,X1) & eqangle(X7,X1,X1,X2,X7,X1,X1,X0) & eqangle(X7,X0,X0,X1,X7,X0,X0,X2)) => coll(X18,X20,X19))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X19,X20,X18] : (! [X0,X1,X2,X7,X18,X4,X19,X20] : (coll(X20,X1,X7) & perp(X20,X2,X1,X7) & coll(X19,X0,X4) & perp(X19,X2,X0,X4) & perp(X0,X7,X0,X4) & coll(X18,X0,X7) & perp(X18,X2,X0,X7) & eqangle(X7,X2,X2,X0,X7,X2,X2,X1) & eqangle(X7,X1,X1,X2,X7,X1,X1,X0) & eqangle(X7,X0,X0,X1,X7,X0,X0,X2)) => coll(X18,X20,X19)) )),
+  file('./6_GDD_FULL/81-109/82.p',exemplo6GDDFULL8110982)).
+fof(f481,plain,(
+  ~coll(sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for 82
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.029 s
+% Time elapsed: 0.027 s
 % ------------------------------
 % ------------------------------

@@ -1,40 +1,96 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for E046-7
 % SZS output start Proof for E046-7
-23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
-24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
-25. ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5)) [input]
-68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
-94. ! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & para(X2,X4,X5,X1) & coll(X4,X1,X3) & eqangle(X4,X0,X0,X3,X4,X0,X0,X1) & midp(X3,X2,X0)) => cong(X1,X0,X2,X5) [input]
-95. ~! [X5,X2,X0,X1] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & para(X2,X4,X5,X1) & coll(X4,X1,X3) & eqangle(X4,X0,X0,X3,X4,X0,X0,X1) & midp(X3,X2,X0)) => cong(X1,X0,X2,X5)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4)) => cong(X3,X2,X1,X0)) [rectify 95]
-196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
-197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
-198. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))) [ennf transformation 25]
-199. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)) [flattening 198]
-266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
-315. ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4))) => (~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4))) [choice axiom]
-353. ~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4)) [skolemisation 315,352]
-376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
-377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
-378. ~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3) [cnf transformation 199]
-422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
-467. midp(X7,X6,X4) [cnf transformation 353]
-472. ~cong(sK23,sK22,sK21,sK20) [cnf transformation 353]
-480. cong(X0,X1,X2,X0) | ~midp(X0,X1,X2) [resolution 376,422]
-481. cong(X0,X1,X2,X0) [subsumption resolution 480,467]
-482. cong(X0,X1,X0,X2) | ~midp(X0,X2,X1) [resolution 377,422]
-483. cong(X0,X1,X0,X2) [subsumption resolution 482,467]
-539. ~cong(X0,X1,X2,X4) | cong(X0,X1,X2,X3) [resolution 378,483]
-552. cong(X7,X8,X9,X10) [resolution 539,481]
-555. $false [resolution 552,472]
+fof(f559,plain,(
+  $false),
+  inference(resolution,[],[f556,f476])).
+fof(f476,plain,(
+  ~cong(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4))) => (~cong(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~cong(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & para(X6,X8,X9,X5) & coll(X8,X5,X7) & eqangle(X8,X4,X4,X7,X8,X4,X4,X5) & midp(X7,X6,X4)) => cong(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X5,X2,X0,X1] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & para(X2,X4,X5,X1) & coll(X4,X1,X3) & eqangle(X4,X0,X0,X3,X4,X0,X0,X1) & midp(X3,X2,X0)) => cong(X1,X0,X2,X5))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X2,X0,X5,X1] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & para(X2,X4,X5,X1) & coll(X4,X1,X3) & eqangle(X4,X0,X0,X3,X4,X0,X0,X1) & midp(X3,X2,X0)) => cong(X1,X0,X2,X5)) )),
+  file('./Other/unsolved/E046-7.p',exemploOtherunsolvedE0467)).
+fof(f556,plain,(
+  ( ! [X10,X8,X7,X9] : (cong(X7,X8,X9,X10)) )),
+  inference(resolution,[],[f543,f485])).
+fof(f485,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0)) )),
+  inference(subsumption_resolution,[],[f484,f471])).
+fof(f471,plain,(
+  ( ! [X6,X4,X7] : (midp(X7,X6,X4)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f484,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0) | ~midp(X0,X1,X2)) )),
+  inference(resolution,[],[f380,f426])).
+fof(f426,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f270])).
+fof(f270,plain,(
+  ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2))),
+  inference(ennf_transformation,[],[f69])).
+fof(f69,axiom,(
+  ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2))),
+  file('./Other/unsolved/E046-7.p',ruleD68)).
+fof(f380,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f198])).
+fof(f198,plain,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2))),
+  file('./Other/unsolved/E046-7.p',cong23)).
+fof(f543,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~cong(X0,X1,X2,X4) | cong(X0,X1,X2,X3)) )),
+  inference(resolution,[],[f382,f487])).
+fof(f487,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X0,X2)) )),
+  inference(subsumption_resolution,[],[f486,f471])).
+fof(f486,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X0,X2) | ~midp(X0,X2,X1)) )),
+  inference(resolution,[],[f381,f426])).
+fof(f381,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1))),
+  file('./Other/unsolved/E046-7.p',ruleD24)).
+fof(f382,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f201])).
+fof(f201,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))),
+  inference(flattening,[],[f200])).
+fof(f200,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,axiom,(
+  ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5))),
+  file('./Other/unsolved/E046-7.p',ruleD25)).
 % SZS output end Proof for E046-7
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.028 s
+% Time elapsed: 0.027 s
 % ------------------------------
 % ------------------------------

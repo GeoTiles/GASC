@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for E039-28
 % SZS output start Proof for E039-28
-94. ! [X0,X1,X2,X3,X4,X5,X18,X19,X20,X21,X22] : (coll(X5,X1,X4) & circle(X0,X1,X5,X22) & cong(X3,X2,X3,X4) & coll(X3,X2,X4) & cong(X2,X3,X2,X1) & circle(X0,X1,X3,X21) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => coll(X3,X0,X5) [input]
-95. ~! [X5,X0,X3] : (! [X0,X1,X2,X3,X4,X5,X18,X19,X20,X21,X22] : (coll(X5,X1,X4) & circle(X0,X1,X5,X22) & cong(X3,X2,X3,X4) & coll(X3,X2,X4) & cong(X2,X3,X2,X1) & circle(X0,X1,X3,X21) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => coll(X3,X0,X5)) [negated conjecture 94]
-165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10)) => coll(X2,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10))) [ennf transformation 165]
-352. ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10))) [choice axiom]
-353. ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10)) [skolemisation 315,352]
-474. coll(X8,X4,X7) [cnf transformation 353]
-475. ~coll(sK22,sK21,sK20) [cnf transformation 353]
-476. $false [resolution 475,474]
+fof(f480,plain,(
+  $false),
+  inference(resolution,[],[f479,f478])).
+fof(f478,plain,(
+  ( ! [X4,X8,X7] : (coll(X8,X4,X7)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X8,X4,X7) & circle(X3,X4,X8,X13) & cong(X6,X5,X6,X7) & coll(X6,X5,X7) & cong(X5,X6,X5,X4) & circle(X3,X4,X6,X12) & circle(X3,X4,X5,X11) & circle(X3,X4,X9,X10)) => coll(X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X5,X0,X3] : (! [X0,X1,X2,X3,X4,X5,X18,X19,X20,X21,X22] : (coll(X5,X1,X4) & circle(X0,X1,X5,X22) & cong(X3,X2,X3,X4) & coll(X3,X2,X4) & cong(X2,X3,X2,X1) & circle(X0,X1,X3,X21) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => coll(X3,X0,X5))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X0,X5,X3] : (! [X0,X1,X2,X3,X4,X5,X18,X19,X20,X21,X22] : (coll(X5,X1,X4) & circle(X0,X1,X5,X22) & cong(X3,X2,X3,X4) & coll(X3,X2,X4) & cong(X2,X3,X2,X1) & circle(X0,X1,X3,X21) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => coll(X3,X0,X5)) )),
+  file('./7_Book/00EE/03/E039-28.p',exemplo7Book00EE03E03928)).
+fof(f479,plain,(
+  ~coll(sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for E039-28
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 4989
-% Time elapsed: 0.026 s
+% Memory used [KB]: 5117
+% Time elapsed: 0.027 s
 % ------------------------------
 % ------------------------------

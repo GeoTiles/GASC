@@ -1,48 +1,87 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 57
 % SZS output start Proof for 57
-13. ! [X0,X1,X2,X3,X7] : ((cong(X7,X0,X7,X3) & cong(X7,X0,X7,X2) & cong(X7,X0,X7,X1)) => cyclic(X0,X1,X2,X3)) [input]
-23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
-24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
-25. ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5)) [input]
-68. ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2)) [input]
-94. ! [X0,X1,X2,X3,X7,X4,X5,X18,X19,X20,X21] : (circle(X7,X3,X5,X21) & coll(X5,X0,X2) & circle(X7,X3,X4,X20) & coll(X4,X0,X1) & circle(X7,X3,X18,X19) & midp(X7,X0,X3) & coll(X3,X1,X2) & perp(X3,X0,X1,X2)) => cyclic(X1,X2,X4,X5) [input]
-95. ~! [X5,X4,X2,X1] : (! [X0,X1,X2,X3,X7,X4,X5,X18,X19,X20,X21] : (circle(X7,X3,X5,X21) & coll(X5,X0,X2) & circle(X7,X3,X4,X20) & coll(X4,X0,X1) & circle(X7,X3,X18,X19) & midp(X7,X0,X3) & coll(X3,X1,X2) & perp(X3,X0,X1,X2)) => cyclic(X1,X2,X4,X5)) [negated conjecture 94]
-98. ! [X0,X1,X2,X3,X4] : ((cong(X4,X0,X4,X3) & cong(X4,X0,X4,X2) & cong(X4,X0,X4,X1)) => cyclic(X0,X1,X2,X3)) [rectify 13]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6)) => cyclic(X3,X2,X1,X0)) [rectify 95]
-183. ! [X0,X1,X2,X3,X4] : (cyclic(X0,X1,X2,X3) | (~cong(X4,X0,X4,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1))) [ennf transformation 98]
-184. ! [X0,X1,X2,X3,X4] : (cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1)) [flattening 183]
-196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
-197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
-198. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))) [ennf transformation 25]
-199. ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)) [flattening 198]
-266. ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) [ennf transformation 68]
-315. ? [X0,X1,X2,X3] : (~cyclic(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~cyclic(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6))) => (~cyclic(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6))) [choice axiom]
-353. ~cyclic(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6)) [skolemisation 315,352]
-366. ~cong(X4,X0,X4,X3) | cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1) [cnf transformation 184]
-376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
-377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
-378. ~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3) [cnf transformation 199]
-422. cong(X0,X1,X0,X2) | ~midp(X0,X1,X2) [cnf transformation 266]
-469. midp(X8,X4,X7) [cnf transformation 353]
-475. ~cyclic(sK23,sK22,sK21,sK20) [cnf transformation 353]
-482. cong(X0,X1,X2,X0) | ~midp(X0,X1,X2) [resolution 376,422]
-483. cong(X0,X1,X2,X0) [subsumption resolution 482,469]
-484. cong(X0,X1,X0,X2) | ~midp(X0,X2,X1) [resolution 377,422]
-485. cong(X0,X1,X0,X2) [subsumption resolution 484,469]
-526. ~cong(X0,X1,X2,X4) | cong(X0,X1,X2,X3) [resolution 378,485]
-533. cong(X7,X8,X9,X10) [resolution 526,483]
-1072. cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X2) | ~cong(X4,X0,X4,X1) [resolution 366,485]
-1079. cyclic(X0,X1,X2,X3) | ~cong(X4,X0,X4,X1) [subsumption resolution 1072,533]
-1080. cyclic(X0,X1,X2,X3) [subsumption resolution 1079,533]
-1081. $false [resolution 1080,475]
+fof(f709,plain,(
+  $false),
+  inference(resolution,[],[f708,f479])).
+fof(f479,plain,(
+  ~cyclic(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~cyclic(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~cyclic(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6))) => (~cyclic(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~cyclic(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14] : (circle(X8,X7,X10,X14) & coll(X10,X4,X6) & circle(X8,X7,X9,X13) & coll(X9,X4,X5) & circle(X8,X7,X11,X12) & midp(X8,X4,X7) & coll(X7,X5,X6) & perp(X7,X4,X5,X6)) => cyclic(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X5,X4,X2,X1] : (! [X0,X1,X2,X3,X7,X4,X5,X18,X19,X20,X21] : (circle(X7,X3,X5,X21) & coll(X5,X0,X2) & circle(X7,X3,X4,X20) & coll(X4,X0,X1) & circle(X7,X3,X18,X19) & midp(X7,X0,X3) & coll(X3,X1,X2) & perp(X3,X0,X1,X2)) => cyclic(X1,X2,X4,X5))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X4,X2,X5,X1] : (! [X0,X1,X2,X3,X7,X4,X5,X18,X19,X20,X21] : (circle(X7,X3,X5,X21) & coll(X5,X0,X2) & circle(X7,X3,X4,X20) & coll(X4,X0,X1) & circle(X7,X3,X18,X19) & midp(X7,X0,X3) & coll(X3,X1,X2) & perp(X3,X0,X1,X2)) => cyclic(X1,X2,X4,X5)) )),
+  file('./6_GDD_FULL/41-60/57.p',exemplo6GDDFULL416057)).
+fof(f708,plain,(
+  ( ! [X26,X24,X23,X25] : (cyclic(X24,X23,X26,X25)) )),
+  inference(subsumption_resolution,[],[f707,f477])).
+fof(f477,plain,(
+  ( ! [X6,X4,X10] : (coll(X10,X4,X6)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f707,plain,(
+  ( ! [X26,X24,X23,X25] : (~coll(X26,X25,X23) | cyclic(X24,X23,X26,X25)) )),
+  inference(subsumption_resolution,[],[f706,f478])).
+fof(f478,plain,(
+  ( ! [X14,X10,X8,X7] : (circle(X8,X7,X10,X14)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f706,plain,(
+  ( ! [X26,X24,X23,X25] : (~circle(X25,X26,X24,X23) | ~coll(X26,X25,X23) | cyclic(X24,X23,X26,X25)) )),
+  inference(subsumption_resolution,[],[f695,f473])).
+fof(f473,plain,(
+  ( ! [X4,X8,X7] : (midp(X8,X4,X7)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f695,plain,(
+  ( ! [X26,X24,X23,X25] : (~midp(X23,X24,X23) | ~circle(X25,X26,X24,X23) | ~coll(X26,X25,X23) | cyclic(X24,X23,X26,X25)) )),
+  inference(resolution,[],[f408,f400])).
+fof(f400,plain,(
+  ( ! [X2,X0,X3,X1] : (~eqangle(X2,X0,X2,X1,X3,X0,X3,X1) | ~coll(X2,X3,X1) | cyclic(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f224])).
+fof(f224,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) | ~coll(X2,X3,X1) | ~eqangle(X2,X0,X2,X1,X3,X0,X3,X1))),
+  inference(flattening,[],[f223])).
+fof(f223,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) | (~coll(X2,X3,X1) | ~eqangle(X2,X0,X2,X1,X3,X0,X3,X1)))),
+  inference(ennf_transformation,[],[f122])).
+fof(f122,plain,(
+  ! [X0,X1,X2,X3] : ((coll(X2,X3,X1) & eqangle(X2,X0,X2,X1,X3,X0,X3,X1)) => cyclic(X0,X1,X2,X3))),
+  inference(rectify,[],[f43])).
+fof(f43,axiom,(
+  ! [X0,X1,X8,X9] : ((coll(X8,X9,X1) & eqangle(X8,X0,X8,X1,X9,X0,X9,X1)) => cyclic(X0,X1,X8,X9))),
+  file('./6_GDD_FULL/41-60/57.p',ruleD42b)).
+fof(f408,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~midp(X4,X1,X2) | ~circle(X3,X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f239])).
+fof(f239,plain,(
+  ! [X0,X1,X2,X3,X4] : (eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | ~midp(X4,X1,X2) | ~circle(X3,X0,X1,X2))),
+  inference(flattening,[],[f238])).
+fof(f238,plain,(
+  ! [X0,X1,X2,X3,X4] : (eqangle(X0,X1,X0,X2,X3,X1,X3,X4) | (~midp(X4,X1,X2) | ~circle(X3,X0,X1,X2)))),
+  inference(ennf_transformation,[],[f130])).
+fof(f130,plain,(
+  ! [X0,X1,X2,X3,X4] : ((midp(X4,X1,X2) & circle(X3,X0,X1,X2)) => eqangle(X0,X1,X0,X2,X3,X1,X3,X4))),
+  inference(rectify,[],[f51])).
+fof(f51,axiom,(
+  ! [X0,X1,X2,X7,X6] : ((midp(X6,X1,X2) & circle(X7,X0,X1,X2)) => eqangle(X0,X1,X0,X2,X7,X1,X7,X6))),
+  file('./6_GDD_FULL/41-60/57.p',ruleD50)).
 % SZS output end Proof for 57
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 5245
-% Time elapsed: 0.032 s
+% Memory used [KB]: 5117
+% Time elapsed: 0.030 s
 % ------------------------------
 % ------------------------------

@@ -1,27 +1,57 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for L055-5
 % SZS output start Proof for L055-5
-9. ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & perp(X0,X1,X2,X3)) => para(X0,X1,X4,X5)) [input]
-94. ! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & eqangle(X3,X0,X0,X2,X2,X0,X0,X1) & eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) => para(X4,X5,X0,X1) [input]
-95. ~! [X1,X0,X5,X4] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & eqangle(X3,X0,X0,X2,X2,X0,X0,X1) & eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) => para(X4,X5,X0,X1)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4)) => para(X3,X2,X1,X0)) [rectify 95]
-176. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3))) [ennf transformation 9]
-177. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3)) [flattening 176]
-315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4))) [choice axiom]
-353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4)) [skolemisation 315,352]
-362. ~perp(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~perp(X0,X1,X2,X3) [cnf transformation 177]
-471. perp(X9,X7,X4,X6) [cnf transformation 353]
-473. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
-530. para(X0,X1,X2,X3) | ~perp(X0,X1,X4,X5) [resolution 362,471]
-532. para(X0,X1,X2,X3) [subsumption resolution 530,471]
-533. $false [resolution 532,473]
+fof(f537,plain,(
+  $false),
+  inference(resolution,[],[f536,f477])).
+fof(f477,plain,(
+  ~para(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9] : (coll(X9,X4,X6) & perp(X9,X7,X4,X6) & coll(X8,X5,X6) & perp(X8,X7,X5,X6) & eqangle(X7,X4,X4,X6,X6,X4,X4,X5) & eqangle(X7,X5,X5,X6,X6,X5,X5,X4)) => para(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X1,X0,X5,X4] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & eqangle(X3,X0,X0,X2,X2,X0,X0,X1) & eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) => para(X4,X5,X0,X1))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X4,X0,X5,X1] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X0,X2) & perp(X5,X3,X0,X2) & coll(X4,X1,X2) & perp(X4,X3,X1,X2) & eqangle(X3,X0,X0,X2,X2,X0,X0,X1) & eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) => para(X4,X5,X0,X1)) )),
+  file('./7_Book/LLL/L055-5.p',exemplo7BookLLLL0555)).
+fof(f536,plain,(
+  ( ! [X2,X0,X3,X1] : (para(X0,X1,X2,X3)) )),
+  inference(subsumption_resolution,[],[f534,f475])).
+fof(f475,plain,(
+  ( ! [X6,X4,X7,X9] : (perp(X9,X7,X4,X6)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f534,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (para(X0,X1,X2,X3) | ~perp(X0,X1,X4,X5)) )),
+  inference(resolution,[],[f366,f475])).
+fof(f366,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~perp(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~perp(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f179])).
+fof(f179,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3))),
+  inference(flattening,[],[f178])).
+fof(f178,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,axiom,(
+  ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & perp(X0,X1,X2,X3)) => para(X0,X1,X4,X5))),
+  file('./7_Book/LLL/L055-5.p',ruleD9)).
 % SZS output end Proof for L055-5
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.027 s
+% Time elapsed: 0.029 s
 % ------------------------------
 % ------------------------------

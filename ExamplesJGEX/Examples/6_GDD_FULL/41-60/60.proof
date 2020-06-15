@@ -1,57 +1,147 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 60
 % SZS output start Proof for 60
-18. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X1,X0,X2,X3,X8,X9,X10,X11)) [input]
-19. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9)) [input]
-21. ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X0,X1,X8,X9,X2,X3,X10,X11)) [input]
-22. ! [X0,X1,X2,X3,X8,X9,X10,X11,X4,X5,X12,X13] : ((eqangle(X8,X9,X10,X11,X4,X5,X12,X13) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => eqangle(X0,X1,X2,X3,X4,X5,X12,X13)) [input]
-40. ! [X0,X1,X2,X3,X8,X9] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X8,X9,X2,X3,X8,X9)) [input]
-44. ! [X0,X1,X2,X4,X5] : ((midp(X5,X0,X2) & midp(X4,X0,X1)) => para(X4,X5,X1,X2)) [input]
-94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X18,X0,X2) & perp(X18,X13,X0,X2) & circle(X3,X0,X13,X19) & coll(X13,X3,X12) & midp(X12,X1,X0) & midp(X5,X0,X2) & midp(X4,X2,X1) & circle(X3,X0,X1,X2)) => eqangle(X5,X12,X12,X18,X18,X12,X12,X4) [input]
-95. ~! [X4,X12,X18,X5] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X18,X0,X2) & perp(X18,X13,X0,X2) & circle(X3,X0,X13,X19) & coll(X13,X3,X12) & midp(X12,X1,X0) & midp(X5,X0,X2) & midp(X4,X2,X1) & circle(X3,X0,X1,X2)) => eqangle(X5,X12,X12,X18,X18,X12,X12,X4)) [negated conjecture 94]
-99. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X1,X0,X2,X3,X4,X5,X6,X7)) [rectify 18]
-100. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) [rectify 19]
-102. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X0,X1,X4,X5,X2,X3,X6,X7)) [rectify 21]
-103. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : ((eqangle(X4,X5,X6,X7,X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) [rectify 22]
-118. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X4,X5,X2,X3,X4,X5)) [rectify 40]
-122. ! [X0,X1,X2,X3,X4] : ((midp(X4,X0,X2) & midp(X3,X0,X1)) => para(X3,X4,X1,X2)) [rectify 44]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6)) => eqangle(X3,X1,X1,X2,X2,X1,X1,X0)) [rectify 95]
-190. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X1,X0,X2,X3,X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 99]
-191. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 100]
-193. ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X4,X5,X2,X3,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [ennf transformation 102]
-194. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))) [ennf transformation 103]
-195. ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) [flattening 194]
-217. ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) [ennf transformation 118]
-223. ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | (~midp(X4,X0,X2) | ~midp(X3,X0,X1))) [ennf transformation 122]
-224. ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | ~midp(X4,X0,X2) | ~midp(X3,X0,X1)) [flattening 223]
-315. ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6))) => (~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6))) [choice axiom]
-353. ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6)) [skolemisation 315,352]
-371. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X1,X0,X2,X3,X4,X5,X6,X7) [cnf transformation 190]
-372. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5) [cnf transformation 191]
-374. ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X0,X1,X4,X5,X2,X3,X6,X7) [cnf transformation 193]
-375. ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) [cnf transformation 195]
-393. eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3) [cnf transformation 217]
-398. ~midp(X4,X0,X2) | para(X3,X4,X1,X2) | ~midp(X3,X0,X1) [cnf transformation 224]
-470. midp(X10,X5,X4) [cnf transformation 353]
-475. ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) [cnf transformation 353]
-493. para(X0,X1,X2,X3) | ~midp(X0,X4,X2) [resolution 398,470]
-494. para(X0,X1,X2,X3) [subsumption resolution 493,470]
-572. eqangle(X0,X1,X2,X3,X4,X5,X2,X3) | ~para(X1,X0,X4,X5) [resolution 371,393]
-576. eqangle(X0,X1,X2,X3,X4,X5,X2,X3) [subsumption resolution 572,494]
-578. eqangle(X0,X1,X2,X3,X0,X1,X4,X5) | ~para(X2,X3,X4,X5) [resolution 372,393]
-582. eqangle(X0,X1,X2,X3,X0,X1,X4,X5) [subsumption resolution 578,494]
-597. eqangle(X0,X1,X2,X3,X4,X5,X4,X5) [resolution 374,576]
-604. eqangle(X2,X3,X2,X3,X4,X5,X6,X7) [resolution 582,374]
-1601. eqangle(X250,X251,X252,X253,X254,X255,X256,X257) | ~eqangle(X250,X251,X252,X253,X258,X259,X258,X259) [resolution 375,604]
-1613. eqangle(X250,X251,X252,X253,X254,X255,X256,X257) [subsumption resolution 1601,597]
-1779. $false [resolution 1613,475]
+fof(f2728,plain,(
+  $false),
+  inference(resolution,[],[f1685,f479])).
+fof(f479,plain,(
+  ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6))) => (~eqangle(sK23,sK21,sK21,sK22,sK22,sK21,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~eqangle(X3,X1,X1,X2,X2,X1,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (coll(X12,X4,X6) & perp(X12,X11,X4,X6) & circle(X7,X4,X11,X13) & coll(X11,X7,X10) & midp(X10,X5,X4) & midp(X9,X4,X6) & midp(X8,X6,X5) & circle(X7,X4,X5,X6)) => eqangle(X3,X1,X1,X2,X2,X1,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X4,X12,X18,X5] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X18,X0,X2) & perp(X18,X13,X0,X2) & circle(X3,X0,X13,X19) & coll(X13,X3,X12) & midp(X12,X1,X0) & midp(X5,X0,X2) & midp(X4,X2,X1) & circle(X3,X0,X1,X2)) => eqangle(X5,X12,X12,X18,X18,X12,X12,X4))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X4,X12,X5,X18] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19] : (coll(X18,X0,X2) & perp(X18,X13,X0,X2) & circle(X3,X0,X13,X19) & coll(X13,X3,X12) & midp(X12,X1,X0) & midp(X5,X0,X2) & midp(X4,X2,X1) & circle(X3,X0,X1,X2)) => eqangle(X5,X12,X12,X18,X18,X12,X12,X4)) )),
+  file('./6_GDD_FULL/41-60/60.p',exemplo6GDDFULL416060)).
+fof(f1685,plain,(
+  ( ! [X280,X277,X279,X275,X281,X276,X278,X274] : (eqangle(X274,X275,X276,X277,X278,X279,X280,X281)) )),
+  inference(subsumption_resolution,[],[f1674,f601])).
+fof(f601,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X4,X5,X4,X5)) )),
+  inference(resolution,[],[f378,f580])).
+fof(f580,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X4,X5,X2,X3)) )),
+  inference(subsumption_resolution,[],[f576,f498])).
+fof(f498,plain,(
+  ( ! [X2,X0,X3,X1] : (para(X0,X1,X2,X3)) )),
+  inference(subsumption_resolution,[],[f497,f474])).
+fof(f474,plain,(
+  ( ! [X4,X10,X5] : (midp(X10,X5,X4)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f497,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (para(X0,X1,X2,X3) | ~midp(X0,X4,X2)) )),
+  inference(resolution,[],[f402,f474])).
+fof(f402,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~midp(X4,X0,X2) | para(X3,X4,X1,X2) | ~midp(X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f228])).
+fof(f228,plain,(
+  ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | ~midp(X4,X0,X2) | ~midp(X3,X0,X1))),
+  inference(flattening,[],[f227])).
+fof(f227,plain,(
+  ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | (~midp(X4,X0,X2) | ~midp(X3,X0,X1)))),
+  inference(ennf_transformation,[],[f124])).
+fof(f124,plain,(
+  ! [X0,X1,X2,X3,X4] : ((midp(X4,X0,X2) & midp(X3,X0,X1)) => para(X3,X4,X1,X2))),
+  inference(rectify,[],[f45])).
+fof(f45,axiom,(
+  ! [X0,X1,X2,X4,X5] : ((midp(X5,X0,X2) & midp(X4,X0,X1)) => para(X4,X5,X1,X2))),
+  file('./6_GDD_FULL/41-60/60.p',ruleD44)).
+fof(f576,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X4,X5,X2,X3) | ~para(X1,X0,X4,X5)) )),
+  inference(resolution,[],[f375,f397])).
+fof(f397,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f219])).
+fof(f219,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f119])).
+fof(f119,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X4,X5,X2,X3,X4,X5))),
+  inference(rectify,[],[f40])).
+fof(f40,axiom,(
+  ! [X0,X1,X2,X3,X8,X9] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X8,X9,X2,X3,X8,X9))),
+  file('./6_GDD_FULL/41-60/60.p',ruleD40)).
+fof(f375,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X1,X0,X2,X3,X4,X5,X6,X7)) )),
+  inference(cnf_transformation,[],[f192])).
+fof(f192,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X1,X0,X2,X3,X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f100])).
+fof(f100,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X1,X0,X2,X3,X4,X5,X6,X7))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X1,X0,X2,X3,X8,X9,X10,X11))),
+  file('./6_GDD_FULL/41-60/60.p',ruleD18)).
+fof(f378,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X0,X1,X4,X5,X2,X3,X6,X7)) )),
+  inference(cnf_transformation,[],[f195])).
+fof(f195,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X4,X5,X2,X3,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f103])).
+fof(f103,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X0,X1,X4,X5,X2,X3,X6,X7))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X0,X1,X8,X9,X2,X3,X10,X11))),
+  file('./6_GDD_FULL/41-60/60.p',ruleD21)).
+fof(f1674,plain,(
+  ( ! [X280,X282,X277,X279,X275,X281,X283,X276,X278,X274] : (eqangle(X274,X275,X276,X277,X278,X279,X280,X281) | ~eqangle(X274,X275,X276,X277,X282,X283,X282,X283)) )),
+  inference(resolution,[],[f379,f608])).
+fof(f608,plain,(
+  ( ! [X6,X4,X2,X7,X5,X3] : (eqangle(X2,X3,X2,X3,X4,X5,X6,X7)) )),
+  inference(resolution,[],[f586,f378])).
+fof(f586,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X0,X1,X4,X5)) )),
+  inference(subsumption_resolution,[],[f582,f498])).
+fof(f582,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X0,X1,X4,X5) | ~para(X2,X3,X4,X5)) )),
+  inference(resolution,[],[f376,f397])).
+fof(f376,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) )),
+  inference(cnf_transformation,[],[f193])).
+fof(f193,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f101])).
+fof(f101,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9))),
+  file('./6_GDD_FULL/41-60/60.p',ruleD19)).
+fof(f379,plain,(
+  ( ! [X6,X4,X2,X0,X10,X8,X7,X5,X3,X1,X11,X9] : (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) )),
+  inference(cnf_transformation,[],[f197])).
+fof(f197,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(flattening,[],[f196])).
+fof(f196,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)))),
+  inference(ennf_transformation,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : ((eqangle(X4,X5,X6,X7,X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => eqangle(X0,X1,X2,X3,X8,X9,X10,X11))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11,X4,X5,X12,X13] : ((eqangle(X8,X9,X10,X11,X4,X5,X12,X13) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => eqangle(X0,X1,X2,X3,X4,X5,X12,X13))),
+  file('./6_GDD_FULL/41-60/60.p',ruleD22)).
 % SZS output end Proof for 60
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 5373
-% Time elapsed: 0.037 s
+% Memory used [KB]: 5628
+% Time elapsed: 0.046 s
 % ------------------------------
 % ------------------------------

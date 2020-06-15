@@ -1,41 +1,111 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for E057-44
 % SZS output start Proof for E057-44
-23. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2)) [input]
-24. ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1)) [input]
-52. ! [X0,X1,X2,X6] : ((midp(X6,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X6,X1,X6)) [input]
-67. ! [X0,X1,X2] : ((coll(X0,X1,X2) & cong(X0,X1,X0,X2)) => midp(X0,X1,X2)) [input]
-94. ! [X0,X1,X2,X3,X4,X5] : (coll(X5,X1,X4) & coll(X5,X0,X3) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & (cong(X2,X0,X2,X1) | cong(X2,X0,X0,X1))) => cong(X5,X0,X5,X1) [input]
-95. ~! [X1,X5,X0] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X1,X4) & coll(X5,X0,X3) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & (cong(X2,X0,X2,X1) | cong(X2,X0,X0,X1))) => cong(X5,X0,X5,X1)) [negated conjecture 94]
-130. ! [X0,X1,X2,X3] : ((midp(X3,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X3,X1,X3)) [rectify 52]
-165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))) => cong(X1,X2,X1,X0)) [rectify 95]
-196. ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3)) [ennf transformation 23]
-197. ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3)) [ennf transformation 24]
-238. ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | (~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2))) [ennf transformation 130]
-239. ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | ~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2)) [flattening 238]
-264. ! [X0,X1,X2] : (midp(X0,X1,X2) | (~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2))) [ennf transformation 67]
-265. ! [X0,X1,X2] : (midp(X0,X1,X2) | ~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2)) [flattening 264]
-315. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) [ennf transformation 165]
-352. ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) [choice axiom]
-353. ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))) [skolemisation 315,352]
-376. ~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2) [cnf transformation 196]
-377. ~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1) [cnf transformation 197]
-406. ~perp(X0,X1,X1,X2) | ~midp(X3,X0,X2) | cong(X0,X3,X1,X3) [cnf transformation 239]
-421. ~cong(X0,X1,X0,X2) | ~coll(X0,X1,X2) | midp(X0,X1,X2) [cnf transformation 265]
-467. cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4) [cnf transformation 353]
-470. perp(X7,X4,X3,X5) [cnf transformation 353]
-473. coll(X8,X4,X7) [cnf transformation 353]
-474. ~cong(sK21,sK22,sK21,sK20) [cnf transformation 353]
-479. cong(X0,X0,X0,X1) [factoring 467]
-490. cong(X9,X10,X9,X9) [resolution 377,479]
-506. ~coll(X8,X9,X8) | midp(X8,X9,X8) [resolution 421,490]
-511. midp(X8,X9,X8) [subsumption resolution 506,473]
-553. ~midp(X0,X1,X2) | cong(X1,X0,X3,X0) [resolution 406,470]
-569. cong(X2,X3,X4,X3) [resolution 553,511]
-577. cong(X3,X4,X4,X5) [resolution 569,376]
-607. cong(X0,X1,X2,X0) [resolution 577,377]
-631. cong(X8,X9,X8,X10) [resolution 607,376]
-647. $false [resolution 631,474]
+fof(f651,plain,(
+  $false),
+  inference(resolution,[],[f635,f478])).
+fof(f478,plain,(
+  ~cong(sK21,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)))) => (~cong(sK21,sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2] : (~cong(X1,X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8] : (coll(X8,X4,X7) & coll(X8,X3,X6) & coll(X7,X3,X5) & perp(X7,X4,X3,X5) & coll(X6,X4,X5) & perp(X6,X3,X4,X5) & (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4))) => cong(X1,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X1,X5,X0] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X1,X4) & coll(X5,X0,X3) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & (cong(X2,X0,X2,X1) | cong(X2,X0,X0,X1))) => cong(X5,X0,X5,X1))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X0,X5,X1] : (! [X0,X1,X2,X3,X4,X5] : (coll(X5,X1,X4) & coll(X5,X0,X3) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X1,X2) & perp(X3,X0,X1,X2) & (cong(X2,X0,X2,X1) | cong(X2,X0,X0,X1))) => cong(X5,X0,X5,X1)) )),
+  file('./7_Book/00EE/07/E057-44.p',exemplo7Book00EE07E05744)).
+fof(f635,plain,(
+  ( ! [X10,X8,X9] : (cong(X8,X9,X8,X10)) )),
+  inference(resolution,[],[f611,f380])).
+fof(f380,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f198])).
+fof(f198,plain,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2))),
+  file('./7_Book/00EE/07/E057-44.p',cong23)).
+fof(f611,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0)) )),
+  inference(resolution,[],[f581,f381])).
+fof(f381,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1))),
+  file('./7_Book/00EE/07/E057-44.p',ruleD24)).
+fof(f581,plain,(
+  ( ! [X4,X5,X3] : (cong(X3,X4,X4,X5)) )),
+  inference(resolution,[],[f573,f380])).
+fof(f573,plain,(
+  ( ! [X4,X2,X3] : (cong(X2,X3,X4,X3)) )),
+  inference(resolution,[],[f557,f515])).
+fof(f515,plain,(
+  ( ! [X8,X9] : (midp(X8,X9,X8)) )),
+  inference(subsumption_resolution,[],[f510,f477])).
+fof(f477,plain,(
+  ( ! [X4,X8,X7] : (coll(X8,X4,X7)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f510,plain,(
+  ( ! [X8,X9] : (~coll(X8,X9,X8) | midp(X8,X9,X8)) )),
+  inference(resolution,[],[f425,f494])).
+fof(f494,plain,(
+  ( ! [X10,X9] : (cong(X9,X10,X9,X9)) )),
+  inference(resolution,[],[f381,f483])).
+fof(f483,plain,(
+  ( ! [X0,X1] : (cong(X0,X0,X0,X1)) )),
+  inference(factoring,[],[f471])).
+fof(f471,plain,(
+  ( ! [X4,X5,X3] : (cong(X5,X3,X5,X4) | cong(X5,X3,X3,X4)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f425,plain,(
+  ( ! [X2,X0,X1] : (~cong(X0,X1,X0,X2) | ~coll(X0,X1,X2) | midp(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f269])).
+fof(f269,plain,(
+  ! [X0,X1,X2] : (midp(X0,X1,X2) | ~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2))),
+  inference(flattening,[],[f268])).
+fof(f268,plain,(
+  ! [X0,X1,X2] : (midp(X0,X1,X2) | (~coll(X0,X1,X2) | ~cong(X0,X1,X0,X2)))),
+  inference(ennf_transformation,[],[f68])).
+fof(f68,axiom,(
+  ! [X0,X1,X2] : ((coll(X0,X1,X2) & cong(X0,X1,X0,X2)) => midp(X0,X1,X2))),
+  file('./7_Book/00EE/07/E057-44.p',ruleD67)).
+fof(f557,plain,(
+  ( ! [X2,X0,X3,X1] : (~midp(X0,X1,X2) | cong(X1,X0,X3,X0)) )),
+  inference(resolution,[],[f410,f474])).
+fof(f474,plain,(
+  ( ! [X4,X7,X5,X3] : (perp(X7,X4,X3,X5)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f410,plain,(
+  ( ! [X2,X0,X3,X1] : (~perp(X0,X1,X1,X2) | ~midp(X3,X0,X2) | cong(X0,X3,X1,X3)) )),
+  inference(cnf_transformation,[],[f243])).
+fof(f243,plain,(
+  ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | ~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2))),
+  inference(flattening,[],[f242])).
+fof(f242,plain,(
+  ! [X0,X1,X2,X3] : (cong(X0,X3,X1,X3) | (~midp(X3,X0,X2) | ~perp(X0,X1,X1,X2)))),
+  inference(ennf_transformation,[],[f132])).
+fof(f132,plain,(
+  ! [X0,X1,X2,X3] : ((midp(X3,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X3,X1,X3))),
+  inference(rectify,[],[f53])).
+fof(f53,axiom,(
+  ! [X0,X1,X2,X6] : ((midp(X6,X0,X2) & perp(X0,X1,X1,X2)) => cong(X0,X6,X1,X6))),
+  file('./7_Book/00EE/07/E057-44.p',ruleD52)).
 % SZS output end Proof for E057-44
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)

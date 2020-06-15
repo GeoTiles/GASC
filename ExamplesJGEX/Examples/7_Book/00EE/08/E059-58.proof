@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for E059-58
 % SZS output start Proof for E059-58
-94. ! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21,X22] : (coll(X13,X5,X12) & coll(X13,X1,X2) & perp(X12,X0,X12,X4) & circle(X0,X1,X12,X22) & perp(X5,X0,X5,X3) & circle(X0,X1,X5,X21) & cong(X4,X2,X1,X3) & coll(X4,X1,X2) & coll(X3,X1,X2) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => cong(X2,X13,X13,X1) [input]
-95. ~! [X1,X13,X2] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21,X22] : (coll(X13,X5,X12) & coll(X13,X1,X2) & perp(X12,X0,X12,X4) & circle(X0,X1,X12,X22) & perp(X5,X0,X5,X3) & circle(X0,X1,X5,X21) & cong(X4,X2,X1,X3) & coll(X4,X1,X2) & coll(X3,X1,X2) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => cong(X2,X13,X13,X1)) [negated conjecture 94]
-165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12)) => cong(X2,X1,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12))) [ennf transformation 165]
-352. ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12))) => (~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12))) [choice axiom]
-353. ~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12)) [skolemisation 315,352]
-471. cong(X7,X5,X4,X6) [cnf transformation 353]
-478. ~cong(sK22,sK21,sK21,sK20) [cnf transformation 353]
-479. $false [resolution 478,471]
+fof(f483,plain,(
+  $false),
+  inference(resolution,[],[f482,f475])).
+fof(f475,plain,(
+  ( ! [X6,X4,X7,X5] : (cong(X7,X5,X4,X6)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12))) => (~cong(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2] : (~cong(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13,X14,X15] : (coll(X10,X8,X9) & coll(X10,X4,X5) & perp(X9,X3,X9,X7) & circle(X3,X4,X9,X15) & perp(X8,X3,X8,X6) & circle(X3,X4,X8,X14) & cong(X7,X5,X4,X6) & coll(X7,X4,X5) & coll(X6,X4,X5) & circle(X3,X4,X5,X13) & circle(X3,X4,X11,X12)) => cong(X2,X1,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X1,X13,X2] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21,X22] : (coll(X13,X5,X12) & coll(X13,X1,X2) & perp(X12,X0,X12,X4) & circle(X0,X1,X12,X22) & perp(X5,X0,X5,X3) & circle(X0,X1,X5,X21) & cong(X4,X2,X1,X3) & coll(X4,X1,X2) & coll(X3,X1,X2) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => cong(X2,X13,X13,X1))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X2,X1,X13] : (! [X0,X1,X2,X3,X4,X5,X12,X13,X18,X19,X20,X21,X22] : (coll(X13,X5,X12) & coll(X13,X1,X2) & perp(X12,X0,X12,X4) & circle(X0,X1,X12,X22) & perp(X5,X0,X5,X3) & circle(X0,X1,X5,X21) & cong(X4,X2,X1,X3) & coll(X4,X1,X2) & coll(X3,X1,X2) & circle(X0,X1,X2,X20) & circle(X0,X1,X18,X19)) => cong(X2,X13,X13,X1)) )),
+  file('./7_Book/00EE/08/E059-58.p',exemplo7Book00EE08E05958)).
+fof(f482,plain,(
+  ~cong(sK22,sK21,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for E059-58
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.027 s
+% Time elapsed: 0.029 s
 % ------------------------------
 % ------------------------------

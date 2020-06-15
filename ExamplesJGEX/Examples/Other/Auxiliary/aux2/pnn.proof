@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for pnn
 % SZS output start Proof for pnn
-94. ! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X3,X4) & coll(X13,X0,X5) & coll(X12,X1,X2) & coll(X12,X0,X5) & coll(X5,X1,X4) & coll(X5,X2,X3) & midp(X4,X2,X0) & midp(X3,X0,X1)) => midp(X12,X1,X2) [input]
-95. ~! [X2,X1,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X3,X4) & coll(X13,X0,X5) & coll(X12,X1,X2) & coll(X12,X0,X5) & coll(X5,X1,X4) & coll(X5,X2,X3) & midp(X4,X2,X0) & midp(X3,X0,X1)) => midp(X12,X1,X2)) [negated conjecture 94]
-165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4)) => midp(X2,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2] : (~midp(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4))) [ennf transformation 165]
-352. ? [X0,X1,X2] : (~midp(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4))) => (~midp(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4))) [choice axiom]
-353. ~midp(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4)) [skolemisation 315,352]
-468. midp(X7,X5,X3) [cnf transformation 353]
-475. ~midp(sK22,sK21,sK20) [cnf transformation 353]
-476. $false [resolution 475,468]
+fof(f480,plain,(
+  $false),
+  inference(resolution,[],[f479,f472])).
+fof(f472,plain,(
+  ( ! [X7,X5,X3] : (midp(X7,X5,X3)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~midp(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2] : (~midp(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4))) => (~midp(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2] : (~midp(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10] : (coll(X10,X6,X7) & coll(X10,X3,X8) & coll(X9,X4,X5) & coll(X9,X3,X8) & coll(X8,X4,X7) & coll(X8,X5,X6) & midp(X7,X5,X3) & midp(X6,X3,X4)) => midp(X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X2,X1,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X3,X4) & coll(X13,X0,X5) & coll(X12,X1,X2) & coll(X12,X0,X5) & coll(X5,X1,X4) & coll(X5,X2,X3) & midp(X4,X2,X0) & midp(X3,X0,X1)) => midp(X12,X1,X2))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X2,X12,X1] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X3,X4) & coll(X13,X0,X5) & coll(X12,X1,X2) & coll(X12,X0,X5) & coll(X5,X1,X4) & coll(X5,X2,X3) & midp(X4,X2,X0) & midp(X3,X0,X1)) => midp(X12,X1,X2)) )),
+  file('./Other/Auxiliary/aux2/pnn.p',exemploOtherAuxiliaryaux2pnn)).
+fof(f479,plain,(
+  ~midp(sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for pnn
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 4989
+% Memory used [KB]: 5117
 % Time elapsed: 0.027 s
 % ------------------------------
 % ------------------------------

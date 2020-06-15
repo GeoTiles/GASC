@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for E022-7
 % SZS output start Proof for E022-7
-94. ! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X2,X5) & coll(X13,X1,X4) & coll(X12,X0,X4) & coll(X12,X3,X5) & coll(X5,X0,X1) & para(X0,X3,X5,X4) & coll(X4,X2,X3) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => para(X12,X13,X0,X1) [input]
-95. ~! [X1,X0,X13,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X2,X5) & coll(X13,X1,X4) & coll(X12,X0,X4) & coll(X12,X3,X5) & coll(X5,X0,X1) & para(X0,X3,X5,X4) & coll(X4,X2,X3) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => para(X12,X13,X0,X1)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) => para(X3,X2,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) [choice axiom]
-353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) [skolemisation 315,352]
-470. para(X4,X7,X9,X8) [cnf transformation 353]
-476. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
-477. $false [resolution 476,470]
+fof(f481,plain,(
+  $false),
+  inference(resolution,[],[f480,f474])).
+fof(f474,plain,(
+  ( ! [X4,X8,X7,X9] : (para(X4,X7,X9,X8)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X11,X6,X9) & coll(X11,X5,X8) & coll(X10,X4,X8) & coll(X10,X7,X9) & coll(X9,X4,X5) & para(X4,X7,X9,X8) & coll(X8,X6,X7) & para(X4,X6,X5,X7) & para(X4,X5,X6,X7)) => para(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X1,X0,X13,X12] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X2,X5) & coll(X13,X1,X4) & coll(X12,X0,X4) & coll(X12,X3,X5) & coll(X5,X0,X1) & para(X0,X3,X5,X4) & coll(X4,X2,X3) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => para(X12,X13,X0,X1))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X0,X12,X1,X13] : (! [X0,X1,X2,X3,X4,X5,X12,X13] : (coll(X13,X2,X5) & coll(X13,X1,X4) & coll(X12,X0,X4) & coll(X12,X3,X5) & coll(X5,X0,X1) & para(X0,X3,X5,X4) & coll(X4,X2,X3) & para(X0,X2,X1,X3) & para(X0,X1,X2,X3)) => para(X12,X13,X0,X1)) )),
+  file('./6_GDD_FULL/more/E022-7.p',exemplo6GDDFULLmoreE0227)).
+fof(f480,plain,(
+  ~para(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for E022-7
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 4989
-% Time elapsed: 0.027 s
+% Memory used [KB]: 5117
+% Time elapsed: 0.028 s
 % ------------------------------
 % ------------------------------

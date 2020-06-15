@@ -1,21 +1,39 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 01
 % SZS output start Proof for 01
-94. ! [X0,X1,X2,X3,X4,X5,X12] : (midp(X12,X3,X4) & midp(X5,X2,X1) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X0,X1) & perp(X3,X2,X0,X1)) => perp(X5,X12,X3,X4) [input]
-95. ~! [X4,X3,X12,X5] : (! [X0,X1,X2,X3,X4,X5,X12] : (midp(X12,X3,X4) & midp(X5,X2,X1) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X0,X1) & perp(X3,X2,X0,X1)) => perp(X5,X12,X3,X4)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) => perp(X3,X2,X1,X0)) [rectify 95]
-315. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) => (~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) [choice axiom]
-353. ~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) [skolemisation 315,352]
-469. perp(X8,X5,X4,X6) [cnf transformation 353]
-473. ~perp(sK23,sK22,sK21,sK20) [cnf transformation 353]
-474. $false [resolution 473,469]
+fof(f478,plain,(
+  $false),
+  inference(resolution,[],[f477,f473])).
+fof(f473,plain,(
+  ( ! [X6,X4,X8,X5] : (perp(X8,X5,X4,X6)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5))) => (~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (midp(X10,X7,X8) & midp(X9,X6,X5) & coll(X8,X4,X6) & perp(X8,X5,X4,X6) & coll(X7,X4,X5) & perp(X7,X6,X4,X5)) => perp(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X4,X3,X12,X5] : (! [X0,X1,X2,X3,X4,X5,X12] : (midp(X12,X3,X4) & midp(X5,X2,X1) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X0,X1) & perp(X3,X2,X0,X1)) => perp(X5,X12,X3,X4))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X4,X12,X5,X3] : (! [X0,X1,X2,X3,X4,X5,X12] : (midp(X12,X3,X4) & midp(X5,X2,X1) & coll(X4,X0,X2) & perp(X4,X1,X0,X2) & coll(X3,X0,X1) & perp(X3,X2,X0,X1)) => perp(X5,X12,X3,X4)) )),
+  file('./6_GDD_FULL/01-20/01.p',exemplo6GDDFULL012001)).
+fof(f477,plain,(
+  ~perp(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
 % SZS output end Proof for 01
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 4989
-% Time elapsed: 0.028 s
+% Memory used [KB]: 5117
+% Time elapsed: 0.026 s
 % ------------------------------
 % ------------------------------

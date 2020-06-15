@@ -1,31 +1,69 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 44
 % SZS output start Proof for 44
-7. ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) => perp(X0,X1,X3,X2)) [input]
-9. ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & perp(X0,X1,X2,X3)) => para(X0,X1,X4,X5)) [input]
-94. ! [X0,X1,X2,X7,X3,X18,X19,X20] : (coll(X19,X0,X1) & perp(X2,X3,X2,X19) & coll(X18,X2,X3) & perp(X0,X1,X0,X18) & circle(X7,X0,X3,X20) & circle(X7,X0,X1,X2)) => para(X3,X1,X18,X19) [input]
-95. ~! [X19,X18,X1,X3] : (! [X0,X1,X2,X7,X3,X18,X19,X20] : (coll(X19,X0,X1) & perp(X2,X3,X2,X19) & coll(X18,X2,X3) & perp(X0,X1,X0,X18) & circle(X7,X0,X3,X20) & circle(X7,X0,X1,X2)) => para(X3,X1,X18,X19)) [negated conjecture 94]
-165. ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6)) => para(X3,X2,X1,X0)) [rectify 95]
-174. ! [X0,X1,X2,X3] : (perp(X0,X1,X3,X2) | ~perp(X0,X1,X2,X3)) [ennf transformation 7]
-176. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3))) [ennf transformation 9]
-177. ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3)) [flattening 176]
-315. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6))) [ennf transformation 165]
-352. ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6))) [choice axiom]
-353. ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6)) [skolemisation 315,352]
-360. ~perp(X0,X1,X2,X3) | perp(X0,X1,X3,X2) [cnf transformation 174]
-362. ~perp(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~perp(X0,X1,X2,X3) [cnf transformation 177]
-471. perp(X6,X8,X6,X10) [cnf transformation 353]
-473. ~para(sK23,sK22,sK21,sK20) [cnf transformation 353]
-476. perp(X0,X1,X2,X0) [resolution 360,471]
-538. ~perp(X0,X1,X2,X4) | para(X0,X1,X2,X3) [resolution 362,471]
-621. para(X3,X4,X5,X6) [resolution 538,476]
-641. $false [resolution 621,473]
+fof(f645,plain,(
+  $false),
+  inference(resolution,[],[f625,f477])).
+fof(f477,plain,(
+  ~para(sK23,sK22,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6))) => (~para(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3] : (~para(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10,X11] : (coll(X10,X4,X5) & perp(X6,X8,X6,X10) & coll(X9,X6,X8) & perp(X4,X5,X4,X9) & circle(X7,X4,X8,X11) & circle(X7,X4,X5,X6)) => para(X3,X2,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X19,X18,X1,X3] : (! [X0,X1,X2,X7,X3,X18,X19,X20] : (coll(X19,X0,X1) & perp(X2,X3,X2,X19) & coll(X18,X2,X3) & perp(X0,X1,X0,X18) & circle(X7,X0,X3,X20) & circle(X7,X0,X1,X2)) => para(X3,X1,X18,X19))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X19,X3,X1,X18] : (! [X0,X1,X2,X7,X3,X18,X19,X20] : (coll(X19,X0,X1) & perp(X2,X3,X2,X19) & coll(X18,X2,X3) & perp(X0,X1,X0,X18) & circle(X7,X0,X3,X20) & circle(X7,X0,X1,X2)) => para(X3,X1,X18,X19)) )),
+  file('./Other/ndg1/44.p',exemploOtherndg144)).
+fof(f625,plain,(
+  ( ! [X6,X4,X5,X3] : (para(X3,X4,X5,X6)) )),
+  inference(resolution,[],[f542,f480])).
+fof(f480,plain,(
+  ( ! [X2,X0,X1] : (perp(X0,X1,X2,X0)) )),
+  inference(resolution,[],[f364,f475])).
+fof(f475,plain,(
+  ( ! [X6,X10,X8] : (perp(X6,X8,X6,X10)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f364,plain,(
+  ( ! [X2,X0,X3,X1] : (~perp(X0,X1,X2,X3) | perp(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f176])).
+fof(f176,plain,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X3,X2) | ~perp(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f7])).
+fof(f7,axiom,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) => perp(X0,X1,X3,X2))),
+  file('./Other/ndg1/44.p',ruleD7)).
+fof(f542,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~perp(X0,X1,X2,X4) | para(X0,X1,X2,X3)) )),
+  inference(resolution,[],[f366,f475])).
+fof(f366,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~perp(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~perp(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f179])).
+fof(f179,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3))),
+  inference(flattening,[],[f178])).
+fof(f178,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~perp(X2,X3,X4,X5) | ~perp(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,axiom,(
+  ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & perp(X0,X1,X2,X3)) => para(X0,X1,X4,X5))),
+  file('./Other/ndg1/44.p',ruleD9)).
 % SZS output end Proof for 44
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.030 s
+% Time elapsed: 0.029 s
 % ------------------------------
 % ------------------------------

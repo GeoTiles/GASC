@@ -1,29 +1,63 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 70
 % SZS output start Proof for 70
-53. ! [X0,X1,X2,X7] : ((coll(X7,X0,X2) & circle(X7,X0,X1,X2)) => perp(X0,X1,X1,X2)) [input]
-94. ! [X8,X0,X1,X7,X18,X19,X20,X21,X22,X23,X24] : (circle(X20,X8,X18,X19) & circle(X7,X0,X19,X24) & coll(X19,X8,X1) & circle(X7,X0,X18,X23) & coll(X18,X8,X0) & circle(X7,X0,X21,X22) & midp(X7,X1,X0)) => perp(X7,X18,X18,X20) [input]
-95. ~! [X20,X18,X7] : (! [X8,X0,X1,X7,X18,X19,X20,X21,X22,X23,X24] : (circle(X20,X8,X18,X19) & circle(X7,X0,X19,X24) & coll(X19,X8,X1) & circle(X7,X0,X18,X23) & coll(X18,X8,X0) & circle(X7,X0,X21,X22) & midp(X7,X1,X0)) => perp(X7,X18,X18,X20)) [negated conjecture 94]
-131. ! [X0,X1,X2,X3] : ((coll(X3,X0,X2) & circle(X3,X0,X1,X2)) => perp(X0,X1,X1,X2)) [rectify 53]
-165. ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4)) => perp(X2,X1,X1,X0)) [rectify 95]
-240. ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | (~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2))) [ennf transformation 131]
-241. ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | ~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2)) [flattening 240]
-315. ? [X0,X1,X2] : (~perp(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4))) [ennf transformation 165]
-352. ? [X0,X1,X2] : (~perp(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4))) => (~perp(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4))) [choice axiom]
-353. ~perp(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4)) [skolemisation 315,352]
-407. ~circle(X3,X0,X1,X2) | ~coll(X3,X0,X2) | perp(X0,X1,X1,X2) [cnf transformation 241]
-471. coll(X8,X3,X5) [cnf transformation 353]
-473. circle(X9,X3,X7,X8) [cnf transformation 353]
-474. ~perp(sK22,sK21,sK21,sK20) [cnf transformation 353]
-505. ~coll(X0,X1,X2) | perp(X1,X3,X3,X2) [resolution 407,473]
-506. perp(X1,X3,X3,X2) [subsumption resolution 505,471]
-507. $false [resolution 506,474]
+fof(f511,plain,(
+  $false),
+  inference(resolution,[],[f510,f478])).
+fof(f478,plain,(
+  ~perp(sK22,sK21,sK21,sK20)),
+  inference(cnf_transformation,[],[f357])).
+fof(f357,plain,(
+  ~perp(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
+fof(f356,plain,(
+  ? [X0,X1,X2] : (~perp(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4))) => (~perp(sK22,sK21,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4)))),
+  introduced(choice_axiom,[])).
+fof(f319,plain,(
+  ? [X0,X1,X2] : (~perp(X2,X1,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (circle(X9,X3,X7,X8) & circle(X6,X4,X8,X13) & coll(X8,X3,X5) & circle(X6,X4,X7,X12) & coll(X7,X3,X4) & circle(X6,X4,X10,X11) & midp(X6,X5,X4)) => perp(X2,X1,X1,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X20,X18,X7] : (! [X8,X0,X1,X7,X18,X19,X20,X21,X22,X23,X24] : (circle(X20,X8,X18,X19) & circle(X7,X0,X19,X24) & coll(X19,X8,X1) & circle(X7,X0,X18,X23) & coll(X18,X8,X0) & circle(X7,X0,X21,X22) & midp(X7,X1,X0)) => perp(X7,X18,X18,X20))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ( ! [X7,X20,X18] : (! [X8,X0,X1,X7,X18,X19,X20,X21,X22,X23,X24] : (circle(X20,X8,X18,X19) & circle(X7,X0,X19,X24) & coll(X19,X8,X1) & circle(X7,X0,X18,X23) & coll(X18,X8,X0) & circle(X7,X0,X21,X22) & midp(X7,X1,X0)) => perp(X7,X18,X18,X20)) )),
+  file('./6_GDD_FULL/61-80/70.p',exemplo6GDDFULL618070)).
+fof(f510,plain,(
+  ( ! [X2,X3,X1] : (perp(X1,X3,X3,X2)) )),
+  inference(subsumption_resolution,[],[f509,f475])).
+fof(f475,plain,(
+  ( ! [X8,X5,X3] : (coll(X8,X3,X5)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f509,plain,(
+  ( ! [X2,X0,X3,X1] : (~coll(X0,X1,X2) | perp(X1,X3,X3,X2)) )),
+  inference(resolution,[],[f411,f477])).
+fof(f477,plain,(
+  ( ! [X8,X7,X3,X9] : (circle(X9,X3,X7,X8)) )),
+  inference(cnf_transformation,[],[f357])).
+fof(f411,plain,(
+  ( ! [X2,X0,X3,X1] : (~circle(X3,X0,X1,X2) | ~coll(X3,X0,X2) | perp(X0,X1,X1,X2)) )),
+  inference(cnf_transformation,[],[f245])).
+fof(f245,plain,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | ~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2))),
+  inference(flattening,[],[f244])).
+fof(f244,plain,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | (~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2)))),
+  inference(ennf_transformation,[],[f133])).
+fof(f133,plain,(
+  ! [X0,X1,X2,X3] : ((coll(X3,X0,X2) & circle(X3,X0,X1,X2)) => perp(X0,X1,X1,X2))),
+  inference(rectify,[],[f54])).
+fof(f54,axiom,(
+  ! [X0,X1,X2,X7] : ((coll(X7,X0,X2) & circle(X7,X0,X1,X2)) => perp(X0,X1,X1,X2))),
+  file('./6_GDD_FULL/61-80/70.p',ruleD53)).
 % SZS output end Proof for 70
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
 % Memory used [KB]: 5117
-% Time elapsed: 0.028 s
+% Time elapsed: 0.027 s
 % ------------------------------
 % ------------------------------
