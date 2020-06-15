@@ -19,10 +19,10 @@ walk_dir () {
 			rm -f .$nome.p
 			printf '%s\n' "$nome"
                 	printf '.%s.p ; ' "$nome" >> results.csv
-			#./jgexToTPTP $pathname
-                	#printf '.%s.proof ; ' "$nome" >> results.csv
-			#vampire .$nome.p > .$nome.proof
-			#./refutationTime .$nome.proof >> results.csv
+			./jgexToTPTP $pathname
+                	printf '.%s.proof ; ' "$nome" >> results.csv
+			vampire --proof tptp --output_axiom_names on .$nome.p > .$nome.proof
+			./refutationTime .$nome.proof >> results.csv
 		    fi
             esac
         fi
@@ -32,7 +32,7 @@ walk_dir () {
 DOWNLOADING_DIR=.
 
 if [ $# -eq 0 ]; then
-    echo "Usage ./listAll <extension>, e.g. ./listAll gex"
+    echo "Usage ./processAll.bash <extension>, e.g. ./listAll gex"
 else 
     rm -f results.csv
     touch results.csv   
