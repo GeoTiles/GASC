@@ -3,7 +3,7 @@ CCTANGENT W1 W1 F O O A CCTANGENT W2 W2 aaa O O A
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemploOtherpaperThebaultt6,conjecture,( ! [ A,B,C,M,E,F,W1,O,H,AAA,W2,I,L,CCC,N,P,NWPNT1,NWPNT2,NWPNT6,NWPNT7,NWPNT8,NWPNT9,NWPNT01,NWPNT11,NWPNT21 ] :
-(
+((
 coll(M,B,C) & 
 coll(F,B,C) & 
 perp(C,B,W1,F) & 
@@ -30,5 +30,6 @@ perp(P,M,P,W1)
 =>
 (
 coll(W2,W1,I)
+)
 )
 )).

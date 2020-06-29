@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemploOtherAuxiliaryyeauxwang3,conjecture,( ! [ A,B,C,D,E,F,G,H,I ] :
-(
+((
 eqangle(B,A,A,D,A,D,D,C) & cong(A,D,D,C) & 
 coll(E,B,D) & 
 coll(E,A,C) & 
@@ -18,5 +18,6 @@ coll(I,C,G)
 =>
 (
 ratio(A,H,E,I) = 2/1
+)
 )
 )).

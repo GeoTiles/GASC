@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo3JARJAR01new9point,conjecture,( ! [ A,B,C,D,E,F,N,M,NWPNT4 ] :
-(
+((
 perp(D,A,B,C) & coll(D,B,C) & 
 perp(E,B,A,C) & coll(E,A,C) & 
 perp(F,C,A,B) & coll(F,A,B) & 
@@ -12,5 +12,6 @@ coll(A,B,M) & circle(N,D,M,NWPNT4)
 )
 =>
 (midp(M,A,B)
+)
 )
 )).

@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo7BookLLLyL2526,conjecture,( ! [ A,B,C,D,E,F,G,H,I ] :
-(
+((
 para(B,C,A,D) & 
 para(A,B,C,D) & 
 coll(E,A,C) & 
@@ -19,5 +19,6 @@ coll(I,E,F)
 =>
 (
 para(F,G,H,I)
+)
 )
 )).

@@ -1,70 +1,85 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for E028-2
 % SZS output start Proof for E028-2
-fof(f590,plain,(
+fof(f23172,plain,(
   $false),
-  inference(resolution,[],[f582,f475])).
-fof(f475,plain,(
-  ~perp(sK23,sK22,sK21,sK20)),
-  inference(cnf_transformation,[],[f357])).
-fof(f357,plain,(
-  ~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (cong(X5,X10,X10,X9) & eqangle(X6,X5,X5,X10,X5,X10,X10,X9) & cong(X4,X8,X8,X7) & eqangle(X6,X4,X4,X8,X4,X8,X8,X7))),
-  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23])],[f319,f356])).
-fof(f356,plain,(
-  ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (cong(X5,X10,X10,X9) & eqangle(X6,X5,X5,X10,X5,X10,X10,X9) & cong(X4,X8,X8,X7) & eqangle(X6,X4,X4,X8,X4,X8,X8,X7))) => (~perp(sK23,sK22,sK21,sK20) & ! [X4,X5,X6,X7,X8,X9,X10] : (cong(X5,X10,X10,X9) & eqangle(X6,X5,X5,X10,X5,X10,X10,X9) & cong(X4,X8,X8,X7) & eqangle(X6,X4,X4,X8,X4,X8,X8,X7)))),
-  introduced(choice_axiom,[])).
-fof(f319,plain,(
-  ? [X0,X1,X2,X3] : (~perp(X3,X2,X1,X0) & ! [X4,X5,X6,X7,X8,X9,X10] : (cong(X5,X10,X10,X9) & eqangle(X6,X5,X5,X10,X5,X10,X10,X9) & cong(X4,X8,X8,X7) & eqangle(X6,X4,X4,X8,X4,X8,X8,X7)))),
-  inference(ennf_transformation,[],[f167])).
-fof(f167,plain,(
-  ~! [X0,X1,X2,X3] : (! [X4,X5,X6,X7,X8,X9,X10] : (cong(X5,X10,X10,X9) & eqangle(X6,X5,X5,X10,X5,X10,X10,X9) & cong(X4,X8,X8,X7) & eqangle(X6,X4,X4,X8,X4,X8,X8,X7)) => perp(X3,X2,X1,X0))),
-  inference(rectify,[],[f96])).
-fof(f96,negated_conjecture,(
-  ~! [X0,X5,X1,X3] : (! [X0,X1,X2,X3,X4,X5,X12] : (cong(X1,X12,X12,X5) & eqangle(X2,X1,X1,X12,X1,X12,X12,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)) => perp(X3,X1,X5,X0))),
-  inference(negated_conjecture,[],[f95])).
-fof(f95,conjecture,(
-  ( ! [X0,X5,X3,X1] : (! [X0,X1,X2,X3,X4,X5,X12] : (cong(X1,X12,X12,X5) & eqangle(X2,X1,X1,X12,X1,X12,X12,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)) => perp(X3,X1,X5,X0)) )),
-  file('./7_Book/00EE/02/E028-2.p',exemplo7Book00EE02E0282)).
-fof(f582,plain,(
-  ( ! [X2,X0,X3,X1] : (perp(X0,X1,X2,X3)) )),
-  inference(subsumption_resolution,[],[f576,f536])).
-fof(f536,plain,(
-  ( ! [X2,X0,X3,X1] : (para(X0,X1,X2,X3)) )),
-  inference(subsumption_resolution,[],[f532,f523])).
-fof(f523,plain,(
-  ( ! [X2,X0,X1] : (midp(X0,X1,X2)) )),
-  inference(resolution,[],[f522,f492])).
-fof(f492,plain,(
-  ( ! [X6,X7,X5] : (~coll(X5,X6,X7) | midp(X5,X6,X7)) )),
-  inference(resolution,[],[f425,f483])).
-fof(f483,plain,(
-  ( ! [X4,X5,X3] : (cong(X3,X4,X3,X5)) )),
-  inference(resolution,[],[f478,f380])).
-fof(f380,plain,(
-  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2)) )),
-  inference(cnf_transformation,[],[f198])).
-fof(f198,plain,(
-  ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3))),
-  inference(ennf_transformation,[],[f23])).
-fof(f23,axiom,(
-  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2))),
-  file('./7_Book/00EE/02/E028-2.p',cong23)).
-fof(f478,plain,(
-  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0)) )),
-  inference(resolution,[],[f381,f474])).
-fof(f474,plain,(
-  ( ! [X10,X5,X9] : (cong(X5,X10,X10,X9)) )),
-  inference(cnf_transformation,[],[f357])).
-fof(f381,plain,(
-  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1)) )),
-  inference(cnf_transformation,[],[f199])).
-fof(f199,plain,(
-  ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3))),
-  inference(ennf_transformation,[],[f24])).
-fof(f24,axiom,(
-  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD24)).
+  inference(avatar_sat_refutation,[],[f674,f700,f2050,f2092,f2093,f2238,f3790,f9413,f9420,f23167,f23171])).
+fof(f23171,plain,(
+  ~spl27_154 | ~spl27_160 | ~spl27_474),
+  inference(avatar_contradiction_clause,[],[f23170])).
+fof(f23170,plain,(
+  $false | (~spl27_154 | ~spl27_160 | ~spl27_474)),
+  inference(subsumption_resolution,[],[f23169,f23168])).
+fof(f23168,plain,(
+  ( ! [X70,X68,X71,X69] : (perp(X70,X71,X69,X68)) ) | (~spl27_154 | ~spl27_160)),
+  inference(subsumption_resolution,[],[f22876,f21859])).
+fof(f21859,plain,(
+  ( ! [X10,X8,X7,X9] : (para(X7,X8,X9,X10)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21833,f21779])).
+fof(f21779,plain,(
+  ( ! [X59,X57,X58] : (midp(X57,X58,X59)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21778,f20659])).
+fof(f20659,plain,(
+  ( ! [X0,X1] : (midp(X0,X1,X0)) ) | ~spl27_154),
+  inference(resolution,[],[f20601,f4248])).
+fof(f4248,plain,(
+  ( ! [X14,X15,X16] : (~midp(X16,X15,X16) | midp(X14,X15,X14)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f4135,f4146])).
+fof(f4146,plain,(
+  ( ! [X4,X3] : (coll(X3,X4,X3)) ) | ~spl27_154),
+  inference(resolution,[],[f4131,f360])).
+fof(f360,plain,(
+  ( ! [X2,X0,X1] : (~coll(X0,X1,X2) | coll(X1,X0,X2)) )),
+  inference(cnf_transformation,[],[f169])).
+fof(f169,plain,(
+  ! [X0,X1,X2] : (coll(X1,X0,X2) | ~coll(X0,X1,X2))),
+  inference(ennf_transformation,[],[f2])).
+fof(f2,axiom,(
+  ! [X0,X1,X2] : (coll(X0,X1,X2) => coll(X1,X0,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD2)).
+fof(f4131,plain,(
+  ( ! [X4,X3] : (coll(X3,X4,X4)) ) | ~spl27_154),
+  inference(resolution,[],[f2046,f425])).
 fof(f425,plain,(
+  ( ! [X2,X0,X1] : (~para(X0,X1,X0,X2) | coll(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f267])).
+fof(f267,plain,(
+  ! [X0,X1,X2] : (coll(X0,X1,X2) | ~para(X0,X1,X0,X2))),
+  inference(ennf_transformation,[],[f67])).
+fof(f67,axiom,(
+  ! [X0,X1,X2] : (para(X0,X1,X0,X2) => coll(X0,X1,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD66)).
+fof(f2046,plain,(
+  ( ! [X2,X3] : (para(X2,X3,X2,X3)) ) | ~spl27_154),
+  inference(avatar_component_clause,[],[f2045])).
+fof(f2045,plain,(
+  spl27_154 <=> ! [X3,X2] : para(X2,X3,X2,X3)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_154])])).
+fof(f4135,plain,(
+  ( ! [X14,X15,X16] : (~coll(X14,X15,X14) | midp(X14,X15,X14) | ~midp(X16,X15,X16)) ) | ~spl27_154),
+  inference(resolution,[],[f2046,f404])).
+fof(f404,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~para(X3,X4,X1,X2) | ~coll(X4,X0,X2) | midp(X4,X0,X2) | ~midp(X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f230])).
+fof(f230,plain,(
+  ! [X0,X1,X2,X3,X4] : (midp(X4,X0,X2) | ~coll(X4,X0,X2) | ~para(X3,X4,X1,X2) | ~midp(X3,X0,X1))),
+  inference(flattening,[],[f229])).
+fof(f229,plain,(
+  ! [X0,X1,X2,X3,X4] : (midp(X4,X0,X2) | (~coll(X4,X0,X2) | ~para(X3,X4,X1,X2) | ~midp(X3,X0,X1)))),
+  inference(ennf_transformation,[],[f125])).
+fof(f125,plain,(
+  ! [X0,X1,X2,X3,X4] : ((coll(X4,X0,X2) & para(X3,X4,X1,X2) & midp(X3,X0,X1)) => midp(X4,X0,X2))),
+  inference(rectify,[],[f46])).
+fof(f46,axiom,(
+  ! [X0,X1,X2,X4,X5] : ((coll(X5,X0,X2) & para(X4,X5,X1,X2) & midp(X4,X0,X1)) => midp(X5,X0,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD45)).
+fof(f20601,plain,(
+  ( ! [X5] : (midp(X5,X5,X5)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f20553,f4131])).
+fof(f20553,plain,(
+  ( ! [X5] : (~coll(X5,X5,X5) | midp(X5,X5,X5)) ) | ~spl27_154),
+  inference(resolution,[],[f20550,f426])).
+fof(f426,plain,(
   ( ! [X2,X0,X1] : (~cong(X0,X1,X0,X2) | ~coll(X0,X1,X2) | midp(X0,X1,X2)) )),
   inference(cnf_transformation,[],[f269])).
 fof(f269,plain,(
@@ -76,55 +91,184 @@ fof(f268,plain,(
 fof(f68,axiom,(
   ! [X0,X1,X2] : ((coll(X0,X1,X2) & cong(X0,X1,X0,X2)) => midp(X0,X1,X2))),
   file('./7_Book/00EE/02/E028-2.p',ruleD67)).
-fof(f522,plain,(
-  ( ! [X4,X2,X3] : (coll(X2,X3,X4)) )),
-  inference(subsumption_resolution,[],[f518,f514])).
-fof(f514,plain,(
-  ( ! [X0,X1] : (coll(X0,X0,X1)) )),
-  inference(resolution,[],[f509,f424])).
-fof(f424,plain,(
-  ( ! [X2,X0,X1] : (~para(X0,X1,X0,X2) | coll(X0,X1,X2)) )),
-  inference(cnf_transformation,[],[f267])).
-fof(f267,plain,(
-  ! [X0,X1,X2] : (coll(X0,X1,X2) | ~para(X0,X1,X0,X2))),
-  inference(ennf_transformation,[],[f67])).
-fof(f67,axiom,(
-  ! [X0,X1,X2] : (para(X0,X1,X0,X2) => coll(X0,X1,X2))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD66)).
-fof(f509,plain,(
-  ( ! [X0,X1] : (para(X0,X0,X0,X1)) )),
-  inference(subsumption_resolution,[],[f508,f474])).
-fof(f508,plain,(
-  ( ! [X0,X1] : (~cong(X0,X0,X0,X1) | para(X0,X0,X0,X1)) )),
-  inference(resolution,[],[f404,f396])).
-fof(f396,plain,(
-  ( ! [X4,X2,X0,X5,X3,X1] : (~eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | para(X0,X1,X2,X3)) )),
-  inference(cnf_transformation,[],[f218])).
-fof(f218,plain,(
-  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) | ~eqangle(X0,X1,X4,X5,X2,X3,X4,X5))),
-  inference(ennf_transformation,[],[f118])).
-fof(f118,plain,(
-  ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) => para(X0,X1,X2,X3))),
-  inference(rectify,[],[f39])).
-fof(f39,axiom,(
-  ! [X0,X1,X2,X3,X8,X9] : (eqangle(X0,X1,X8,X9,X2,X3,X8,X9) => para(X0,X1,X2,X3))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD39)).
-fof(f404,plain,(
-  ( ! [X2,X0,X1] : (eqangle(X2,X0,X0,X1,X0,X1,X2,X1) | ~cong(X2,X0,X2,X1)) )),
-  inference(cnf_transformation,[],[f231])).
-fof(f231,plain,(
-  ! [X0,X1,X2] : (eqangle(X2,X0,X0,X1,X0,X1,X2,X1) | ~cong(X2,X0,X2,X1))),
-  inference(ennf_transformation,[],[f126])).
-fof(f126,plain,(
-  ! [X0,X1,X2] : (cong(X2,X0,X2,X1) => eqangle(X2,X0,X0,X1,X0,X1,X2,X1))),
-  inference(rectify,[],[f47])).
-fof(f47,axiom,(
-  ! [X0,X1,X7] : (cong(X7,X0,X7,X1) => eqangle(X7,X0,X0,X1,X0,X1,X7,X1))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD46)).
-fof(f518,plain,(
-  ( ! [X4,X2,X3] : (coll(X2,X3,X4) | ~coll(X4,X4,X2)) )),
-  inference(resolution,[],[f514,f360])).
-fof(f360,plain,(
+fof(f20550,plain,(
+  ( ! [X90,X93] : (cong(X93,X93,X90,X90)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f20549,f7038])).
+fof(f7038,plain,(
+  ( ! [X2,X0,X1] : (cyclic(X0,X0,X1,X2)) ) | ~spl27_154),
+  inference(resolution,[],[f2290,f2046])).
+fof(f2290,plain,(
+  ( ! [X68,X66,X67] : (~para(X66,X67,X66,X67) | cyclic(X67,X67,X66,X68)) )),
+  inference(subsumption_resolution,[],[f2221,f2222])).
+fof(f2222,plain,(
+  ( ! [X70,X71,X69] : (~para(X69,X70,X69,X70) | coll(X69,X71,X70) | cyclic(X70,X70,X69,X71)) )),
+  inference(resolution,[],[f731,f400])).
+fof(f400,plain,(
+  ( ! [X2,X0,X3,X1] : (~eqangle(X2,X0,X2,X1,X3,X0,X3,X1) | coll(X2,X3,X0) | cyclic(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f222])).
+fof(f222,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) | coll(X2,X3,X0) | ~eqangle(X2,X0,X2,X1,X3,X0,X3,X1))),
+  inference(flattening,[],[f221])).
+fof(f221,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) | (coll(X2,X3,X0) | ~eqangle(X2,X0,X2,X1,X3,X0,X3,X1)))),
+  inference(ennf_transformation,[],[f121])).
+fof(f121,plain,(
+  ! [X0,X1,X2,X3] : ((~coll(X2,X3,X0) & eqangle(X2,X0,X2,X1,X3,X0,X3,X1)) => cyclic(X0,X1,X2,X3))),
+  inference(rectify,[],[f42])).
+fof(f42,axiom,(
+  ! [X0,X1,X8,X9] : ((~coll(X8,X9,X0) & eqangle(X8,X0,X8,X1,X9,X0,X9,X1)) => cyclic(X0,X1,X8,X9))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD42a)).
+fof(f731,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X4,X5,X4,X5) | ~para(X0,X1,X2,X3)) )),
+  inference(resolution,[],[f379,f398])).
+fof(f398,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f219])).
+fof(f219,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f119])).
+fof(f119,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X4,X5,X2,X3,X4,X5))),
+  inference(rectify,[],[f40])).
+fof(f40,axiom,(
+  ! [X0,X1,X2,X3,X8,X9] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X8,X9,X2,X3,X8,X9))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD40)).
+fof(f379,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X0,X1,X4,X5,X2,X3,X6,X7)) )),
+  inference(cnf_transformation,[],[f195])).
+fof(f195,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X4,X5,X2,X3,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f103])).
+fof(f103,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X0,X1,X4,X5,X2,X3,X6,X7))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X0,X1,X8,X9,X2,X3,X10,X11))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD21)).
+fof(f2221,plain,(
+  ( ! [X68,X66,X67] : (~para(X66,X67,X66,X67) | ~coll(X66,X68,X67) | cyclic(X67,X67,X66,X68)) )),
+  inference(resolution,[],[f731,f401])).
+fof(f401,plain,(
+  ( ! [X2,X0,X3,X1] : (~eqangle(X2,X0,X2,X1,X3,X0,X3,X1) | ~coll(X2,X3,X1) | cyclic(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f224])).
+fof(f224,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) | ~coll(X2,X3,X1) | ~eqangle(X2,X0,X2,X1,X3,X0,X3,X1))),
+  inference(flattening,[],[f223])).
+fof(f223,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) | (~coll(X2,X3,X1) | ~eqangle(X2,X0,X2,X1,X3,X0,X3,X1)))),
+  inference(ennf_transformation,[],[f122])).
+fof(f122,plain,(
+  ! [X0,X1,X2,X3] : ((coll(X2,X3,X1) & eqangle(X2,X0,X2,X1,X3,X0,X3,X1)) => cyclic(X0,X1,X2,X3))),
+  inference(rectify,[],[f43])).
+fof(f43,axiom,(
+  ! [X0,X1,X8,X9] : ((coll(X8,X9,X1) & eqangle(X8,X0,X8,X1,X9,X0,X9,X1)) => cyclic(X0,X1,X8,X9))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD42b)).
+fof(f20549,plain,(
+  ( ! [X90,X93,X91] : (cong(X93,X93,X90,X90) | ~cyclic(X93,X93,X91,X90)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f20548,f7038])).
+fof(f20548,plain,(
+  ( ! [X92,X90,X93,X91] : (cong(X93,X93,X90,X90) | ~cyclic(X93,X93,X91,X92) | ~cyclic(X93,X93,X91,X90)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f20547,f10811])).
+fof(f10811,plain,(
+  ( ! [X12,X10,X11,X9] : (cyclic(X9,X10,X11,X12)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f10789,f7038])).
+fof(f10789,plain,(
+  ( ! [X12,X10,X11,X9] : (cyclic(X9,X10,X11,X12) | ~cyclic(X9,X9,X10,X11)) ) | ~spl27_154),
+  inference(resolution,[],[f7038,f375])).
+fof(f375,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~cyclic(X0,X1,X2,X4) | cyclic(X1,X2,X3,X4) | ~cyclic(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f191])).
+fof(f191,plain,(
+  ! [X0,X1,X2,X3,X4] : (cyclic(X1,X2,X3,X4) | ~cyclic(X0,X1,X2,X4) | ~cyclic(X0,X1,X2,X3))),
+  inference(flattening,[],[f190])).
+fof(f190,plain,(
+  ! [X0,X1,X2,X3,X4] : (cyclic(X1,X2,X3,X4) | (~cyclic(X0,X1,X2,X4) | ~cyclic(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,axiom,(
+  ! [X0,X1,X2,X3,X4] : ((cyclic(X0,X1,X2,X4) & cyclic(X0,X1,X2,X3)) => cyclic(X1,X2,X3,X4))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD17)).
+fof(f20547,plain,(
+  ( ! [X92,X90,X93,X91] : (~cyclic(X93,X90,X91,X91) | cong(X93,X93,X90,X90) | ~cyclic(X93,X93,X91,X92) | ~cyclic(X93,X93,X91,X90)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f20531,f7038])).
+fof(f20531,plain,(
+  ( ! [X92,X90,X93,X91] : (~cyclic(X90,X90,X91,X92) | ~cyclic(X93,X90,X91,X91) | cong(X93,X93,X90,X90) | ~cyclic(X93,X93,X91,X92) | ~cyclic(X93,X93,X91,X90)) )),
+  inference(duplicate_literal_removal,[],[f20512])).
+fof(f20512,plain,(
+  ( ! [X92,X90,X93,X91] : (~cyclic(X90,X90,X91,X92) | ~cyclic(X93,X90,X91,X91) | cong(X93,X93,X90,X90) | ~cyclic(X93,X93,X91,X92) | ~cyclic(X93,X93,X91,X90) | ~cyclic(X93,X93,X91,X90)) )),
+  inference(resolution,[],[f4371,f402])).
+fof(f402,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~eqangle(X2,X0,X2,X1,X5,X3,X5,X4) | cong(X0,X1,X3,X4) | ~cyclic(X0,X1,X2,X5) | ~cyclic(X0,X1,X2,X4) | ~cyclic(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f226])).
+fof(f226,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X3,X4) | ~eqangle(X2,X0,X2,X1,X5,X3,X5,X4) | ~cyclic(X0,X1,X2,X5) | ~cyclic(X0,X1,X2,X4) | ~cyclic(X0,X1,X2,X3))),
+  inference(flattening,[],[f225])).
+fof(f225,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X3,X4) | (~eqangle(X2,X0,X2,X1,X5,X3,X5,X4) | ~cyclic(X0,X1,X2,X5) | ~cyclic(X0,X1,X2,X4) | ~cyclic(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f123])).
+fof(f123,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : ((eqangle(X2,X0,X2,X1,X5,X3,X5,X4) & cyclic(X0,X1,X2,X5) & cyclic(X0,X1,X2,X4) & cyclic(X0,X1,X2,X3)) => cong(X0,X1,X3,X4))),
+  inference(rectify,[],[f44])).
+fof(f44,axiom,(
+  ! [X0,X1,X2,X8,X9,X14] : ((eqangle(X2,X0,X2,X1,X14,X8,X14,X9) & cyclic(X0,X1,X2,X14) & cyclic(X0,X1,X2,X9) & cyclic(X0,X1,X2,X8)) => cong(X0,X1,X8,X9))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD43)).
+fof(f4371,plain,(
+  ( ! [X37,X35,X36,X34] : (eqangle(X34,X35,X34,X35,X36,X37,X36,X37) | ~cyclic(X37,X37,X34,X36) | ~cyclic(X35,X37,X34,X34)) )),
+  inference(resolution,[],[f1468,f732])).
+fof(f732,plain,(
+  ( ! [X6,X8,X7,X9] : (eqangle(X6,X7,X8,X7,X6,X9,X8,X9) | ~cyclic(X7,X9,X6,X8)) )),
+  inference(resolution,[],[f379,f399])).
+fof(f399,plain,(
+  ( ! [X2,X0,X3,X1] : (eqangle(X2,X0,X2,X1,X3,X0,X3,X1) | ~cyclic(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f220])).
+fof(f220,plain,(
+  ! [X0,X1,X2,X3] : (eqangle(X2,X0,X2,X1,X3,X0,X3,X1) | ~cyclic(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f120])).
+fof(f120,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) => eqangle(X2,X0,X2,X1,X3,X0,X3,X1))),
+  inference(rectify,[],[f41])).
+fof(f41,axiom,(
+  ! [X0,X1,X8,X9] : (cyclic(X0,X1,X8,X9) => eqangle(X8,X0,X8,X1,X9,X0,X9,X1))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD41)).
+fof(f1468,plain,(
+  ( ! [X24,X23,X21,X19,X25,X22,X20,X18] : (~eqangle(X18,X19,X20,X21,X25,X23,X25,X24) | eqangle(X18,X19,X20,X21,X22,X23,X22,X24) | ~cyclic(X23,X24,X25,X22)) )),
+  inference(resolution,[],[f380,f399])).
+fof(f380,plain,(
+  ( ! [X6,X4,X2,X0,X10,X8,X7,X5,X3,X1,X11,X9] : (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) )),
+  inference(cnf_transformation,[],[f197])).
+fof(f197,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | ~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(flattening,[],[f196])).
+fof(f196,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) | (~eqangle(X4,X5,X6,X7,X8,X9,X10,X11) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)))),
+  inference(ennf_transformation,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11] : ((eqangle(X4,X5,X6,X7,X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => eqangle(X0,X1,X2,X3,X8,X9,X10,X11))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11,X4,X5,X12,X13] : ((eqangle(X8,X9,X10,X11,X4,X5,X12,X13) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => eqangle(X0,X1,X2,X3,X4,X5,X12,X13))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD22)).
+fof(f21778,plain,(
+  ( ! [X59,X57,X60,X58] : (midp(X57,X58,X59) | ~midp(X60,X58,X60)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21758,f4199])).
+fof(f4199,plain,(
+  ( ! [X2,X0,X1] : (coll(X0,X1,X2)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f4196,f4192])).
+fof(f4192,plain,(
+  ( ! [X6,X5] : (coll(X5,X5,X6)) ) | ~spl27_154),
+  inference(resolution,[],[f4146,f359])).
+fof(f359,plain,(
+  ( ! [X2,X0,X1] : (~coll(X0,X1,X2) | coll(X0,X2,X1)) )),
+  inference(cnf_transformation,[],[f168])).
+fof(f168,plain,(
+  ! [X0,X1,X2] : (coll(X0,X2,X1) | ~coll(X0,X1,X2))),
+  inference(ennf_transformation,[],[f1])).
+fof(f1,axiom,(
+  ! [X0,X1,X2] : (coll(X0,X1,X2) => coll(X0,X2,X1))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD1)).
+fof(f4196,plain,(
+  ( ! [X2,X0,X1] : (coll(X0,X1,X2) | ~coll(X2,X2,X0)) ) | ~spl27_154),
+  inference(resolution,[],[f4192,f361])).
+fof(f361,plain,(
   ( ! [X2,X0,X3,X1] : (~coll(X0,X1,X3) | coll(X2,X3,X0) | ~coll(X0,X1,X2)) )),
   inference(cnf_transformation,[],[f171])).
 fof(f171,plain,(
@@ -136,31 +280,250 @@ fof(f170,plain,(
 fof(f3,axiom,(
   ! [X0,X1,X2,X3] : ((coll(X0,X1,X3) & coll(X0,X1,X2)) => coll(X2,X3,X0))),
   file('./7_Book/00EE/02/E028-2.p',ruleD3)).
-fof(f532,plain,(
-  ( ! [X2,X0,X3,X1] : (para(X0,X1,X2,X3) | ~midp(X1,X0,X2)) )),
-  inference(resolution,[],[f517,f421])).
-fof(f421,plain,(
-  ( ! [X4,X2,X0,X3,X1] : (~midp(X4,X2,X3) | para(X0,X2,X1,X3) | ~midp(X4,X0,X1)) )),
-  inference(cnf_transformation,[],[f262])).
-fof(f262,plain,(
-  ! [X0,X1,X2,X3,X4] : (para(X0,X2,X1,X3) | ~midp(X4,X2,X3) | ~midp(X4,X0,X1))),
-  inference(flattening,[],[f261])).
-fof(f261,plain,(
-  ! [X0,X1,X2,X3,X4] : (para(X0,X2,X1,X3) | (~midp(X4,X2,X3) | ~midp(X4,X0,X1)))),
-  inference(ennf_transformation,[],[f142])).
-fof(f142,plain,(
-  ! [X0,X1,X2,X3,X4] : ((midp(X4,X2,X3) & midp(X4,X0,X1)) => para(X0,X2,X1,X3))),
-  inference(rectify,[],[f64])).
-fof(f64,axiom,(
-  ! [X0,X1,X2,X3,X6] : ((midp(X6,X2,X3) & midp(X6,X0,X1)) => para(X0,X2,X1,X3))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD63)).
-fof(f517,plain,(
-  ( ! [X0,X1] : (midp(X0,X0,X1)) )),
-  inference(resolution,[],[f514,f492])).
-fof(f576,plain,(
-  ( ! [X4,X2,X0,X3,X1] : (perp(X0,X1,X2,X3) | ~para(X0,X1,X4,X2)) )),
-  inference(resolution,[],[f565,f367])).
-fof(f367,plain,(
+fof(f21758,plain,(
+  ( ! [X59,X57,X60,X58] : (~coll(X57,X58,X59) | midp(X57,X58,X59) | ~midp(X60,X58,X60)) ) | ~spl27_154),
+  inference(resolution,[],[f21437,f404])).
+fof(f21437,plain,(
+  ( ! [X39,X38,X40] : (para(X40,X38,X40,X39)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21436,f2046])).
+fof(f21436,plain,(
+  ( ! [X39,X38,X40] : (~para(X38,X39,X38,X39) | para(X40,X38,X40,X39)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21435,f10787])).
+fof(f10787,plain,(
+  ( ! [X4,X5,X3] : (cyclic(X3,X4,X3,X5)) ) | ~spl27_154),
+  inference(resolution,[],[f7038,f373])).
+fof(f373,plain,(
+  ( ! [X2,X0,X3,X1] : (~cyclic(X0,X1,X2,X3) | cyclic(X0,X2,X1,X3)) )),
+  inference(cnf_transformation,[],[f188])).
+fof(f188,plain,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X2,X1,X3) | ~cyclic(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,axiom,(
+  ! [X0,X1,X2,X3] : (cyclic(X0,X1,X2,X3) => cyclic(X0,X2,X1,X3))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD15)).
+fof(f21435,plain,(
+  ( ! [X39,X38,X40] : (~cyclic(X38,X39,X38,X40) | ~para(X38,X39,X38,X39) | para(X40,X38,X40,X39)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21395,f20916])).
+fof(f20916,plain,(
+  ( ! [X17,X18,X16] : (cong(X16,X17,X16,X18)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f20899,f20696])).
+fof(f20696,plain,(
+  ( ! [X4,X5] : (midp(X4,X4,X5)) ) | ~spl27_154),
+  inference(resolution,[],[f20659,f369])).
+fof(f369,plain,(
+  ( ! [X2,X0,X1] : (~midp(X2,X1,X0) | midp(X2,X0,X1)) )),
+  inference(cnf_transformation,[],[f182])).
+fof(f182,plain,(
+  ! [X0,X1,X2] : (midp(X2,X0,X1) | ~midp(X2,X1,X0))),
+  inference(ennf_transformation,[],[f97])).
+fof(f97,plain,(
+  ! [X0,X1,X2] : (midp(X2,X1,X0) => midp(X2,X0,X1))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X0,X1,X6] : (midp(X6,X1,X0) => midp(X6,X0,X1))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD11)).
+fof(f20899,plain,(
+  ( ! [X17,X18,X16] : (cong(X16,X17,X16,X18) | ~midp(X16,X16,X17)) ) | ~spl27_154),
+  inference(resolution,[],[f20696,f1865])).
+fof(f1865,plain,(
+  ( ! [X2,X0,X3,X1] : (~midp(X0,X3,X2) | cong(X0,X1,X0,X2) | ~midp(X0,X3,X1)) )),
+  inference(resolution,[],[f611,f482])).
+fof(f482,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X0,X2) | ~midp(X0,X2,X1)) )),
+  inference(resolution,[],[f382,f427])).
+fof(f427,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f270])).
+fof(f270,plain,(
+  ! [X0,X1,X2] : (cong(X0,X1,X0,X2) | ~midp(X0,X1,X2))),
+  inference(ennf_transformation,[],[f69])).
+fof(f69,axiom,(
+  ! [X0,X1,X2] : (midp(X0,X1,X2) => cong(X0,X1,X0,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD68)).
+fof(f382,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X2,X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ! [X0,X1,X2,X3] : (cong(X2,X3,X0,X1) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X2,X3,X0,X1))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD24)).
+fof(f611,plain,(
+  ( ! [X6,X8,X7,X5,X9] : (~cong(X5,X6,X7,X9) | cong(X5,X6,X7,X8) | ~midp(X7,X9,X8)) )),
+  inference(resolution,[],[f383,f427])).
+fof(f383,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~cong(X2,X3,X4,X5) | cong(X0,X1,X4,X5) | ~cong(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f201])).
+fof(f201,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | ~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3))),
+  inference(flattening,[],[f200])).
+fof(f200,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (cong(X0,X1,X4,X5) | (~cong(X2,X3,X4,X5) | ~cong(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,axiom,(
+  ! [X0,X1,X2,X3,X4,X5] : ((cong(X2,X3,X4,X5) & cong(X0,X1,X2,X3)) => cong(X0,X1,X4,X5))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD25)).
+fof(f21395,plain,(
+  ( ! [X39,X38,X40] : (~cong(X38,X38,X38,X39) | ~cyclic(X38,X39,X38,X40) | ~para(X38,X39,X38,X39) | para(X40,X38,X40,X39)) )),
+  inference(resolution,[],[f4422,f432])).
+fof(f432,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | ~para(X4,X5,X6,X7) | para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f279])).
+fof(f279,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (para(X0,X1,X2,X3) | ~para(X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(flattening,[],[f278])).
+fof(f278,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (para(X0,X1,X2,X3) | (~para(X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)))),
+  inference(ennf_transformation,[],[f146])).
+fof(f146,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : ((para(X4,X5,X6,X7) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => para(X0,X1,X2,X3))),
+  inference(rectify,[],[f74])).
+fof(f74,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : ((para(X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => para(X0,X1,X2,X3))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD73)).
+fof(f4422,plain,(
+  ( ! [X57,X58,X56] : (eqangle(X56,X57,X56,X58,X57,X58,X57,X58) | ~cong(X57,X57,X57,X58) | ~cyclic(X57,X58,X57,X56)) )),
+  inference(resolution,[],[f1470,f721])).
+fof(f721,plain,(
+  ( ! [X6,X8,X7,X9] : (eqangle(X6,X7,X6,X8,X9,X7,X9,X8) | ~cyclic(X7,X8,X9,X6)) )),
+  inference(resolution,[],[f378,f399])).
+fof(f378,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X4,X5,X6,X7,X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f194])).
+fof(f194,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X4,X5,X6,X7,X0,X1,X2,X3) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f102])).
+fof(f102,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X4,X5,X6,X7,X0,X1,X2,X3))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X8,X9,X10,X11,X0,X1,X2,X3))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD20)).
+fof(f1470,plain,(
+  ( ! [X39,X37,X35,X41,X38,X36,X40] : (~eqangle(X35,X36,X37,X38,X41,X39,X39,X40) | eqangle(X35,X36,X37,X38,X39,X40,X41,X40) | ~cong(X41,X39,X41,X40)) )),
+  inference(resolution,[],[f380,f405])).
+fof(f405,plain,(
+  ( ! [X2,X0,X1] : (eqangle(X2,X0,X0,X1,X0,X1,X2,X1) | ~cong(X2,X0,X2,X1)) )),
+  inference(cnf_transformation,[],[f231])).
+fof(f231,plain,(
+  ! [X0,X1,X2] : (eqangle(X2,X0,X0,X1,X0,X1,X2,X1) | ~cong(X2,X0,X2,X1))),
+  inference(ennf_transformation,[],[f126])).
+fof(f126,plain,(
+  ! [X0,X1,X2] : (cong(X2,X0,X2,X1) => eqangle(X2,X0,X0,X1,X0,X1,X2,X1))),
+  inference(rectify,[],[f47])).
+fof(f47,axiom,(
+  ! [X0,X1,X7] : (cong(X7,X0,X7,X1) => eqangle(X7,X0,X0,X1,X0,X1,X7,X1))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD46)).
+fof(f21833,plain,(
+  ( ! [X10,X8,X7,X11,X9] : (para(X7,X8,X9,X10) | ~midp(X7,X11,X9)) ) | ~spl27_154),
+  inference(resolution,[],[f21779,f403])).
+fof(f403,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~midp(X4,X0,X2) | para(X3,X4,X1,X2) | ~midp(X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f228])).
+fof(f228,plain,(
+  ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | ~midp(X4,X0,X2) | ~midp(X3,X0,X1))),
+  inference(flattening,[],[f227])).
+fof(f227,plain,(
+  ! [X0,X1,X2,X3,X4] : (para(X3,X4,X1,X2) | (~midp(X4,X0,X2) | ~midp(X3,X0,X1)))),
+  inference(ennf_transformation,[],[f124])).
+fof(f124,plain,(
+  ! [X0,X1,X2,X3,X4] : ((midp(X4,X0,X2) & midp(X3,X0,X1)) => para(X3,X4,X1,X2))),
+  inference(rectify,[],[f45])).
+fof(f45,axiom,(
+  ! [X0,X1,X2,X4,X5] : ((midp(X5,X0,X2) & midp(X4,X0,X1)) => para(X4,X5,X1,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD44)).
+fof(f22876,plain,(
+  ( ! [X70,X68,X71,X69] : (~para(X68,X69,X70,X71) | perp(X70,X71,X69,X68)) ) | (~spl27_154 | ~spl27_160)),
+  inference(resolution,[],[f9431,f2131])).
+fof(f2131,plain,(
+  ( ! [X47,X45,X48,X46,X44,X49] : (~perp(X44,X45,X48,X49) | ~para(X44,X45,X46,X47) | perp(X46,X47,X48,X49)) )),
+  inference(resolution,[],[f720,f433])).
+fof(f433,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | ~perp(X4,X5,X6,X7) | perp(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f281])).
+fof(f281,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (perp(X0,X1,X2,X3) | ~perp(X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(flattening,[],[f280])).
+fof(f280,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (perp(X0,X1,X2,X3) | (~perp(X4,X5,X6,X7) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7)))),
+  inference(ennf_transformation,[],[f147])).
+fof(f147,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : ((perp(X4,X5,X6,X7) & eqangle(X0,X1,X2,X3,X4,X5,X6,X7)) => perp(X0,X1,X2,X3))),
+  inference(rectify,[],[f75])).
+fof(f75,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : ((perp(X8,X9,X10,X11) & eqangle(X0,X1,X2,X3,X8,X9,X10,X11)) => perp(X0,X1,X2,X3))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD74)).
+fof(f720,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X4,X5,X2,X3) | ~para(X4,X5,X0,X1)) )),
+  inference(resolution,[],[f378,f398])).
+fof(f9431,plain,(
+  ( ! [X6,X7] : (perp(X6,X7,X7,X6)) ) | (~spl27_154 | ~spl27_160)),
+  inference(resolution,[],[f2237,f4138])).
+fof(f4138,plain,(
+  ( ! [X24,X23] : (para(X23,X24,X24,X23)) ) | ~spl27_154),
+  inference(resolution,[],[f2046,f362])).
+fof(f362,plain,(
+  ( ! [X2,X0,X3,X1] : (~para(X0,X1,X2,X3) | para(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f172])).
+fof(f172,plain,(
+  ! [X0,X1,X2,X3] : (para(X0,X1,X3,X2) | ~para(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f4])).
+fof(f4,axiom,(
+  ! [X0,X1,X2,X3] : (para(X0,X1,X2,X3) => para(X0,X1,X3,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD4)).
+fof(f2237,plain,(
+  ( ! [X47,X45,X46,X44] : (~para(X44,X45,X46,X47) | perp(X44,X45,X46,X47)) ) | ~spl27_160),
+  inference(avatar_component_clause,[],[f2236])).
+fof(f2236,plain,(
+  spl27_160 <=> ! [X44,X46,X45,X47] : (~para(X44,X45,X46,X47) | perp(X44,X45,X46,X47))),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_160])])).
+fof(f23169,plain,(
+  ( ! [X70,X72,X71,X73] : (~perp(X70,X71,X72,X73)) ) | (~spl27_154 | ~spl27_474)),
+  inference(subsumption_resolution,[],[f9419,f21859])).
+fof(f9419,plain,(
+  ( ! [X70,X72,X71,X73] : (~para(X70,X71,X72,X73) | ~perp(X70,X71,X72,X73)) ) | ~spl27_474),
+  inference(avatar_component_clause,[],[f9418])).
+fof(f9418,plain,(
+  spl27_474 <=> ! [X73,X71,X72,X70] : (~para(X70,X71,X72,X73) | ~perp(X70,X71,X72,X73))),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_474])])).
+fof(f23167,plain,(
+  ~spl27_154 | ~spl27_472),
+  inference(avatar_contradiction_clause,[],[f23166])).
+fof(f23166,plain,(
+  $false | (~spl27_154 | ~spl27_472)),
+  inference(resolution,[],[f22159,f476])).
+fof(f476,plain,(
+  ~perp(sK23,sK21,sK25,sK20)),
+  inference(cnf_transformation,[],[f358])).
+fof(f358,plain,(
+  ~perp(sK23,sK21,sK25,sK20) & cong(sK21,sK26,sK26,sK25) & eqangle(sK22,sK21,sK21,sK26,sK21,sK26,sK26,sK25) & cong(sK20,sK24,sK24,sK23) & eqangle(sK22,sK20,sK20,sK24,sK20,sK24,sK24,sK23)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23,sK24,sK25,sK26])],[f320,f357])).
+fof(f357,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6] : (~perp(X3,X1,X5,X0) & cong(X1,X6,X6,X5) & eqangle(X2,X1,X1,X6,X1,X6,X6,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)) => (~perp(sK23,sK21,sK25,sK20) & cong(sK21,sK26,sK26,sK25) & eqangle(sK22,sK21,sK21,sK26,sK21,sK26,sK26,sK25) & cong(sK20,sK24,sK24,sK23) & eqangle(sK22,sK20,sK20,sK24,sK20,sK24,sK24,sK23))),
+  introduced(choice_axiom,[])).
+fof(f320,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6] : (~perp(X3,X1,X5,X0) & cong(X1,X6,X6,X5) & eqangle(X2,X1,X1,X6,X1,X6,X6,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3))),
+  inference(flattening,[],[f319])).
+fof(f319,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6] : (~perp(X3,X1,X5,X0) & (cong(X1,X6,X6,X5) & eqangle(X2,X1,X1,X6,X1,X6,X6,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)))),
+  inference(ennf_transformation,[],[f167])).
+fof(f167,plain,(
+  ~! [X0,X1,X2,X3,X4,X5,X6] : ((cong(X1,X6,X6,X5) & eqangle(X2,X1,X1,X6,X1,X6,X6,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)) => perp(X3,X1,X5,X0))),
+  inference(rectify,[],[f96])).
+fof(f96,negated_conjecture,(
+  ~! [X0,X1,X2,X3,X4,X5,X12] : ((cong(X1,X12,X12,X5) & eqangle(X2,X1,X1,X12,X1,X12,X12,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)) => perp(X3,X1,X5,X0))),
+  inference(negated_conjecture,[],[f95])).
+fof(f95,conjecture,(
+  ! [X0,X1,X2,X3,X4,X5,X12] : ((cong(X1,X12,X12,X5) & eqangle(X2,X1,X1,X12,X1,X12,X12,X5) & cong(X0,X4,X4,X3) & eqangle(X2,X0,X0,X4,X0,X4,X4,X3)) => perp(X3,X1,X5,X0))),
+  file('./7_Book/00EE/02/E028-2.p',exemplo7Book00EE02E0282)).
+fof(f22159,plain,(
+  ( ! [X68,X66,X69,X67] : (perp(X66,X67,X68,X69)) ) | (~spl27_154 | ~spl27_472)),
+  inference(subsumption_resolution,[],[f22149,f21859])).
+fof(f22149,plain,(
+  ( ! [X70,X68,X66,X69,X67] : (perp(X66,X67,X68,X69) | ~para(X66,X67,X68,X70)) ) | (~spl27_154 | ~spl27_472)),
+  inference(resolution,[],[f21440,f368])).
+fof(f368,plain,(
   ( ! [X4,X2,X0,X5,X3,X1] : (~perp(X2,X3,X4,X5) | perp(X0,X1,X4,X5) | ~para(X0,X1,X2,X3)) )),
   inference(cnf_transformation,[],[f181])).
 fof(f181,plain,(
@@ -172,54 +535,282 @@ fof(f180,plain,(
 fof(f10,axiom,(
   ! [X0,X1,X2,X3,X4,X5] : ((perp(X2,X3,X4,X5) & para(X0,X1,X2,X3)) => perp(X0,X1,X4,X5))),
   file('./7_Book/00EE/02/E028-2.p',ruleD10)).
-fof(f565,plain,(
-  ( ! [X2,X0,X1] : (perp(X0,X2,X2,X1)) )),
-  inference(subsumption_resolution,[],[f564,f514])).
-fof(f564,plain,(
-  ( ! [X2,X0,X1] : (~coll(X0,X0,X1) | perp(X0,X2,X2,X1)) )),
-  inference(resolution,[],[f561,f411])).
-fof(f411,plain,(
-  ( ! [X2,X0,X3,X1] : (~circle(X3,X0,X1,X2) | ~coll(X3,X0,X2) | perp(X0,X1,X1,X2)) )),
-  inference(cnf_transformation,[],[f245])).
-fof(f245,plain,(
-  ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | ~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2))),
-  inference(flattening,[],[f244])).
-fof(f244,plain,(
-  ! [X0,X1,X2,X3] : (perp(X0,X1,X1,X2) | (~coll(X3,X0,X2) | ~circle(X3,X0,X1,X2)))),
-  inference(ennf_transformation,[],[f133])).
-fof(f133,plain,(
-  ! [X0,X1,X2,X3] : ((coll(X3,X0,X2) & circle(X3,X0,X1,X2)) => perp(X0,X1,X1,X2))),
-  inference(rectify,[],[f54])).
-fof(f54,axiom,(
-  ! [X0,X1,X2,X7] : ((coll(X7,X0,X2) & circle(X7,X0,X1,X2)) => perp(X0,X1,X1,X2))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD53)).
-fof(f561,plain,(
-  ( ! [X2,X0,X1] : (circle(X0,X0,X1,X2)) )),
-  inference(subsumption_resolution,[],[f554,f474])).
-fof(f554,plain,(
-  ( ! [X2,X0,X1] : (circle(X0,X0,X1,X2) | ~cong(X0,X0,X0,X1)) )),
-  inference(resolution,[],[f369,f474])).
-fof(f369,plain,(
-  ( ! [X2,X0,X3,X1] : (~cong(X3,X0,X3,X2) | circle(X3,X0,X1,X2) | ~cong(X3,X0,X3,X1)) )),
-  inference(cnf_transformation,[],[f184])).
-fof(f184,plain,(
-  ! [X0,X1,X2,X3] : (circle(X3,X0,X1,X2) | ~cong(X3,X0,X3,X2) | ~cong(X3,X0,X3,X1))),
-  inference(flattening,[],[f183])).
-fof(f183,plain,(
-  ! [X0,X1,X2,X3] : (circle(X3,X0,X1,X2) | (~cong(X3,X0,X3,X2) | ~cong(X3,X0,X3,X1)))),
-  inference(ennf_transformation,[],[f98])).
-fof(f98,plain,(
-  ! [X0,X1,X2,X3] : ((cong(X3,X0,X3,X2) & cong(X3,X0,X3,X1)) => circle(X3,X0,X1,X2))),
-  inference(rectify,[],[f12])).
-fof(f12,axiom,(
-  ! [X0,X1,X2,X7] : ((cong(X7,X0,X7,X2) & cong(X7,X0,X7,X1)) => circle(X7,X0,X1,X2))),
-  file('./7_Book/00EE/02/E028-2.p',ruleD12)).
+fof(f21440,plain,(
+  ( ! [X43,X41,X42] : (perp(X43,X41,X43,X42)) ) | (~spl27_154 | ~spl27_472)),
+  inference(subsumption_resolution,[],[f21439,f9416])).
+fof(f9416,plain,(
+  ( ! [X74,X75] : (perp(X74,X75,X74,X75)) ) | ~spl27_472),
+  inference(avatar_component_clause,[],[f9415])).
+fof(f9415,plain,(
+  spl27_472 <=> ! [X75,X74] : perp(X74,X75,X74,X75)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_472])])).
+fof(f21439,plain,(
+  ( ! [X43,X41,X42] : (~perp(X41,X42,X41,X42) | perp(X43,X41,X43,X42)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21438,f10787])).
+fof(f21438,plain,(
+  ( ! [X43,X41,X42] : (~cyclic(X41,X42,X41,X43) | ~perp(X41,X42,X41,X42) | perp(X43,X41,X43,X42)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f21396,f20916])).
+fof(f21396,plain,(
+  ( ! [X43,X41,X42] : (~cong(X41,X41,X41,X42) | ~cyclic(X41,X42,X41,X43) | ~perp(X41,X42,X41,X42) | perp(X43,X41,X43,X42)) )),
+  inference(resolution,[],[f4422,f433])).
+fof(f9420,plain,(
+  spl27_472 | spl27_474),
+  inference(avatar_split_clause,[],[f9317,f9418,f9415])).
+fof(f9317,plain,(
+  ( ! [X70,X74,X72,X71,X75,X73] : (~para(X70,X71,X72,X73) | ~perp(X70,X71,X72,X73) | perp(X74,X75,X74,X75)) )),
+  inference(resolution,[],[f2025,f433])).
+fof(f2025,plain,(
+  ( ! [X26,X24,X23,X27,X25,X22] : (eqangle(X26,X27,X26,X27,X22,X23,X24,X25) | ~para(X22,X23,X24,X25)) )),
+  inference(resolution,[],[f713,f379])).
+fof(f713,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X0,X1,X4,X5) | ~para(X2,X3,X4,X5)) )),
+  inference(resolution,[],[f377,f398])).
+fof(f377,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) )),
+  inference(cnf_transformation,[],[f193])).
+fof(f193,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f101])).
+fof(f101,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD19)).
+fof(f9413,plain,(
+  ~spl27_16 | ~spl27_20 | ~spl27_154 | ~spl27_158),
+  inference(avatar_contradiction_clause,[],[f9412])).
+fof(f9412,plain,(
+  $false | (~spl27_16 | ~spl27_20 | ~spl27_154 | ~spl27_158)),
+  inference(subsumption_resolution,[],[f9407,f2234])).
+fof(f2234,plain,(
+  ( ! [X48,X49] : (~perp(X48,X49,X48,X49)) ) | ~spl27_158),
+  inference(avatar_component_clause,[],[f2233])).
+fof(f2233,plain,(
+  spl27_158 <=> ! [X49,X48] : ~perp(X48,X49,X48,X49)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_158])])).
+fof(f9407,plain,(
+  perp(sK20,sK24,sK20,sK24) | (~spl27_16 | ~spl27_20 | ~spl27_154)),
+  inference(resolution,[],[f8868,f365])).
+fof(f365,plain,(
+  ( ! [X2,X0,X3,X1] : (~perp(X0,X1,X2,X3) | perp(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f176])).
+fof(f176,plain,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X3,X2) | ~perp(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f7])).
+fof(f7,axiom,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) => perp(X0,X1,X3,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD7)).
+fof(f8868,plain,(
+  perp(sK20,sK24,sK24,sK20) | (~spl27_16 | ~spl27_20 | ~spl27_154)),
+  inference(subsumption_resolution,[],[f8867,f5115])).
+fof(f5115,plain,(
+  ( ! [X0] : (midp(X0,sK23,X0)) ) | (~spl27_20 | ~spl27_154)),
+  inference(resolution,[],[f4248,f5023])).
+fof(f5023,plain,(
+  ( ! [X37] : (midp(sK23,X37,X37)) ) | (~spl27_20 | ~spl27_154)),
+  inference(resolution,[],[f4140,f693])).
+fof(f693,plain,(
+  midp(sK23,sK24,sK24) | ~spl27_20),
+  inference(avatar_component_clause,[],[f692])).
+fof(f692,plain,(
+  spl27_20 <=> midp(sK23,sK24,sK24)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_20])])).
+fof(f4140,plain,(
+  ( ! [X12,X13,X11] : (~midp(X11,X13,X13) | midp(X11,X12,X12)) ) | ~spl27_154),
+  inference(subsumption_resolution,[],[f4134,f2046])).
+fof(f4134,plain,(
+  ( ! [X12,X13,X11] : (midp(X11,X12,X12) | ~para(X13,X12,X13,X12) | ~midp(X11,X13,X13)) ) | ~spl27_154),
+  inference(resolution,[],[f2046,f423])).
+fof(f423,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~para(X0,X3,X1,X2) | midp(X4,X2,X3) | ~para(X0,X2,X1,X3) | ~midp(X4,X0,X1)) )),
+  inference(cnf_transformation,[],[f264])).
+fof(f264,plain,(
+  ! [X0,X1,X2,X3,X4] : (midp(X4,X2,X3) | ~para(X0,X3,X1,X2) | ~para(X0,X2,X1,X3) | ~midp(X4,X0,X1))),
+  inference(flattening,[],[f263])).
+fof(f263,plain,(
+  ! [X0,X1,X2,X3,X4] : (midp(X4,X2,X3) | (~para(X0,X3,X1,X2) | ~para(X0,X2,X1,X3) | ~midp(X4,X0,X1)))),
+  inference(ennf_transformation,[],[f143])).
+fof(f143,plain,(
+  ! [X0,X1,X2,X3,X4] : ((para(X0,X3,X1,X2) & para(X0,X2,X1,X3) & midp(X4,X0,X1)) => midp(X4,X2,X3))),
+  inference(rectify,[],[f65])).
+fof(f65,axiom,(
+  ! [X0,X1,X2,X3,X6] : ((para(X0,X3,X1,X2) & para(X0,X2,X1,X3) & midp(X6,X0,X1)) => midp(X6,X2,X3))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD64)).
+fof(f8867,plain,(
+  perp(sK20,sK24,sK24,sK20) | ~midp(sK24,sK23,sK24) | (~spl27_16 | ~spl27_154)),
+  inference(subsumption_resolution,[],[f8837,f5133])).
+fof(f5133,plain,(
+  ( ! [X7] : (midp(X7,X7,sK24)) ) | (~spl27_16 | ~spl27_154)),
+  inference(resolution,[],[f5116,f369])).
+fof(f5116,plain,(
+  ( ! [X1] : (midp(X1,sK24,X1)) ) | (~spl27_16 | ~spl27_154)),
+  inference(resolution,[],[f4248,f5022])).
+fof(f5022,plain,(
+  ( ! [X36] : (midp(sK24,X36,X36)) ) | (~spl27_16 | ~spl27_154)),
+  inference(resolution,[],[f4140,f667])).
+fof(f667,plain,(
+  midp(sK24,sK23,sK23) | ~spl27_16),
+  inference(avatar_component_clause,[],[f666])).
+fof(f666,plain,(
+  spl27_16 <=> midp(sK24,sK23,sK23)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_16])])).
+fof(f8837,plain,(
+  perp(sK20,sK24,sK24,sK20) | ~midp(sK20,sK20,sK24) | ~midp(sK24,sK23,sK24)),
+  inference(resolution,[],[f647,f1879])).
+fof(f1879,plain,(
+  ( ! [X52] : (cong(sK20,sK24,sK24,X52) | ~midp(sK24,sK23,X52)) )),
+  inference(resolution,[],[f611,f473])).
+fof(f473,plain,(
+  cong(sK20,sK24,sK24,sK23)),
+  inference(cnf_transformation,[],[f358])).
+fof(f647,plain,(
+  ( ! [X10,X11,X9] : (~cong(X9,X11,X10,X11) | perp(X9,X10,X11,X9) | ~midp(X9,X9,X10)) )),
+  inference(resolution,[],[f415,f479])).
+fof(f479,plain,(
+  ( ! [X2,X0,X1] : (cong(X0,X1,X2,X0) | ~midp(X0,X1,X2)) )),
+  inference(resolution,[],[f381,f427])).
+fof(f381,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X1,X2,X3) | cong(X0,X1,X3,X2)) )),
+  inference(cnf_transformation,[],[f198])).
+fof(f198,plain,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X3,X2) | ~cong(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,axiom,(
+  ! [X0,X1,X2,X3] : (cong(X0,X1,X2,X3) => cong(X0,X1,X3,X2))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD23)).
+fof(f415,plain,(
+  ( ! [X2,X0,X3,X1] : (~cong(X0,X3,X1,X3) | perp(X0,X1,X2,X3) | ~cong(X0,X2,X1,X2)) )),
+  inference(cnf_transformation,[],[f251])).
+fof(f251,plain,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) | ~cong(X0,X3,X1,X3) | ~cong(X0,X2,X1,X2))),
+  inference(flattening,[],[f250])).
+fof(f250,plain,(
+  ! [X0,X1,X2,X3] : (perp(X0,X1,X2,X3) | (~cong(X0,X3,X1,X3) | ~cong(X0,X2,X1,X2)))),
+  inference(ennf_transformation,[],[f135])).
+fof(f135,plain,(
+  ! [X0,X1,X2,X3] : ((cong(X0,X3,X1,X3) & cong(X0,X2,X1,X2)) => perp(X0,X1,X2,X3))),
+  inference(rectify,[],[f57])).
+fof(f57,axiom,(
+  ! [X0,X1,X8,X9] : ((cong(X0,X9,X1,X9) & cong(X0,X8,X1,X8)) => perp(X0,X1,X8,X9))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD56)).
+fof(f3790,plain,(
+  ~spl27_156),
+  inference(avatar_contradiction_clause,[],[f3789])).
+fof(f3789,plain,(
+  $false | ~spl27_156),
+  inference(subsumption_resolution,[],[f3781,f2049])).
+fof(f2049,plain,(
+  ( ! [X0,X1] : (~para(X0,X1,X0,X1)) ) | ~spl27_156),
+  inference(avatar_component_clause,[],[f2048])).
+fof(f2048,plain,(
+  spl27_156 <=> ! [X1,X0] : ~para(X0,X1,X0,X1)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_156])])).
+fof(f3781,plain,(
+  para(sK20,sK24,sK20,sK24)),
+  inference(resolution,[],[f2860,f397])).
+fof(f397,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f218])).
+fof(f218,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) | ~eqangle(X0,X1,X4,X5,X2,X3,X4,X5))),
+  inference(ennf_transformation,[],[f118])).
+fof(f118,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) => para(X0,X1,X2,X3))),
+  inference(rectify,[],[f39])).
+fof(f39,axiom,(
+  ! [X0,X1,X2,X3,X8,X9] : (eqangle(X0,X1,X8,X9,X2,X3,X8,X9) => para(X0,X1,X2,X3))),
+  file('./7_Book/00EE/02/E028-2.p',ruleD39)).
+fof(f2860,plain,(
+  eqangle(sK20,sK24,sK24,sK23,sK20,sK24,sK24,sK23)),
+  inference(resolution,[],[f1482,f726])).
+fof(f726,plain,(
+  eqangle(sK20,sK24,sK24,sK23,sK22,sK20,sK20,sK24)),
+  inference(resolution,[],[f378,f472])).
+fof(f472,plain,(
+  eqangle(sK22,sK20,sK20,sK24,sK20,sK24,sK24,sK23)),
+  inference(cnf_transformation,[],[f358])).
+fof(f1482,plain,(
+  ( ! [X94,X92,X95,X93] : (~eqangle(X92,X93,X94,X95,sK22,sK20,sK20,sK24) | eqangle(X92,X93,X94,X95,sK20,sK24,sK24,sK23)) )),
+  inference(resolution,[],[f380,f472])).
+fof(f2238,plain,(
+  spl27_158 | spl27_160),
+  inference(avatar_split_clause,[],[f2215,f2236,f2233])).
+fof(f2215,plain,(
+  ( ! [X47,X45,X48,X46,X44,X49] : (~para(X44,X45,X46,X47) | ~perp(X48,X49,X48,X49) | perp(X44,X45,X46,X47)) )),
+  inference(resolution,[],[f731,f433])).
+fof(f2093,plain,(
+  spl27_23 | ~spl27_154),
+  inference(avatar_contradiction_clause,[],[f2086])).
+fof(f2086,plain,(
+  $false | (~spl27_23 | ~spl27_154)),
+  inference(resolution,[],[f2053,f699])).
+fof(f699,plain,(
+  ~coll(sK23,sK24,sK24) | ~spl27_23),
+  inference(avatar_component_clause,[],[f698])).
+fof(f698,plain,(
+  spl27_23 <=> ~coll(sK23,sK24,sK24)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_23])])).
+fof(f2053,plain,(
+  ( ! [X0,X1] : (coll(X0,X1,X1)) ) | ~spl27_154),
+  inference(resolution,[],[f2046,f425])).
+fof(f2092,plain,(
+  spl27_19 | ~spl27_154),
+  inference(avatar_contradiction_clause,[],[f2087])).
+fof(f2087,plain,(
+  $false | (~spl27_19 | ~spl27_154)),
+  inference(resolution,[],[f2053,f673])).
+fof(f673,plain,(
+  ~coll(sK24,sK23,sK23) | ~spl27_19),
+  inference(avatar_component_clause,[],[f672])).
+fof(f672,plain,(
+  spl27_19 <=> ~coll(sK24,sK23,sK23)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_19])])).
+fof(f2050,plain,(
+  spl27_154 | spl27_156),
+  inference(avatar_split_clause,[],[f2021,f2048,f2045])).
+fof(f2021,plain,(
+  ( ! [X2,X0,X3,X1] : (~para(X0,X1,X0,X1) | para(X2,X3,X2,X3)) )),
+  inference(resolution,[],[f713,f397])).
+fof(f700,plain,(
+  spl27_20 | ~spl27_23),
+  inference(avatar_split_clause,[],[f687,f698,f692])).
+fof(f687,plain,(
+  ~coll(sK23,sK24,sK24) | midp(sK23,sK24,sK24)),
+  inference(resolution,[],[f678,f426])).
+fof(f678,plain,(
+  cong(sK23,sK24,sK23,sK24)),
+  inference(resolution,[],[f642,f381])).
+fof(f642,plain,(
+  cong(sK23,sK24,sK24,sK23)),
+  inference(resolution,[],[f618,f483])).
+fof(f483,plain,(
+  cong(sK23,sK24,sK20,sK24)),
+  inference(resolution,[],[f477,f382])).
+fof(f477,plain,(
+  cong(sK20,sK24,sK23,sK24)),
+  inference(resolution,[],[f381,f473])).
+fof(f618,plain,(
+  ( ! [X41,X40] : (~cong(X40,X41,sK20,sK24) | cong(X40,X41,sK24,sK23)) )),
+  inference(resolution,[],[f383,f473])).
+fof(f674,plain,(
+  spl27_16 | ~spl27_19),
+  inference(avatar_split_clause,[],[f661,f672,f666])).
+fof(f661,plain,(
+  ~coll(sK24,sK23,sK23) | midp(sK24,sK23,sK23)),
+  inference(resolution,[],[f643,f426])).
+fof(f643,plain,(
+  cong(sK24,sK23,sK24,sK23)),
+  inference(resolution,[],[f618,f480])).
+fof(f480,plain,(
+  cong(sK24,sK23,sK20,sK24)),
+  inference(resolution,[],[f382,f473])).
 % SZS output end Proof for E028-2
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 5117
-% Time elapsed: 0.029 s
+% Memory used [KB]: 17398
+% Time elapsed: 0.610 s
 % ------------------------------
 % ------------------------------

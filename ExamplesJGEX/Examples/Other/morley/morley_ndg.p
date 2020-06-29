@@ -3,7 +3,7 @@ EQANGLE3P B A C B A C D A C EQANGLE3P B A C B A C D A C EQANGLE3P A B C A B C D 
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemploOthermorleymorleyndg,conjecture,( ! [ A,B,C,D,E,F ] :
-(
+((
 eqangle(E,A,A,C,C,A,A,B) & 
 eqangle(E,A,A,C,C,A,A,B) & 
 eqangle(F,B,B,C,C,B,B,A) & 
@@ -12,5 +12,6 @@ eqangle(F,B,B,C,C,B,B,A)
 =>
 (
 coll(A,B,C)
+)
 )
 )).

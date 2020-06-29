@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo1TOPTEN105cir,conjecture,( ! [ P1,P2,P3,P4,P5,Q1,Q2,Q3,Q4,Q5,O1,O2,O3,O4,O5,M1,M2,M3,M4,M5,NWPNT61,NWPNT71,NWPNT81,NWPNT91,NWPNT02,NWPNT12,NWPNT22,NWPNT32,NWPNT42,NWPNT52 ] :
-(
+((
 coll(Q1,P2,P5) & coll(Q1,P1,P3) & 
 coll(Q2,P1,P3) & coll(Q2,P2,P4) & 
 coll(Q3,P2,P4) & coll(Q3,P3,P5) & 
@@ -23,5 +23,6 @@ circle(O5,Q5,M5,NWPNT42) & circle(O1,Q5,M5,NWPNT52)
 =>
 (
 cyclic(M1,M2,M3,M5)
+)
 )
 )).

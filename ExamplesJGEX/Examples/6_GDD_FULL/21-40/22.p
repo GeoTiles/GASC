@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo6GDDFULL214022,conjecture,( ! [ A,B,C,O,P,Q,N,M,E,D,NWPNT1,NWPNT2 ] :
-(circle(O,A,B,C) & 
+((circle(O,A,B,C) & 
 perp(P,O,A,C) & coll(P,A,C) & 
 perp(Q,O,A,B) & coll(Q,A,B) & 
 coll(N,O,P) & 
@@ -18,5 +18,6 @@ coll(D,N,M)
 =>
 (
 eqangle(A,D,D,E,D,E,E,A)
+)
 )
 )).

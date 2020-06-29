@@ -3,11 +3,12 @@ Point A B C D INTERSECTION_LP F A C E A B
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo7BookLLLL0572,conjecture,( ! [ ] :
-(
+((
 perp(E,C,A,D) & coll(E,A,D)
 )
 =>
 (
 cong(F,E,F,C)
+)
 )
 )).

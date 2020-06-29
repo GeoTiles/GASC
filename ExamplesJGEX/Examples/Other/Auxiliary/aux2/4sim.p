@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemploOtherAuxiliaryaux24sim,conjecture,( ! [ A,B,C,D,E,F,G,H,I,J,K,L,NWPNT1,NWPNT2,NWPNT3,NWPNT4,NWPNT5,NWPNT6,NWPNT7,NWPNT8,NWPNT9,NWPNT01,NWPNT11,NWPNT21,NWPNT31,NWPNT41,NWPNT51,NWPNT61 ] :
-(
+((
 midpoint(NWPNT1,A,B) & perp(A,B,NWPNT1,E) & 
 midpoint(NWPNT2,A,B) & perp(A,B,NWPNT2,H) & 
 midpoint(NWPNT3,B,C) & perp(B,C,NWPNT3,E) & 
@@ -29,5 +29,6 @@ eqangle(L,I,I,K,B,A,A,D)) & (eqangle(I,L,L,K,A,B,B,D) |
 eqangle(L,I,I,K,B,A,A,D)) & (eqangle(I,L,L,K,B,D,D,A) |
 eqangle(L,I,I,K,B,D,D,A)) & (eqangle(I,L,L,K,A,B,B,D) |
 eqangle(L,I,I,K,B,D,D,A)) & eqangle(I,L,L,K,B,A,A,D)
+)
 )
 )).

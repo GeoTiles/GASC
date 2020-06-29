@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemploOtherndgTest81,conjecture,( ! [ A,B,C,D,E,F,G,H,NWPNT1,NWPNT2,NWPNT3,NWPNT4 ] :
-(
+((
 perp(C,A,C,B) & 
 cong(A,C,B,C) & 
 coll(D,A,B) & 
@@ -18,5 +18,6 @@ circle(F,E,H,NWPNT4)
 =>
 (
 cong(D,G,D,H)
+)
 )
 )).

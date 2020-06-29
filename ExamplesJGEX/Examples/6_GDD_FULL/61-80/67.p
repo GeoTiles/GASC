@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo6GDDFULL618067,conjecture,( ! [ M,B,C,I,IC,IB,A,O ] :
-(
+((
 eqangle(I,M,M,B,I,M,M,C) & eqangle(I,B,B,C,I,B,B,M) & eqangle(I,C,C,M,I,C,C,B) & 
 perp(B,I,B,IC) & 
 perp(C,I,C,IB) & 
@@ -14,5 +14,6 @@ midp(MIDPNT1,B,I) & perp(B,I,MIDPNT1,O) & midp(MIDPNT2,B,C) & perp(B,C,MIDPNT2,O
 =>
 (
 perp(A,B,B,O)
+)
 )
 )).

@@ -1401,9 +1401,15 @@ variaveis:      VARIABLE
 
 int main(int argc, char *argv[]) {
   
+  if (argc < 2) {
+    printf("Error: usage ./jgexToTPTP <full-name-of-a-JGEX-file>\n\n");
+    return(1);
+  }
+
+  
   strncpy(fileName,argv[1],strlen(argv[1])-4);
   strcpy(fullFileName,argv[1]);
-
+  
   yyin = fopen(fullFileName,"r");
 
   strcpy(outputFileName,fileName);
@@ -1447,7 +1453,9 @@ int main(int argc, char *argv[]) {
   
   fprintf(yyout,"] :\n");
   
-  
+  // Parenthesis embracing all the conjecture
+  fprintf(yyout,"(");
+  // Parenthesis embracing the hypothesis
   fprintf(yyout,"(");
   for (int i=0;i<numHypotheses;i++) {
     fprintf(yyout,"%s",listPropositions[i].proposition);
@@ -1458,6 +1466,7 @@ int main(int argc, char *argv[]) {
       fprintf(yyout,"\n");
     }
   }
+  // Closing the parenthesis in the hypothesis and opening it in the conclusions 
   fprintf(yyout,")\n=>\n(");
   for (int i=numHypotheses;i<numPropositions;i++) {
     fprintf(yyout,"%s",listPropositions[i].proposition);
@@ -1468,8 +1477,11 @@ int main(int argc, char *argv[]) {
       fprintf(yyout,"\n");
     }
   }
+  // Close the parenthesis on the conclusions
   fprintf(yyout,")\n");
-  // finalisa
+  // Close the parenthesis on the conjecture
+  fprintf(yyout,")\n");
+  // Close all
   fprintf(yyout,")).");
   
   fclose(yyout);

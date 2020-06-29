@@ -1,39 +1,195 @@
 % Refutation found. Thanks to Tanya!
 % SZS status Theorem for 65
 % SZS output start Proof for 65
-fof(f477,plain,(
+fof(f2383,plain,(
   $false),
-  inference(resolution,[],[f476,f474])).
+  inference(avatar_sat_refutation,[],[f1875,f2358,f2382])).
+fof(f2382,plain,(
+  ~spl27_142),
+  inference(avatar_contradiction_clause,[],[f2381])).
+fof(f2381,plain,(
+  $false | ~spl27_142),
+  inference(resolution,[],[f1874,f1301])).
+fof(f1301,plain,(
+  para(sK25,sK24,sK25,sK24)),
+  inference(resolution,[],[f605,f495])).
+fof(f495,plain,(
+  para(sK25,sK24,sK21,sK22)),
+  inference(resolution,[],[f363,f474])).
 fof(f474,plain,(
-  ( ! [X8,X5,X3] : (coll(X8,X3,X5)) )),
-  inference(cnf_transformation,[],[f357])).
+  para(sK21,sK22,sK25,sK24)),
+  inference(cnf_transformation,[],[f358])).
+fof(f358,plain,(
+  ~coll(sK20,sK26,sK23) & circle(sK26,sK20,sK24,sK25) & coll(sK25,sK20,sK22) & para(sK21,sK22,sK25,sK24) & coll(sK24,sK20,sK21) & circle(sK23,sK20,sK21,sK22)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22,sK23,sK24,sK25,sK26])],[f320,f357])).
 fof(f357,plain,(
-  ~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5))),
-  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20,sK21,sK22])],[f319,f356])).
-fof(f356,plain,(
-  ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5))) => (~coll(sK22,sK21,sK20) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5)))),
+  ? [X0,X1,X2,X3,X4,X5,X6] : (~coll(X0,X6,X3) & circle(X6,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => (~coll(sK20,sK26,sK23) & circle(sK26,sK20,sK24,sK25) & coll(sK25,sK20,sK22) & para(sK21,sK22,sK25,sK24) & coll(sK24,sK20,sK21) & circle(sK23,sK20,sK21,sK22))),
   introduced(choice_axiom,[])).
+fof(f320,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6] : (~coll(X0,X6,X3) & circle(X6,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2))),
+  inference(flattening,[],[f319])).
 fof(f319,plain,(
-  ? [X0,X1,X2] : (~coll(X2,X1,X0) & ! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5)))),
+  ? [X0,X1,X2,X3,X4,X5,X6] : (~coll(X0,X6,X3) & (circle(X6,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)))),
   inference(ennf_transformation,[],[f167])).
 fof(f167,plain,(
-  ~! [X0,X1,X2] : (! [X3,X4,X5,X6,X7,X8,X9] : (circle(X9,X3,X7,X8) & coll(X8,X3,X5) & para(X4,X5,X8,X7) & coll(X7,X3,X4) & circle(X6,X3,X4,X5)) => coll(X2,X1,X0))),
+  ~! [X0,X1,X2,X3,X4,X5,X6] : ((circle(X6,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X6,X3))),
   inference(rectify,[],[f96])).
 fof(f96,negated_conjecture,(
-  ~! [X3,X12,X0] : (! [X0,X1,X2,X3,X4,X5,X12] : (circle(X12,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X12,X3))),
+  ~! [X0,X1,X2,X3,X4,X5,X12] : ((circle(X12,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X12,X3))),
   inference(negated_conjecture,[],[f95])).
 fof(f95,conjecture,(
-  ( ! [X0,X12,X3] : (! [X0,X1,X2,X3,X4,X5,X12] : (circle(X12,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X12,X3)) )),
+  ! [X0,X1,X2,X3,X4,X5,X12] : ((circle(X12,X0,X4,X5) & coll(X5,X0,X2) & para(X1,X2,X5,X4) & coll(X4,X0,X1) & circle(X3,X0,X1,X2)) => coll(X0,X12,X3))),
   file('./Other/unsolved/65.p',exemploOtherunsolved65)).
-fof(f476,plain,(
-  ~coll(sK22,sK21,sK20)),
-  inference(cnf_transformation,[],[f357])).
+fof(f363,plain,(
+  ( ! [X2,X0,X3,X1] : (~para(X0,X1,X2,X3) | para(X2,X3,X0,X1)) )),
+  inference(cnf_transformation,[],[f173])).
+fof(f173,plain,(
+  ! [X0,X1,X2,X3] : (para(X2,X3,X0,X1) | ~para(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f5])).
+fof(f5,axiom,(
+  ! [X0,X1,X2,X3] : (para(X0,X1,X2,X3) => para(X2,X3,X0,X1))),
+  file('./Other/unsolved/65.p',ruleD5)).
+fof(f605,plain,(
+  ( ! [X0,X1] : (~para(X0,X1,sK21,sK22) | para(X0,X1,sK25,sK24)) )),
+  inference(resolution,[],[f364,f474])).
+fof(f364,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~para(X2,X3,X4,X5) | para(X0,X1,X4,X5) | ~para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f175])).
+fof(f175,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | ~para(X2,X3,X4,X5) | ~para(X0,X1,X2,X3))),
+  inference(flattening,[],[f174])).
+fof(f174,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X4,X5) | (~para(X2,X3,X4,X5) | ~para(X0,X1,X2,X3)))),
+  inference(ennf_transformation,[],[f6])).
+fof(f6,axiom,(
+  ! [X0,X1,X2,X3,X4,X5] : ((para(X2,X3,X4,X5) & para(X0,X1,X2,X3)) => para(X0,X1,X4,X5))),
+  file('./Other/unsolved/65.p',ruleD6)).
+fof(f1874,plain,(
+  ( ! [X0,X1] : (~para(X0,X1,X0,X1)) ) | ~spl27_142),
+  inference(avatar_component_clause,[],[f1873])).
+fof(f1873,plain,(
+  spl27_142 <=> ! [X1,X0] : ~para(X0,X1,X0,X1)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_142])])).
+fof(f2358,plain,(
+  ~spl27_140),
+  inference(avatar_contradiction_clause,[],[f2341])).
+fof(f2341,plain,(
+  $false | ~spl27_140),
+  inference(resolution,[],[f2332,f477])).
+fof(f477,plain,(
+  ~coll(sK20,sK26,sK23)),
+  inference(cnf_transformation,[],[f358])).
+fof(f2332,plain,(
+  ( ! [X2,X0,X1] : (coll(X0,X1,X2)) ) | ~spl27_140),
+  inference(subsumption_resolution,[],[f2326,f2308])).
+fof(f2308,plain,(
+  ( ! [X6,X5] : (coll(X5,X5,X6)) ) | ~spl27_140),
+  inference(resolution,[],[f2287,f359])).
+fof(f359,plain,(
+  ( ! [X2,X0,X1] : (~coll(X0,X1,X2) | coll(X0,X2,X1)) )),
+  inference(cnf_transformation,[],[f168])).
+fof(f168,plain,(
+  ! [X0,X1,X2] : (coll(X0,X2,X1) | ~coll(X0,X1,X2))),
+  inference(ennf_transformation,[],[f1])).
+fof(f1,axiom,(
+  ! [X0,X1,X2] : (coll(X0,X1,X2) => coll(X0,X2,X1))),
+  file('./Other/unsolved/65.p',ruleD1)).
+fof(f2287,plain,(
+  ( ! [X4,X3] : (coll(X3,X4,X3)) ) | ~spl27_140),
+  inference(resolution,[],[f2270,f360])).
+fof(f360,plain,(
+  ( ! [X2,X0,X1] : (~coll(X0,X1,X2) | coll(X1,X0,X2)) )),
+  inference(cnf_transformation,[],[f169])).
+fof(f169,plain,(
+  ! [X0,X1,X2] : (coll(X1,X0,X2) | ~coll(X0,X1,X2))),
+  inference(ennf_transformation,[],[f2])).
+fof(f2,axiom,(
+  ! [X0,X1,X2] : (coll(X0,X1,X2) => coll(X1,X0,X2))),
+  file('./Other/unsolved/65.p',ruleD2)).
+fof(f2270,plain,(
+  ( ! [X0,X1] : (coll(X0,X1,X1)) ) | ~spl27_140),
+  inference(resolution,[],[f1871,f425])).
+fof(f425,plain,(
+  ( ! [X2,X0,X1] : (~para(X0,X1,X0,X2) | coll(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f267])).
+fof(f267,plain,(
+  ! [X0,X1,X2] : (coll(X0,X1,X2) | ~para(X0,X1,X0,X2))),
+  inference(ennf_transformation,[],[f67])).
+fof(f67,axiom,(
+  ! [X0,X1,X2] : (para(X0,X1,X0,X2) => coll(X0,X1,X2))),
+  file('./Other/unsolved/65.p',ruleD66)).
+fof(f1871,plain,(
+  ( ! [X2,X3] : (para(X2,X3,X2,X3)) ) | ~spl27_140),
+  inference(avatar_component_clause,[],[f1870])).
+fof(f1870,plain,(
+  spl27_140 <=> ! [X3,X2] : para(X2,X3,X2,X3)),
+  introduced(avatar_definition,[new_symbols(naming,[spl27_140])])).
+fof(f2326,plain,(
+  ( ! [X2,X0,X1] : (coll(X0,X1,X2) | ~coll(X2,X2,X0)) ) | ~spl27_140),
+  inference(resolution,[],[f2308,f361])).
+fof(f361,plain,(
+  ( ! [X2,X0,X3,X1] : (~coll(X0,X1,X3) | coll(X2,X3,X0) | ~coll(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f171])).
+fof(f171,plain,(
+  ! [X0,X1,X2,X3] : (coll(X2,X3,X0) | ~coll(X0,X1,X3) | ~coll(X0,X1,X2))),
+  inference(flattening,[],[f170])).
+fof(f170,plain,(
+  ! [X0,X1,X2,X3] : (coll(X2,X3,X0) | (~coll(X0,X1,X3) | ~coll(X0,X1,X2)))),
+  inference(ennf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0,X1,X2,X3] : ((coll(X0,X1,X3) & coll(X0,X1,X2)) => coll(X2,X3,X0))),
+  file('./Other/unsolved/65.p',ruleD3)).
+fof(f1875,plain,(
+  spl27_140 | spl27_142),
+  inference(avatar_split_clause,[],[f1846,f1873,f1870])).
+fof(f1846,plain,(
+  ( ! [X2,X0,X3,X1] : (~para(X0,X1,X0,X1) | para(X2,X3,X2,X3)) )),
+  inference(resolution,[],[f678,f397])).
+fof(f397,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f218])).
+fof(f218,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) | ~eqangle(X0,X1,X4,X5,X2,X3,X4,X5))),
+  inference(ennf_transformation,[],[f118])).
+fof(f118,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) => para(X0,X1,X2,X3))),
+  inference(rectify,[],[f39])).
+fof(f39,axiom,(
+  ! [X0,X1,X2,X3,X8,X9] : (eqangle(X0,X1,X8,X9,X2,X3,X8,X9) => para(X0,X1,X2,X3))),
+  file('./Other/unsolved/65.p',ruleD39)).
+fof(f678,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X2,X3,X0,X1,X4,X5) | ~para(X2,X3,X4,X5)) )),
+  inference(resolution,[],[f377,f398])).
+fof(f398,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3)) )),
+  inference(cnf_transformation,[],[f219])).
+fof(f219,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (eqangle(X0,X1,X4,X5,X2,X3,X4,X5) | ~para(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f119])).
+fof(f119,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X4,X5,X2,X3,X4,X5))),
+  inference(rectify,[],[f40])).
+fof(f40,axiom,(
+  ! [X0,X1,X2,X3,X8,X9] : (para(X0,X1,X2,X3) => eqangle(X0,X1,X8,X9,X2,X3,X8,X9))),
+  file('./Other/unsolved/65.p',ruleD40)).
+fof(f377,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (~eqangle(X0,X1,X2,X3,X4,X5,X6,X7) | eqangle(X2,X3,X0,X1,X6,X7,X4,X5)) )),
+  inference(cnf_transformation,[],[f193])).
+fof(f193,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X2,X3,X0,X1,X6,X7,X4,X5) | ~eqangle(X0,X1,X2,X3,X4,X5,X6,X7))),
+  inference(ennf_transformation,[],[f101])).
+fof(f101,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqangle(X0,X1,X2,X3,X4,X5,X6,X7) => eqangle(X2,X3,X0,X1,X6,X7,X4,X5))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X0,X1,X2,X3,X8,X9,X10,X11] : (eqangle(X0,X1,X2,X3,X8,X9,X10,X11) => eqangle(X2,X3,X0,X1,X10,X11,X8,X9))),
+  file('./Other/unsolved/65.p',ruleD19)).
 % SZS output end Proof for 65
 % ------------------------------
 % Version: Vampire 4.4.0 (commit 7916d27 on 2019-08-23 08:50:16 +0100)
 % Termination reason: Refutation
 
-% Memory used [KB]: 4989
-% Time elapsed: 0.028 s
+% Memory used [KB]: 6140
+% Time elapsed: 0.052 s
 % ------------------------------
 % ------------------------------

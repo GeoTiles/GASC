@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemploOtherndgTest94,conjecture,( ! [ A,B,C,O,D,P,F,G,H,E,I,NWPNT1,NWPNT2 ] :
-(circle(O,A,B,C) & 
+((circle(O,A,B,C) & 
 circle(O,A,D,NWPNT1) & 
 circle(O,A,P,NWPNT2) & 
 perp(F,P,A,D) & coll(F,A,D) & 
@@ -15,5 +15,6 @@ coll(I,F,G) & coll(I,H,E)
 =>
 (
 cyclic(P,G,I,H)
+)
 )
 )).

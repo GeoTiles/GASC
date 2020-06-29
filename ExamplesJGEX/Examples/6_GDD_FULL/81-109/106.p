@@ -3,7 +3,7 @@
 include('geometryDeductiveDatabaseMethod.ax').
 
 fof(exemplo6GDDFULL81109106,conjecture,( ! [ Q4,Q1,Q3,Q0,Q2,P0,P1,P2,P3,P4,O0,O4,O3,O2,O1,M0,M4,M3,M2,M1,NWPNT1,NWPNT2,NWPNT3,NWPNT4,NWPNT5,NWPNT6,NWPNT7,NWPNT8,NWPNT9,NWPNT01 ] :
-(
+((
 coll(P0,Q4,Q1) & 
 coll(P0,Q0,Q2) & 
 coll(P1,Q1,Q3) & 
@@ -28,5 +28,6 @@ circle(O1,Q1,M1,NWPNT01)
 =>
 (
 cyclic(M4,M3,M2,M1)
+)
 )
 )).

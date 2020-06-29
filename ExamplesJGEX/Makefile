@@ -1,4 +1,4 @@
-OBJECTIVOS = jgexToTPTP
+OBJECTIVOS = jgexToTPTP 
 FLAGS  = -lfl -lm  
 CC     = gcc
 OBJS   = lex.yy.c ${OBJECTIVOS}.tab.c
